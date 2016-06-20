@@ -1,0 +1,3984 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             11/Jan/2016  16:35:12 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\Source\algorithmandf #
+#                          ilter.c                                            #
+#    Command line       =  -f C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\P #
+#                          rojects\zstack\Samples\SampleApp\CC2530DB\..\..\.. #
+#                          \Tools\CC2530DB\f8wCoord.cfg (-DCPU32MHZ           #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f     #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\To #
+#                          ols\CC2530DB\f8wConfig.cfg (-DSECURE=0             #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=TRUE      #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\Source\algorithmandf #
+#                          ilter.c -D ZIGBEEPRO -D ZTOOL_P1 -D xMT_TASK -D    #
+#                          xMT_SYS_FUNC -D xMT_ZDO_FUNC -D                    #
+#                          LCD_SUPPORTED=DEBUG -lC C:\Users\ArnoldWorkStation #
+#                          \Desktop\ZigbeeTest\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\CoordinatorEB-Pro\List\ -lA           #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\Coordinator #
+#                          EB-Pro\List\ --diag_suppress Pe001,Pa010 -o        #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\Coordinator #
+#                          EB-Pro\Obj\ -e --no_cse --no_unroll --no_inline    #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I C:\Users\ArnoldWorkStation #
+#                          \Desktop\ZigbeeTest\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\ -I C:\Users\ArnoldWorkStation\Deskto #
+#                          p\ZigbeeTest\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\SOURCE\ -I C:\Users\ArnoldWorkStation\Des #
+#                          ktop\ZigbeeTest\Projects\zstack\Samples\SampleApp\ #
+#                          CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I               #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\COMPONENTS\MT\ -I C:\Users\ArnoldWorkStation\D #
+#                          esktop\ZigbeeTest\Projects\zstack\Samples\SampleAp #
+#                          p\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\  #
+#                          -I C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\P #
+#                          rojects\zstack\Samples\SampleApp\CC2530DB\..\..\.. #
+#                          \..\..\COMPONENTS\HAL\TARGET\CC2530EB\ -I          #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\COMPONENTS\OSAL\MCU\CCSOC\ -I                  #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\COMPONENTS\OSAL\INCLUDE\ -I                    #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\COMPONENTS\STACK\AF\ -I                        #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\COMPONENTS\STACK\NWK\ -I                       #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\COMPONENTS\STACK\SEC\ -I                       #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\COMPONENTS\STACK\SAPI\ -I                      #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\COMPONENTS\STACK\SYS\ -I                       #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\COMPONENTS\STACK\ZDO\ -I                       #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\COMPONENTS\ZMAC\F8W\ -I                        #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\COMPONENTS\ZMAC\ -I C:\Users\ArnoldWorkStation #
+#                          \Desktop\ZigbeeTest\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SA #
+#                          DDR\ -I C:\Users\ArnoldWorkStation\Desktop\ZigbeeT #
+#                          est\Projects\zstack\Samples\SampleApp\CC2530DB\..\ #
+#                          ..\..\..\..\COMPONENTS\SERVICES\SDATA\ -I          #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I             #
+#                          C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\    #
+#                          -On --require_prototypes                           #
+#    List file          =  C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\Coordinator #
+#                          EB-Pro\List\algorithmandfilter.lst                 #
+#    Object file        =  C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\Coordinator #
+#                          EB-Pro\Obj\algorithmandfilter.r51                  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Projects\zstack\Samples\SampleApp\Source\algorithmandfilter.c
+      1          /**************************************************************************************************
+      2            Filename:       algorithmandfilter.c
+      3            Revised:        $Date: 2016-01-09  $
+      4            Revision:       $Revision: 1 $
+      5          
+      6            Description:    algorithmandfilter.
+      7          
+      8          
+      9          **************************************************************************************************/
+     10          
+     11          /*********************************************************************
+     12           * INCLUDES
+     13           */
+     14          #include "algorithmandfilter.h"
+     15          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     16          void printRSSIandLQI(afIncomingMSGPacket_t *pkt)
+   \                     printRSSIandLQI:
+     17          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 3
+   \   000005   74FD         MOV     A,#-0x3
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   8A..         MOV     ?V0 + 0,R2
+   \   00000C   8B..         MOV     ?V0 + 1,R3
+     18                   int8 rssivalue;
+     19                  rssivalue=0xff-pkt->rssi;
+   \   00000E   E5..         MOV     A,?V0 + 0
+   \   000010   2418         ADD     A,#0x18
+   \   000012   F582         MOV     DPL,A
+   \   000014   E5..         MOV     A,?V0 + 1
+   \   000016   3400         ADDC    A,#0x0
+   \   000018   F583         MOV     DPH,A
+   \   00001A   E0           MOVX    A,@DPTR
+   \   00001B   F8           MOV     R0,A
+   \   00001C   74FF         MOV     A,#-0x1
+   \   00001E   C3           CLR     C
+   \   00001F   98           SUBB    A,R0
+   \   000020   FE           MOV     R6,A
+     20                  unsigned char rssi_buf[3];
+     21                  rssi_buf[0]='-';
+   \   000021   85..82       MOV     DPL,?XSP + 0
+   \   000024   85..83       MOV     DPH,?XSP + 1
+   \   000027   742D         MOV     A,#0x2d
+   \   000029   F0           MOVX    @DPTR,A
+     22                  rssi_buf[1]=rssivalue/10+0x30;
+   \   00002A   EE           MOV     A,R6
+   \   00002B   75F00A       MOV     B,#0xa
+   \   00002E   12....       LCALL   ?SC_DIV_MOD
+   \   000031   2430         ADD     A,#0x30
+   \   000033   C0E0         PUSH    A
+   \   000035   7401         MOV     A,#0x1
+   \   000037   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003A   D0E0         POP     A
+   \   00003C   F0           MOVX    @DPTR,A
+     23                  rssi_buf[2]=rssivalue%10+0x30;
+   \   00003D   EE           MOV     A,R6
+   \   00003E   75F00A       MOV     B,#0xa
+   \   000041   12....       LCALL   ?SC_DIV_MOD
+   \   000044   E5F0         MOV     A,B
+   \   000046   2430         ADD     A,#0x30
+   \   000048   C0E0         PUSH    A
+   \   00004A   7402         MOV     A,#0x2
+   \   00004C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004F   D0E0         POP     A
+   \   000051   F0           MOVX    @DPTR,A
+     24                   HalUARTWrite(0, pkt->cmd.Data, pkt->cmd.DataLength); //输出接收到的数据
+   \   000052                ; Setup parameters for call to function HalUARTWrite
+   \   000052   E5..         MOV     A,?V0 + 0
+   \   000054   241F         ADD     A,#0x1f
+   \   000056   F582         MOV     DPL,A
+   \   000058   E5..         MOV     A,?V0 + 1
+   \   00005A   3400         ADDC    A,#0x0
+   \   00005C   F583         MOV     DPH,A
+   \   00005E   E0           MOVX    A,@DPTR
+   \   00005F   FC           MOV     R4,A
+   \   000060   A3           INC     DPTR
+   \   000061   E0           MOVX    A,@DPTR
+   \   000062   FD           MOV     R5,A
+   \   000063   E5..         MOV     A,?V0 + 0
+   \   000065   2421         ADD     A,#0x21
+   \   000067   F582         MOV     DPL,A
+   \   000069   E5..         MOV     A,?V0 + 1
+   \   00006B   3400         ADDC    A,#0x0
+   \   00006D   F583         MOV     DPH,A
+   \   00006F   E0           MOVX    A,@DPTR
+   \   000070   FA           MOV     R2,A
+   \   000071   A3           INC     DPTR
+   \   000072   E0           MOVX    A,@DPTR
+   \   000073   FB           MOV     R3,A
+   \   000074   7900         MOV     R1,#0x0
+   \   000076   12....       LCALL   ??HalUARTWrite?relay
+     25            
+     26                          
+     27              //  HalUARTWrite(0, "\n", 1); 
+     28                HalUARTWrite(0, "RSSI:", 5);  
+   \   000079                ; Setup parameters for call to function HalUARTWrite
+   \   000079   7C05         MOV     R4,#0x5
+   \   00007B   7D00         MOV     R5,#0x0
+   \   00007D   7A..         MOV     R2,#`?<Constant "RSSI:">` & 0xff
+   \   00007F   7B..         MOV     R3,#(`?<Constant "RSSI:">` >> 8) & 0xff
+   \   000081   7900         MOV     R1,#0x0
+   \   000083   12....       LCALL   ??HalUARTWrite?relay
+     29                HalUARTWrite(0,rssi_buf,3);
+   \   000086                ; Setup parameters for call to function HalUARTWrite
+   \   000086   7C03         MOV     R4,#0x3
+   \   000088   7D00         MOV     R5,#0x0
+   \   00008A   85..82       MOV     DPL,?XSP + 0
+   \   00008D   85..83       MOV     DPH,?XSP + 1
+   \   000090   AA82         MOV     R2,DPL
+   \   000092   AB83         MOV     R3,DPH
+   \   000094   7900         MOV     R1,#0x0
+   \   000096   12....       LCALL   ??HalUARTWrite?relay
+     30          //     HalUARTWrite(0, "\r\n", 2); 
+     31          ////     
+     32          //     uint8 lqivalue;
+     33          //     lqivalue=pkt->LinkQuality;
+     34          //     unsigned char lqi_buf[3];
+     35          //      lqi_buf[0]=lqivalue/100+0x30;
+     36          //        lqi_buf[1]=(lqivalue%100)/10+0x30;
+     37          //        lqi_buf[2]=lqivalue%10+0x30;
+     38          //      HalUARTWrite(0, "LQI:", 4);  
+     39          //      HalUARTWrite(0,lqi_buf,3);
+     40          //     HalUARTWrite(0, "\n", 1);         //回车换行
+     41                
+     42                
+     43                                  
+     44                            
+     45          //                   unsigned char rssi_buf[3];
+     46          //                     rssi_buf[0]='-';
+     47          //                    rssi_buf[1]=(int32)sumRssi1/10+0x30;
+     48          //                    rssi_buf[2]=(int32)sumRssi1%10+0x30;
+     49          //                   HalUARTWrite(0,rssi_buf,3);
+     50          }
+   \   000099   7403         MOV     A,#0x3
+   \   00009B   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00009E   7F02         MOV     R7,#0x2
+   \   0000A0   02....       LJMP    ?BANKED_LEAVE_XDATA
+     51          
+     52          
+     53          
+     54          /*********************************************************************
+     55           * @fn      SampleApp_MinMax_localization
+     56           *
+     57           * @brief   calculate the position of a quadrotor
+     58           *
+     59           * @param   rssi_i readings from different anchors, the result will be stored in xposition and yposition
+     60           *
+     61           * @return  none
+     62           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     63          void SampleApp_MinMax_localization(float* xposition, float* yposition, float zposition, float nValue[4], float RssiValue[4],
+   \                     SampleApp_MinMax_localization:
+     64                                             float AValue[4], float AnchorX[4], float AnchorY[4])
+     65          {
+   \   000000   74E8         MOV     A,#-0x18
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 24
+   \   000005                ; Auto size: 40
+   \   000005   74D8         MOV     A,#-0x28
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   7412         MOV     A,#0x12
+   \   00000C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000F   EA           MOV     A,R2
+   \   000010   F0           MOVX    @DPTR,A
+   \   000011   A3           INC     DPTR
+   \   000012   EB           MOV     A,R3
+   \   000013   F0           MOVX    @DPTR,A
+   \   000014   7410         MOV     A,#0x10
+   \   000016   12....       LCALL   ?XSTACK_DISP0_8
+   \   000019   EC           MOV     A,R4
+   \   00001A   F0           MOVX    @DPTR,A
+   \   00001B   A3           INC     DPTR
+   \   00001C   ED           MOV     A,R5
+   \   00001D   F0           MOVX    @DPTR,A
+   \   00001E   7440         MOV     A,#0x40
+   \   000020   12....       LCALL   ?XSTACK_DISP0_8
+   \   000023   78..         MOV     R0,#?V0 + 0
+   \   000025   12....       LCALL   ?L_MOV_X
+     66              //initial the parameter 
+     67              float x_left=-10;
+   \   000028   7C00         MOV     R4,#0x0
+   \   00002A   7D00         MOV     R5,#0x0
+   \   00002C   7E20         MOV     R6,#0x20
+   \   00002E   7FC1         MOV     R7,#-0x3f
+   \   000030   740C         MOV     A,#0xc
+   \   000032   12....       LCALL   ?XSTACK_DISP0_8
+   \   000035   EC           MOV     A,R4
+   \   000036   F0           MOVX    @DPTR,A
+   \   000037   A3           INC     DPTR
+   \   000038   ED           MOV     A,R5
+   \   000039   F0           MOVX    @DPTR,A
+   \   00003A   A3           INC     DPTR
+   \   00003B   EE           MOV     A,R6
+   \   00003C   F0           MOVX    @DPTR,A
+   \   00003D   A3           INC     DPTR
+   \   00003E   EF           MOV     A,R7
+   \   00003F   F0           MOVX    @DPTR,A
+     68              float x_right=10;
+   \   000040   7C00         MOV     R4,#0x0
+   \   000042   7D00         MOV     R5,#0x0
+   \   000044   7E20         MOV     R6,#0x20
+   \   000046   7F41         MOV     R7,#0x41
+   \   000048   7408         MOV     A,#0x8
+   \   00004A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004D   EC           MOV     A,R4
+   \   00004E   F0           MOVX    @DPTR,A
+   \   00004F   A3           INC     DPTR
+   \   000050   ED           MOV     A,R5
+   \   000051   F0           MOVX    @DPTR,A
+   \   000052   A3           INC     DPTR
+   \   000053   EE           MOV     A,R6
+   \   000054   F0           MOVX    @DPTR,A
+   \   000055   A3           INC     DPTR
+   \   000056   EF           MOV     A,R7
+   \   000057   F0           MOVX    @DPTR,A
+     69              float y_bottom=-10;
+   \   000058   75..00       MOV     ?V0 + 4,#0x0
+   \   00005B   75..00       MOV     ?V0 + 5,#0x0
+   \   00005E   75..20       MOV     ?V0 + 6,#0x20
+   \   000061   75..C1       MOV     ?V0 + 7,#-0x3f
+     70              float y_top=10;
+   \   000064   7C00         MOV     R4,#0x0
+   \   000066   7D00         MOV     R5,#0x0
+   \   000068   7E20         MOV     R6,#0x20
+   \   00006A   7F41         MOV     R7,#0x41
+   \   00006C   7404         MOV     A,#0x4
+   \   00006E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000071   EC           MOV     A,R4
+   \   000072   F0           MOVX    @DPTR,A
+   \   000073   A3           INC     DPTR
+   \   000074   ED           MOV     A,R5
+   \   000075   F0           MOVX    @DPTR,A
+   \   000076   A3           INC     DPTR
+   \   000077   EE           MOV     A,R6
+   \   000078   F0           MOVX    @DPTR,A
+   \   000079   A3           INC     DPTR
+   \   00007A   EF           MOV     A,R7
+   \   00007B   F0           MOVX    @DPTR,A
+     71              float gainconst=1.16f;
+   \   00007C   7CE1         MOV     R4,#-0x1f
+   \   00007E   7D7A         MOV     R5,#0x7a
+   \   000080   7E94         MOV     R6,#-0x6c
+   \   000082   7F3F         MOV     R7,#0x3f
+   \   000084   7424         MOV     A,#0x24
+   \   000086   12....       LCALL   ?XSTACK_DISP0_8
+   \   000089   EC           MOV     A,R4
+   \   00008A   F0           MOVX    @DPTR,A
+   \   00008B   A3           INC     DPTR
+   \   00008C   ED           MOV     A,R5
+   \   00008D   F0           MOVX    @DPTR,A
+   \   00008E   A3           INC     DPTR
+   \   00008F   EE           MOV     A,R6
+   \   000090   F0           MOVX    @DPTR,A
+   \   000091   A3           INC     DPTR
+   \   000092   EF           MOV     A,R7
+   \   000093   F0           MOVX    @DPTR,A
+     72              float naverage=0.0f;
+   \   000094   7C00         MOV     R4,#0x0
+   \   000096   7D00         MOV     R5,#0x0
+   \   000098   7E00         MOV     R6,#0x0
+   \   00009A   7F00         MOV     R7,#0x0
+   \   00009C   85..82       MOV     DPL,?XSP + 0
+   \   00009F   85..83       MOV     DPH,?XSP + 1
+   \   0000A2   EC           MOV     A,R4
+   \   0000A3   F0           MOVX    @DPTR,A
+   \   0000A4   A3           INC     DPTR
+   \   0000A5   ED           MOV     A,R5
+   \   0000A6   F0           MOVX    @DPTR,A
+   \   0000A7   A3           INC     DPTR
+   \   0000A8   EE           MOV     A,R6
+   \   0000A9   F0           MOVX    @DPTR,A
+   \   0000AA   A3           INC     DPTR
+   \   0000AB   EF           MOV     A,R7
+   \   0000AC   F0           MOVX    @DPTR,A
+     73              float distance[4]={0.0f};
+   \   0000AD   90....       MOV     DPTR,#`?<Constant {(0.0F)}>`
+   \   0000B0   C082         PUSH    DPL
+   \   0000B2   C083         PUSH    DPH
+   \   0000B4   7414         MOV     A,#0x14
+   \   0000B6   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000B9   AC82         MOV     R4,DPL
+   \   0000BB   AD83         MOV     R5,DPH
+   \   0000BD   D083         POP     DPH
+   \   0000BF   D082         POP     DPL
+   \   0000C1   7410         MOV     A,#0x10
+   \   0000C3   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+     74              for(int i=0;i<4;i++)
+   \   0000C6   7A00         MOV     R2,#0x0
+   \   0000C8   7B00         MOV     R3,#0x0
+   \                     ??SampleApp_MinMax_localization_0:
+   \   0000CA   C3           CLR     C
+   \   0000CB   EA           MOV     A,R2
+   \   0000CC   9404         SUBB    A,#0x4
+   \   0000CE   EB           MOV     A,R3
+   \   0000CF   9400         SUBB    A,#0x0
+   \   0000D1   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   0000D3   65D0         XRL     A,PSW
+   \   0000D5   33           RLC     A
+   \   0000D6   5054         JNC     ??SampleApp_MinMax_localization_1
+     75              {
+     76                naverage+=nValue[i];
+   \   0000D8   85..82       MOV     DPL,?XSP + 0
+   \   0000DB   85..83       MOV     DPH,?XSP + 1
+   \   0000DE   78..         MOV     R0,#?V0 + 12
+   \   0000E0   12....       LCALL   ?L_MOV_X
+   \   0000E3   EA           MOV     A,R2
+   \   0000E4   F8           MOV     R0,A
+   \   0000E5   EB           MOV     A,R3
+   \   0000E6   F9           MOV     R1,A
+   \   0000E7   E8           MOV     A,R0
+   \   0000E8   75F004       MOV     B,#0x4
+   \   0000EB   A4           MUL     AB
+   \   0000EC   C8           XCH     A,R0
+   \   0000ED   ACF0         MOV     R4,B
+   \   0000EF   75F000       MOV     B,#0x0
+   \   0000F2   A4           MUL     AB
+   \   0000F3   2C           ADD     A,R4
+   \   0000F4   FC           MOV     R4,A
+   \   0000F5   75F004       MOV     B,#0x4
+   \   0000F8   E9           MOV     A,R1
+   \   0000F9   A4           MUL     AB
+   \   0000FA   2C           ADD     A,R4
+   \   0000FB   F9           MOV     R1,A
+   \   0000FC   7444         MOV     A,#0x44
+   \   0000FE   12....       LCALL   ?XSTACK_DISP0_8
+   \   000101   E0           MOVX    A,@DPTR
+   \   000102   28           ADD     A,R0
+   \   000103   FC           MOV     R4,A
+   \   000104   A3           INC     DPTR
+   \   000105   E0           MOVX    A,@DPTR
+   \   000106   39           ADDC    A,R1
+   \   000107   8C82         MOV     DPL,R4
+   \   000109   F583         MOV     DPH,A
+   \   00010B   78..         MOV     R0,#?V0 + 8
+   \   00010D   12....       LCALL   ?L_MOV_X
+   \   000110   78..         MOV     R0,#?V0 + 12
+   \   000112   79..         MOV     R1,#?V0 + 8
+   \   000114   12....       LCALL   ?FLT_ADD
+   \   000117   85..82       MOV     DPL,?XSP + 0
+   \   00011A   85..83       MOV     DPH,?XSP + 1
+   \   00011D   78..         MOV     R0,#?V0 + 12
+   \   00011F   12....       LCALL   ?L_MOV_TO_X
+     77              }
+   \   000122   EA           MOV     A,R2
+   \   000123   2401         ADD     A,#0x1
+   \   000125   FA           MOV     R2,A
+   \   000126   EB           MOV     A,R3
+   \   000127   3400         ADDC    A,#0x0
+   \   000129   FB           MOV     R3,A
+   \   00012A   809E         SJMP    ??SampleApp_MinMax_localization_0
+     78              naverage=naverage/4.0f;
+   \                     ??SampleApp_MinMax_localization_1:
+   \   00012C   85..82       MOV     DPL,?XSP + 0
+   \   00012F   85..83       MOV     DPH,?XSP + 1
+   \   000132   78..         MOV     R0,#?V0 + 8
+   \   000134   12....       LCALL   ?L_MOV_X
+   \   000137   90....       MOV     DPTR,#__Constant_40800000
+   \   00013A   78..         MOV     R0,#?V0 + 12
+   \   00013C   12....       LCALL   ?L_MOV_X
+   \   00013F   78..         MOV     R0,#?V0 + 8
+   \   000141   79..         MOV     R1,#?V0 + 12
+   \   000143   12....       LCALL   ?FLT_DIV
+   \   000146   85..82       MOV     DPL,?XSP + 0
+   \   000149   85..83       MOV     DPH,?XSP + 1
+   \   00014C   78..         MOV     R0,#?V0 + 8
+   \   00014E   12....       LCALL   ?L_MOV_TO_X
+     79              //calculate the distances based on the calibrated parameter n and A
+     80              for (int i=0; i<4; i++)
+   \   000151   7E00         MOV     R6,#0x0
+   \   000153   7F00         MOV     R7,#0x0
+   \                     ??SampleApp_MinMax_localization_2:
+   \   000155   C3           CLR     C
+   \   000156   EE           MOV     A,R6
+   \   000157   9404         SUBB    A,#0x4
+   \   000159   EF           MOV     A,R7
+   \   00015A   9400         SUBB    A,#0x0
+   \   00015C   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   00015E   65D0         XRL     A,PSW
+   \   000160   33           RLC     A
+   \   000161   4003         JC      $+5
+   \   000163   02....       LJMP    ??SampleApp_MinMax_localization_3 & 0xFFFF
+     81              {
+     82                distance[i]=pow(10,((RssiValue[i]/gainconst-AValue[i])/(10*naverage)));
+   \   000166                ; Setup parameters for call to function pow
+   \   000166   EE           MOV     A,R6
+   \   000167   F8           MOV     R0,A
+   \   000168   EF           MOV     A,R7
+   \   000169   F9           MOV     R1,A
+   \   00016A   E8           MOV     A,R0
+   \   00016B   75F004       MOV     B,#0x4
+   \   00016E   A4           MUL     AB
+   \   00016F   C8           XCH     A,R0
+   \   000170   AAF0         MOV     R2,B
+   \   000172   75F000       MOV     B,#0x0
+   \   000175   A4           MUL     AB
+   \   000176   2A           ADD     A,R2
+   \   000177   FA           MOV     R2,A
+   \   000178   75F004       MOV     B,#0x4
+   \   00017B   E9           MOV     A,R1
+   \   00017C   A4           MUL     AB
+   \   00017D   2A           ADD     A,R2
+   \   00017E   F9           MOV     R1,A
+   \   00017F   7446         MOV     A,#0x46
+   \   000181   12....       LCALL   ?XSTACK_DISP0_8
+   \   000184   E0           MOVX    A,@DPTR
+   \   000185   28           ADD     A,R0
+   \   000186   FA           MOV     R2,A
+   \   000187   A3           INC     DPTR
+   \   000188   E0           MOVX    A,@DPTR
+   \   000189   39           ADDC    A,R1
+   \   00018A   8A82         MOV     DPL,R2
+   \   00018C   F583         MOV     DPH,A
+   \   00018E   78..         MOV     R0,#?V0 + 8
+   \   000190   12....       LCALL   ?L_MOV_X
+   \   000193   7424         MOV     A,#0x24
+   \   000195   12....       LCALL   ?XSTACK_DISP0_8
+   \   000198   78..         MOV     R0,#?V0 + 12
+   \   00019A   12....       LCALL   ?L_MOV_X
+   \   00019D   78..         MOV     R0,#?V0 + 8
+   \   00019F   79..         MOV     R1,#?V0 + 12
+   \   0001A1   12....       LCALL   ?FLT_DIV
+   \   0001A4   EE           MOV     A,R6
+   \   0001A5   F8           MOV     R0,A
+   \   0001A6   EF           MOV     A,R7
+   \   0001A7   F9           MOV     R1,A
+   \   0001A8   E8           MOV     A,R0
+   \   0001A9   75F004       MOV     B,#0x4
+   \   0001AC   A4           MUL     AB
+   \   0001AD   C8           XCH     A,R0
+   \   0001AE   AAF0         MOV     R2,B
+   \   0001B0   75F000       MOV     B,#0x0
+   \   0001B3   A4           MUL     AB
+   \   0001B4   2A           ADD     A,R2
+   \   0001B5   FA           MOV     R2,A
+   \   0001B6   75F004       MOV     B,#0x4
+   \   0001B9   E9           MOV     A,R1
+   \   0001BA   A4           MUL     AB
+   \   0001BB   2A           ADD     A,R2
+   \   0001BC   F9           MOV     R1,A
+   \   0001BD   7448         MOV     A,#0x48
+   \   0001BF   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001C2   E0           MOVX    A,@DPTR
+   \   0001C3   28           ADD     A,R0
+   \   0001C4   FA           MOV     R2,A
+   \   0001C5   A3           INC     DPTR
+   \   0001C6   E0           MOVX    A,@DPTR
+   \   0001C7   39           ADDC    A,R1
+   \   0001C8   8A82         MOV     DPL,R2
+   \   0001CA   F583         MOV     DPH,A
+   \   0001CC   78..         MOV     R0,#?V0 + 12
+   \   0001CE   12....       LCALL   ?L_MOV_X
+   \   0001D1   78..         MOV     R0,#?V0 + 8
+   \   0001D3   79..         MOV     R1,#?V0 + 12
+   \   0001D5   12....       LCALL   ?FLT_SUB
+   \   0001D8   C0..         PUSH    ?V0 + 8
+   \   0001DA   C0..         PUSH    ?V0 + 9
+   \   0001DC   C0..         PUSH    ?V0 + 10
+   \   0001DE   C0..         PUSH    ?V0 + 11
+   \   0001E0   85..82       MOV     DPL,?XSP + 0
+   \   0001E3   85..83       MOV     DPH,?XSP + 1
+   \   0001E6   78..         MOV     R0,#?V0 + 12
+   \   0001E8   12....       LCALL   ?L_MOV_X
+   \   0001EB   90....       MOV     DPTR,#__Constant_41200000
+   \   0001EE   78..         MOV     R0,#?V0 + 8
+   \   0001F0   12....       LCALL   ?L_MOV_X
+   \   0001F3   78..         MOV     R0,#?V0 + 12
+   \   0001F5   79..         MOV     R1,#?V0 + 8
+   \   0001F7   12....       LCALL   ?FLT_MUL
+   \   0001FA   D0..         POP     ?V0 + 11
+   \   0001FC   D0..         POP     ?V0 + 10
+   \   0001FE   D0..         POP     ?V0 + 9
+   \   000200   D0..         POP     ?V0 + 8
+   \   000202   78..         MOV     R0,#?V0 + 8
+   \   000204   79..         MOV     R1,#?V0 + 12
+   \   000206   12....       LCALL   ?FLT_DIV
+   \   000209   78..         MOV     R0,#?V0 + 8
+   \   00020B   12....       LCALL   ?PUSH_XSTACK_I_FOUR
+   \   00020E   90....       MOV     DPTR,#__Constant_41200000
+   \   000211   12....       LCALL   ?XLOAD_R2345
+   \   000214   12....       LCALL   ??pow?relay
+   \   000217   7404         MOV     A,#0x4
+   \   000219   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00021C   EE           MOV     A,R6
+   \   00021D   F8           MOV     R0,A
+   \   00021E   EF           MOV     A,R7
+   \   00021F   F9           MOV     R1,A
+   \   000220   E8           MOV     A,R0
+   \   000221   75F004       MOV     B,#0x4
+   \   000224   A4           MUL     AB
+   \   000225   C8           XCH     A,R0
+   \   000226   85F0..       MOV     ?V0 + 8,B
+   \   000229   75F000       MOV     B,#0x0
+   \   00022C   A4           MUL     AB
+   \   00022D   25..         ADD     A,?V0 + 8
+   \   00022F   F5..         MOV     ?V0 + 8,A
+   \   000231   75F004       MOV     B,#0x4
+   \   000234   E9           MOV     A,R1
+   \   000235   A4           MUL     AB
+   \   000236   25..         ADD     A,?V0 + 8
+   \   000238   F9           MOV     R1,A
+   \   000239   7414         MOV     A,#0x14
+   \   00023B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00023E   E582         MOV     A,DPL
+   \   000240   28           ADD     A,R0
+   \   000241   F582         MOV     DPL,A
+   \   000243   E583         MOV     A,DPH
+   \   000245   39           ADDC    A,R1
+   \   000246   F583         MOV     DPH,A
+   \   000248   12....       LCALL   ?XSTORE_R2345
+     83                distance[i]=pow((distance[i]*distance[i]-zposition*zposition),0.5);
+   \   00024B                ; Setup parameters for call to function pow
+   \   00024B   90....       MOV     DPTR,#__Constant_3f000000
+   \   00024E   12....       LCALL   ?PUSH_XSTACK8_X_FOUR
+   \   000251   EE           MOV     A,R6
+   \   000252   F8           MOV     R0,A
+   \   000253   EF           MOV     A,R7
+   \   000254   F9           MOV     R1,A
+   \   000255   E8           MOV     A,R0
+   \   000256   75F004       MOV     B,#0x4
+   \   000259   A4           MUL     AB
+   \   00025A   C8           XCH     A,R0
+   \   00025B   AAF0         MOV     R2,B
+   \   00025D   75F000       MOV     B,#0x0
+   \   000260   A4           MUL     AB
+   \   000261   2A           ADD     A,R2
+   \   000262   FA           MOV     R2,A
+   \   000263   75F004       MOV     B,#0x4
+   \   000266   E9           MOV     A,R1
+   \   000267   A4           MUL     AB
+   \   000268   2A           ADD     A,R2
+   \   000269   F9           MOV     R1,A
+   \   00026A   7418         MOV     A,#0x18
+   \   00026C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00026F   E582         MOV     A,DPL
+   \   000271   28           ADD     A,R0
+   \   000272   F582         MOV     DPL,A
+   \   000274   E583         MOV     A,DPH
+   \   000276   39           ADDC    A,R1
+   \   000277   F583         MOV     DPH,A
+   \   000279   78..         MOV     R0,#?V0 + 8
+   \   00027B   12....       LCALL   ?L_MOV_X
+   \   00027E   EE           MOV     A,R6
+   \   00027F   F8           MOV     R0,A
+   \   000280   EF           MOV     A,R7
+   \   000281   F9           MOV     R1,A
+   \   000282   E8           MOV     A,R0
+   \   000283   75F004       MOV     B,#0x4
+   \   000286   A4           MUL     AB
+   \   000287   C8           XCH     A,R0
+   \   000288   AAF0         MOV     R2,B
+   \   00028A   75F000       MOV     B,#0x0
+   \   00028D   A4           MUL     AB
+   \   00028E   2A           ADD     A,R2
+   \   00028F   FA           MOV     R2,A
+   \   000290   75F004       MOV     B,#0x4
+   \   000293   E9           MOV     A,R1
+   \   000294   A4           MUL     AB
+   \   000295   2A           ADD     A,R2
+   \   000296   F9           MOV     R1,A
+   \   000297   7418         MOV     A,#0x18
+   \   000299   12....       LCALL   ?XSTACK_DISP0_8
+   \   00029C   E582         MOV     A,DPL
+   \   00029E   28           ADD     A,R0
+   \   00029F   F582         MOV     DPL,A
+   \   0002A1   E583         MOV     A,DPH
+   \   0002A3   39           ADDC    A,R1
+   \   0002A4   F583         MOV     DPH,A
+   \   0002A6   78..         MOV     R0,#?V0 + 12
+   \   0002A8   12....       LCALL   ?L_MOV_X
+   \   0002AB   78..         MOV     R0,#?V0 + 8
+   \   0002AD   79..         MOV     R1,#?V0 + 12
+   \   0002AF   12....       LCALL   ?FLT_MUL
+   \   0002B2   85....       MOV     ?V0 + 12,?V0 + 0
+   \   0002B5   85....       MOV     ?V0 + 13,?V0 + 1
+   \   0002B8   85....       MOV     ?V0 + 14,?V0 + 2
+   \   0002BB   85....       MOV     ?V0 + 15,?V0 + 3
+   \   0002BE   78..         MOV     R0,#?V0 + 12
+   \   0002C0   79..         MOV     R1,#?V0 + 0
+   \   0002C2   12....       LCALL   ?FLT_MUL
+   \   0002C5   78..         MOV     R0,#?V0 + 8
+   \   0002C7   79..         MOV     R1,#?V0 + 12
+   \   0002C9   12....       LCALL   ?FLT_SUB
+   \   0002CC   AA..         MOV     R2,?V0 + 8
+   \   0002CE   AB..         MOV     R3,?V0 + 9
+   \   0002D0   AC..         MOV     R4,?V0 + 10
+   \   0002D2   AD..         MOV     R5,?V0 + 11
+   \   0002D4   12....       LCALL   ??pow?relay
+   \   0002D7   7404         MOV     A,#0x4
+   \   0002D9   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0002DC   EE           MOV     A,R6
+   \   0002DD   F8           MOV     R0,A
+   \   0002DE   EF           MOV     A,R7
+   \   0002DF   F9           MOV     R1,A
+   \   0002E0   E8           MOV     A,R0
+   \   0002E1   75F004       MOV     B,#0x4
+   \   0002E4   A4           MUL     AB
+   \   0002E5   C8           XCH     A,R0
+   \   0002E6   85F0..       MOV     ?V0 + 8,B
+   \   0002E9   75F000       MOV     B,#0x0
+   \   0002EC   A4           MUL     AB
+   \   0002ED   25..         ADD     A,?V0 + 8
+   \   0002EF   F5..         MOV     ?V0 + 8,A
+   \   0002F1   75F004       MOV     B,#0x4
+   \   0002F4   E9           MOV     A,R1
+   \   0002F5   A4           MUL     AB
+   \   0002F6   25..         ADD     A,?V0 + 8
+   \   0002F8   F9           MOV     R1,A
+   \   0002F9   7414         MOV     A,#0x14
+   \   0002FB   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002FE   E582         MOV     A,DPL
+   \   000300   28           ADD     A,R0
+   \   000301   F582         MOV     DPL,A
+   \   000303   E583         MOV     A,DPH
+   \   000305   39           ADDC    A,R1
+   \   000306   F583         MOV     DPH,A
+   \   000308   12....       LCALL   ?XSTORE_R2345
+     84              }
+   \   00030B   EE           MOV     A,R6
+   \   00030C   2401         ADD     A,#0x1
+   \   00030E   FE           MOV     R6,A
+   \   00030F   EF           MOV     A,R7
+   \   000310   3400         ADDC    A,#0x0
+   \   000312   FF           MOV     R7,A
+   \   000313   02....       LJMP    ??SampleApp_MinMax_localization_2 & 0xFFFF
+     85              
+     86              
+     87              for(int i=0; i<4; i++)
+   \                     ??SampleApp_MinMax_localization_3:
+   \   000316   7A00         MOV     R2,#0x0
+   \   000318   7B00         MOV     R3,#0x0
+   \                     ??SampleApp_MinMax_localization_4:
+   \   00031A   C3           CLR     C
+   \   00031B   EA           MOV     A,R2
+   \   00031C   9404         SUBB    A,#0x4
+   \   00031E   EB           MOV     A,R3
+   \   00031F   9400         SUBB    A,#0x0
+   \   000321   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000323   65D0         XRL     A,PSW
+   \   000325   33           RLC     A
+   \   000326   4003         JC      $+5
+   \   000328   02....       LJMP    ??SampleApp_MinMax_localization_5 & 0xFFFF
+     88              {
+     89                
+     90                  //max of  
+     91                 if((AnchorX[i]-distance[i])>x_left)
+   \   00032B   740C         MOV     A,#0xc
+   \   00032D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000330   78..         MOV     R0,#?V0 + 8
+   \   000332   12....       LCALL   ?L_MOV_X
+   \   000335   C0..         PUSH    ?V0 + 8
+   \   000337   C0..         PUSH    ?V0 + 9
+   \   000339   C0..         PUSH    ?V0 + 10
+   \   00033B   C0..         PUSH    ?V0 + 11
+   \   00033D   EA           MOV     A,R2
+   \   00033E   F8           MOV     R0,A
+   \   00033F   EB           MOV     A,R3
+   \   000340   F9           MOV     R1,A
+   \   000341   E8           MOV     A,R0
+   \   000342   75F004       MOV     B,#0x4
+   \   000345   A4           MUL     AB
+   \   000346   C8           XCH     A,R0
+   \   000347   ACF0         MOV     R4,B
+   \   000349   75F000       MOV     B,#0x0
+   \   00034C   A4           MUL     AB
+   \   00034D   2C           ADD     A,R4
+   \   00034E   FC           MOV     R4,A
+   \   00034F   75F004       MOV     B,#0x4
+   \   000352   E9           MOV     A,R1
+   \   000353   A4           MUL     AB
+   \   000354   2C           ADD     A,R4
+   \   000355   F9           MOV     R1,A
+   \   000356   744A         MOV     A,#0x4a
+   \   000358   12....       LCALL   ?XSTACK_DISP0_8
+   \   00035B   E0           MOVX    A,@DPTR
+   \   00035C   28           ADD     A,R0
+   \   00035D   FC           MOV     R4,A
+   \   00035E   A3           INC     DPTR
+   \   00035F   E0           MOVX    A,@DPTR
+   \   000360   39           ADDC    A,R1
+   \   000361   8C82         MOV     DPL,R4
+   \   000363   F583         MOV     DPH,A
+   \   000365   78..         MOV     R0,#?V0 + 12
+   \   000367   12....       LCALL   ?L_MOV_X
+   \   00036A   EA           MOV     A,R2
+   \   00036B   F8           MOV     R0,A
+   \   00036C   EB           MOV     A,R3
+   \   00036D   F9           MOV     R1,A
+   \   00036E   E8           MOV     A,R0
+   \   00036F   75F004       MOV     B,#0x4
+   \   000372   A4           MUL     AB
+   \   000373   C8           XCH     A,R0
+   \   000374   ACF0         MOV     R4,B
+   \   000376   75F000       MOV     B,#0x0
+   \   000379   A4           MUL     AB
+   \   00037A   2C           ADD     A,R4
+   \   00037B   FC           MOV     R4,A
+   \   00037C   75F004       MOV     B,#0x4
+   \   00037F   E9           MOV     A,R1
+   \   000380   A4           MUL     AB
+   \   000381   2C           ADD     A,R4
+   \   000382   F9           MOV     R1,A
+   \   000383   7414         MOV     A,#0x14
+   \   000385   12....       LCALL   ?XSTACK_DISP0_8
+   \   000388   E582         MOV     A,DPL
+   \   00038A   28           ADD     A,R0
+   \   00038B   F582         MOV     DPL,A
+   \   00038D   E583         MOV     A,DPH
+   \   00038F   39           ADDC    A,R1
+   \   000390   F583         MOV     DPH,A
+   \   000392   78..         MOV     R0,#?V0 + 8
+   \   000394   12....       LCALL   ?L_MOV_X
+   \   000397   78..         MOV     R0,#?V0 + 12
+   \   000399   79..         MOV     R1,#?V0 + 8
+   \   00039B   12....       LCALL   ?FLT_SUB
+   \   00039E   D0..         POP     ?V0 + 11
+   \   0003A0   D0..         POP     ?V0 + 10
+   \   0003A2   D0..         POP     ?V0 + 9
+   \   0003A4   D0..         POP     ?V0 + 8
+   \   0003A6   78..         MOV     R0,#?V0 + 8
+   \   0003A8   79..         MOV     R1,#?V0 + 12
+   \   0003AA   12....       LCALL   ?FLT_LT
+   \   0003AD   506B         JNC     ??SampleApp_MinMax_localization_6
+     92                 {x_left=(AnchorX[i]+distance[i]);}
+   \   0003AF   EA           MOV     A,R2
+   \   0003B0   F8           MOV     R0,A
+   \   0003B1   EB           MOV     A,R3
+   \   0003B2   F9           MOV     R1,A
+   \   0003B3   E8           MOV     A,R0
+   \   0003B4   75F004       MOV     B,#0x4
+   \   0003B7   A4           MUL     AB
+   \   0003B8   C8           XCH     A,R0
+   \   0003B9   ACF0         MOV     R4,B
+   \   0003BB   75F000       MOV     B,#0x0
+   \   0003BE   A4           MUL     AB
+   \   0003BF   2C           ADD     A,R4
+   \   0003C0   FC           MOV     R4,A
+   \   0003C1   75F004       MOV     B,#0x4
+   \   0003C4   E9           MOV     A,R1
+   \   0003C5   A4           MUL     AB
+   \   0003C6   2C           ADD     A,R4
+   \   0003C7   F9           MOV     R1,A
+   \   0003C8   744A         MOV     A,#0x4a
+   \   0003CA   12....       LCALL   ?XSTACK_DISP0_8
+   \   0003CD   E0           MOVX    A,@DPTR
+   \   0003CE   28           ADD     A,R0
+   \   0003CF   FC           MOV     R4,A
+   \   0003D0   A3           INC     DPTR
+   \   0003D1   E0           MOVX    A,@DPTR
+   \   0003D2   39           ADDC    A,R1
+   \   0003D3   8C82         MOV     DPL,R4
+   \   0003D5   F583         MOV     DPH,A
+   \   0003D7   78..         MOV     R0,#?V0 + 12
+   \   0003D9   12....       LCALL   ?L_MOV_X
+   \   0003DC   EA           MOV     A,R2
+   \   0003DD   F8           MOV     R0,A
+   \   0003DE   EB           MOV     A,R3
+   \   0003DF   F9           MOV     R1,A
+   \   0003E0   E8           MOV     A,R0
+   \   0003E1   75F004       MOV     B,#0x4
+   \   0003E4   A4           MUL     AB
+   \   0003E5   C8           XCH     A,R0
+   \   0003E6   ACF0         MOV     R4,B
+   \   0003E8   75F000       MOV     B,#0x0
+   \   0003EB   A4           MUL     AB
+   \   0003EC   2C           ADD     A,R4
+   \   0003ED   FC           MOV     R4,A
+   \   0003EE   75F004       MOV     B,#0x4
+   \   0003F1   E9           MOV     A,R1
+   \   0003F2   A4           MUL     AB
+   \   0003F3   2C           ADD     A,R4
+   \   0003F4   F9           MOV     R1,A
+   \   0003F5   7414         MOV     A,#0x14
+   \   0003F7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0003FA   E582         MOV     A,DPL
+   \   0003FC   28           ADD     A,R0
+   \   0003FD   F582         MOV     DPL,A
+   \   0003FF   E583         MOV     A,DPH
+   \   000401   39           ADDC    A,R1
+   \   000402   F583         MOV     DPH,A
+   \   000404   78..         MOV     R0,#?V0 + 8
+   \   000406   12....       LCALL   ?L_MOV_X
+   \   000409   78..         MOV     R0,#?V0 + 12
+   \   00040B   79..         MOV     R1,#?V0 + 8
+   \   00040D   12....       LCALL   ?FLT_ADD
+   \   000410   740C         MOV     A,#0xc
+   \   000412   12....       LCALL   ?XSTACK_DISP0_8
+   \   000415   78..         MOV     R0,#?V0 + 12
+   \   000417   12....       LCALL   ?L_MOV_TO_X
+     93                 
+     94                 if((AnchorX[i]+distance[i])<x_right)
+   \                     ??SampleApp_MinMax_localization_6:
+   \   00041A   EA           MOV     A,R2
+   \   00041B   F8           MOV     R0,A
+   \   00041C   EB           MOV     A,R3
+   \   00041D   F9           MOV     R1,A
+   \   00041E   E8           MOV     A,R0
+   \   00041F   75F004       MOV     B,#0x4
+   \   000422   A4           MUL     AB
+   \   000423   C8           XCH     A,R0
+   \   000424   ACF0         MOV     R4,B
+   \   000426   75F000       MOV     B,#0x0
+   \   000429   A4           MUL     AB
+   \   00042A   2C           ADD     A,R4
+   \   00042B   FC           MOV     R4,A
+   \   00042C   75F004       MOV     B,#0x4
+   \   00042F   E9           MOV     A,R1
+   \   000430   A4           MUL     AB
+   \   000431   2C           ADD     A,R4
+   \   000432   F9           MOV     R1,A
+   \   000433   744A         MOV     A,#0x4a
+   \   000435   12....       LCALL   ?XSTACK_DISP0_8
+   \   000438   E0           MOVX    A,@DPTR
+   \   000439   28           ADD     A,R0
+   \   00043A   FC           MOV     R4,A
+   \   00043B   A3           INC     DPTR
+   \   00043C   E0           MOVX    A,@DPTR
+   \   00043D   39           ADDC    A,R1
+   \   00043E   8C82         MOV     DPL,R4
+   \   000440   F583         MOV     DPH,A
+   \   000442   78..         MOV     R0,#?V0 + 8
+   \   000444   12....       LCALL   ?L_MOV_X
+   \   000447   EA           MOV     A,R2
+   \   000448   F8           MOV     R0,A
+   \   000449   EB           MOV     A,R3
+   \   00044A   F9           MOV     R1,A
+   \   00044B   E8           MOV     A,R0
+   \   00044C   75F004       MOV     B,#0x4
+   \   00044F   A4           MUL     AB
+   \   000450   C8           XCH     A,R0
+   \   000451   ACF0         MOV     R4,B
+   \   000453   75F000       MOV     B,#0x0
+   \   000456   A4           MUL     AB
+   \   000457   2C           ADD     A,R4
+   \   000458   FC           MOV     R4,A
+   \   000459   75F004       MOV     B,#0x4
+   \   00045C   E9           MOV     A,R1
+   \   00045D   A4           MUL     AB
+   \   00045E   2C           ADD     A,R4
+   \   00045F   F9           MOV     R1,A
+   \   000460   7414         MOV     A,#0x14
+   \   000462   12....       LCALL   ?XSTACK_DISP0_8
+   \   000465   E582         MOV     A,DPL
+   \   000467   28           ADD     A,R0
+   \   000468   F582         MOV     DPL,A
+   \   00046A   E583         MOV     A,DPH
+   \   00046C   39           ADDC    A,R1
+   \   00046D   F583         MOV     DPH,A
+   \   00046F   78..         MOV     R0,#?V0 + 12
+   \   000471   12....       LCALL   ?L_MOV_X
+   \   000474   78..         MOV     R0,#?V0 + 8
+   \   000476   79..         MOV     R1,#?V0 + 12
+   \   000478   12....       LCALL   ?FLT_ADD
+   \   00047B   7408         MOV     A,#0x8
+   \   00047D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000480   78..         MOV     R0,#?V0 + 12
+   \   000482   12....       LCALL   ?L_MOV_X
+   \   000485   78..         MOV     R0,#?V0 + 8
+   \   000487   79..         MOV     R1,#?V0 + 12
+   \   000489   12....       LCALL   ?FLT_LT
+   \   00048C   506B         JNC     ??SampleApp_MinMax_localization_7
+     95                 {x_right=(AnchorX[i]+distance[i]);}
+   \   00048E   EA           MOV     A,R2
+   \   00048F   F8           MOV     R0,A
+   \   000490   EB           MOV     A,R3
+   \   000491   F9           MOV     R1,A
+   \   000492   E8           MOV     A,R0
+   \   000493   75F004       MOV     B,#0x4
+   \   000496   A4           MUL     AB
+   \   000497   C8           XCH     A,R0
+   \   000498   ACF0         MOV     R4,B
+   \   00049A   75F000       MOV     B,#0x0
+   \   00049D   A4           MUL     AB
+   \   00049E   2C           ADD     A,R4
+   \   00049F   FC           MOV     R4,A
+   \   0004A0   75F004       MOV     B,#0x4
+   \   0004A3   E9           MOV     A,R1
+   \   0004A4   A4           MUL     AB
+   \   0004A5   2C           ADD     A,R4
+   \   0004A6   F9           MOV     R1,A
+   \   0004A7   744A         MOV     A,#0x4a
+   \   0004A9   12....       LCALL   ?XSTACK_DISP0_8
+   \   0004AC   E0           MOVX    A,@DPTR
+   \   0004AD   28           ADD     A,R0
+   \   0004AE   FC           MOV     R4,A
+   \   0004AF   A3           INC     DPTR
+   \   0004B0   E0           MOVX    A,@DPTR
+   \   0004B1   39           ADDC    A,R1
+   \   0004B2   8C82         MOV     DPL,R4
+   \   0004B4   F583         MOV     DPH,A
+   \   0004B6   78..         MOV     R0,#?V0 + 12
+   \   0004B8   12....       LCALL   ?L_MOV_X
+   \   0004BB   EA           MOV     A,R2
+   \   0004BC   F8           MOV     R0,A
+   \   0004BD   EB           MOV     A,R3
+   \   0004BE   F9           MOV     R1,A
+   \   0004BF   E8           MOV     A,R0
+   \   0004C0   75F004       MOV     B,#0x4
+   \   0004C3   A4           MUL     AB
+   \   0004C4   C8           XCH     A,R0
+   \   0004C5   ACF0         MOV     R4,B
+   \   0004C7   75F000       MOV     B,#0x0
+   \   0004CA   A4           MUL     AB
+   \   0004CB   2C           ADD     A,R4
+   \   0004CC   FC           MOV     R4,A
+   \   0004CD   75F004       MOV     B,#0x4
+   \   0004D0   E9           MOV     A,R1
+   \   0004D1   A4           MUL     AB
+   \   0004D2   2C           ADD     A,R4
+   \   0004D3   F9           MOV     R1,A
+   \   0004D4   7414         MOV     A,#0x14
+   \   0004D6   12....       LCALL   ?XSTACK_DISP0_8
+   \   0004D9   E582         MOV     A,DPL
+   \   0004DB   28           ADD     A,R0
+   \   0004DC   F582         MOV     DPL,A
+   \   0004DE   E583         MOV     A,DPH
+   \   0004E0   39           ADDC    A,R1
+   \   0004E1   F583         MOV     DPH,A
+   \   0004E3   78..         MOV     R0,#?V0 + 8
+   \   0004E5   12....       LCALL   ?L_MOV_X
+   \   0004E8   78..         MOV     R0,#?V0 + 12
+   \   0004EA   79..         MOV     R1,#?V0 + 8
+   \   0004EC   12....       LCALL   ?FLT_ADD
+   \   0004EF   7408         MOV     A,#0x8
+   \   0004F1   12....       LCALL   ?XSTACK_DISP0_8
+   \   0004F4   78..         MOV     R0,#?V0 + 12
+   \   0004F6   12....       LCALL   ?L_MOV_TO_X
+     96                 
+     97                 if((AnchorY[i]-distance[i])>y_bottom)
+   \                     ??SampleApp_MinMax_localization_7:
+   \   0004F9   EA           MOV     A,R2
+   \   0004FA   F8           MOV     R0,A
+   \   0004FB   EB           MOV     A,R3
+   \   0004FC   F9           MOV     R1,A
+   \   0004FD   E8           MOV     A,R0
+   \   0004FE   75F004       MOV     B,#0x4
+   \   000501   A4           MUL     AB
+   \   000502   C8           XCH     A,R0
+   \   000503   ACF0         MOV     R4,B
+   \   000505   75F000       MOV     B,#0x0
+   \   000508   A4           MUL     AB
+   \   000509   2C           ADD     A,R4
+   \   00050A   FC           MOV     R4,A
+   \   00050B   75F004       MOV     B,#0x4
+   \   00050E   E9           MOV     A,R1
+   \   00050F   A4           MUL     AB
+   \   000510   2C           ADD     A,R4
+   \   000511   F9           MOV     R1,A
+   \   000512   744C         MOV     A,#0x4c
+   \   000514   12....       LCALL   ?XSTACK_DISP0_8
+   \   000517   E0           MOVX    A,@DPTR
+   \   000518   28           ADD     A,R0
+   \   000519   FC           MOV     R4,A
+   \   00051A   A3           INC     DPTR
+   \   00051B   E0           MOVX    A,@DPTR
+   \   00051C   39           ADDC    A,R1
+   \   00051D   8C82         MOV     DPL,R4
+   \   00051F   F583         MOV     DPH,A
+   \   000521   78..         MOV     R0,#?V0 + 12
+   \   000523   12....       LCALL   ?L_MOV_X
+   \   000526   EA           MOV     A,R2
+   \   000527   F8           MOV     R0,A
+   \   000528   EB           MOV     A,R3
+   \   000529   F9           MOV     R1,A
+   \   00052A   E8           MOV     A,R0
+   \   00052B   75F004       MOV     B,#0x4
+   \   00052E   A4           MUL     AB
+   \   00052F   C8           XCH     A,R0
+   \   000530   ACF0         MOV     R4,B
+   \   000532   75F000       MOV     B,#0x0
+   \   000535   A4           MUL     AB
+   \   000536   2C           ADD     A,R4
+   \   000537   FC           MOV     R4,A
+   \   000538   75F004       MOV     B,#0x4
+   \   00053B   E9           MOV     A,R1
+   \   00053C   A4           MUL     AB
+   \   00053D   2C           ADD     A,R4
+   \   00053E   F9           MOV     R1,A
+   \   00053F   7414         MOV     A,#0x14
+   \   000541   12....       LCALL   ?XSTACK_DISP0_8
+   \   000544   E582         MOV     A,DPL
+   \   000546   28           ADD     A,R0
+   \   000547   F582         MOV     DPL,A
+   \   000549   E583         MOV     A,DPH
+   \   00054B   39           ADDC    A,R1
+   \   00054C   F583         MOV     DPH,A
+   \   00054E   78..         MOV     R0,#?V0 + 8
+   \   000550   12....       LCALL   ?L_MOV_X
+   \   000553   78..         MOV     R0,#?V0 + 12
+   \   000555   79..         MOV     R1,#?V0 + 8
+   \   000557   12....       LCALL   ?FLT_SUB
+   \   00055A   78..         MOV     R0,#?V0 + 4
+   \   00055C   79..         MOV     R1,#?V0 + 12
+   \   00055E   12....       LCALL   ?FLT_LT
+   \   000561   506D         JNC     ??SampleApp_MinMax_localization_8
+     98                 {y_bottom=(AnchorY[i]+distance[i]);}
+   \   000563   EA           MOV     A,R2
+   \   000564   F8           MOV     R0,A
+   \   000565   EB           MOV     A,R3
+   \   000566   F9           MOV     R1,A
+   \   000567   E8           MOV     A,R0
+   \   000568   75F004       MOV     B,#0x4
+   \   00056B   A4           MUL     AB
+   \   00056C   C8           XCH     A,R0
+   \   00056D   ACF0         MOV     R4,B
+   \   00056F   75F000       MOV     B,#0x0
+   \   000572   A4           MUL     AB
+   \   000573   2C           ADD     A,R4
+   \   000574   FC           MOV     R4,A
+   \   000575   75F004       MOV     B,#0x4
+   \   000578   E9           MOV     A,R1
+   \   000579   A4           MUL     AB
+   \   00057A   2C           ADD     A,R4
+   \   00057B   F9           MOV     R1,A
+   \   00057C   744C         MOV     A,#0x4c
+   \   00057E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000581   E0           MOVX    A,@DPTR
+   \   000582   28           ADD     A,R0
+   \   000583   FC           MOV     R4,A
+   \   000584   A3           INC     DPTR
+   \   000585   E0           MOVX    A,@DPTR
+   \   000586   39           ADDC    A,R1
+   \   000587   8C82         MOV     DPL,R4
+   \   000589   F583         MOV     DPH,A
+   \   00058B   78..         MOV     R0,#?V0 + 12
+   \   00058D   12....       LCALL   ?L_MOV_X
+   \   000590   EA           MOV     A,R2
+   \   000591   F8           MOV     R0,A
+   \   000592   EB           MOV     A,R3
+   \   000593   F9           MOV     R1,A
+   \   000594   E8           MOV     A,R0
+   \   000595   75F004       MOV     B,#0x4
+   \   000598   A4           MUL     AB
+   \   000599   C8           XCH     A,R0
+   \   00059A   ACF0         MOV     R4,B
+   \   00059C   75F000       MOV     B,#0x0
+   \   00059F   A4           MUL     AB
+   \   0005A0   2C           ADD     A,R4
+   \   0005A1   FC           MOV     R4,A
+   \   0005A2   75F004       MOV     B,#0x4
+   \   0005A5   E9           MOV     A,R1
+   \   0005A6   A4           MUL     AB
+   \   0005A7   2C           ADD     A,R4
+   \   0005A8   F9           MOV     R1,A
+   \   0005A9   7414         MOV     A,#0x14
+   \   0005AB   12....       LCALL   ?XSTACK_DISP0_8
+   \   0005AE   E582         MOV     A,DPL
+   \   0005B0   28           ADD     A,R0
+   \   0005B1   F582         MOV     DPL,A
+   \   0005B3   E583         MOV     A,DPH
+   \   0005B5   39           ADDC    A,R1
+   \   0005B6   F583         MOV     DPH,A
+   \   0005B8   78..         MOV     R0,#?V0 + 8
+   \   0005BA   12....       LCALL   ?L_MOV_X
+   \   0005BD   78..         MOV     R0,#?V0 + 12
+   \   0005BF   79..         MOV     R1,#?V0 + 8
+   \   0005C1   12....       LCALL   ?FLT_ADD
+   \   0005C4   85....       MOV     ?V0 + 4,?V0 + 12
+   \   0005C7   85....       MOV     ?V0 + 5,?V0 + 13
+   \   0005CA   85....       MOV     ?V0 + 6,?V0 + 14
+   \   0005CD   85....       MOV     ?V0 + 7,?V0 + 15
+     99                 
+    100                 if((AnchorY[i]+distance[i])<y_top)
+   \                     ??SampleApp_MinMax_localization_8:
+   \   0005D0   EA           MOV     A,R2
+   \   0005D1   F8           MOV     R0,A
+   \   0005D2   EB           MOV     A,R3
+   \   0005D3   F9           MOV     R1,A
+   \   0005D4   E8           MOV     A,R0
+   \   0005D5   75F004       MOV     B,#0x4
+   \   0005D8   A4           MUL     AB
+   \   0005D9   C8           XCH     A,R0
+   \   0005DA   ACF0         MOV     R4,B
+   \   0005DC   75F000       MOV     B,#0x0
+   \   0005DF   A4           MUL     AB
+   \   0005E0   2C           ADD     A,R4
+   \   0005E1   FC           MOV     R4,A
+   \   0005E2   75F004       MOV     B,#0x4
+   \   0005E5   E9           MOV     A,R1
+   \   0005E6   A4           MUL     AB
+   \   0005E7   2C           ADD     A,R4
+   \   0005E8   F9           MOV     R1,A
+   \   0005E9   744C         MOV     A,#0x4c
+   \   0005EB   12....       LCALL   ?XSTACK_DISP0_8
+   \   0005EE   E0           MOVX    A,@DPTR
+   \   0005EF   28           ADD     A,R0
+   \   0005F0   FC           MOV     R4,A
+   \   0005F1   A3           INC     DPTR
+   \   0005F2   E0           MOVX    A,@DPTR
+   \   0005F3   39           ADDC    A,R1
+   \   0005F4   8C82         MOV     DPL,R4
+   \   0005F6   F583         MOV     DPH,A
+   \   0005F8   78..         MOV     R0,#?V0 + 8
+   \   0005FA   12....       LCALL   ?L_MOV_X
+   \   0005FD   EA           MOV     A,R2
+   \   0005FE   F8           MOV     R0,A
+   \   0005FF   EB           MOV     A,R3
+   \   000600   F9           MOV     R1,A
+   \   000601   E8           MOV     A,R0
+   \   000602   75F004       MOV     B,#0x4
+   \   000605   A4           MUL     AB
+   \   000606   C8           XCH     A,R0
+   \   000607   ACF0         MOV     R4,B
+   \   000609   75F000       MOV     B,#0x0
+   \   00060C   A4           MUL     AB
+   \   00060D   2C           ADD     A,R4
+   \   00060E   FC           MOV     R4,A
+   \   00060F   75F004       MOV     B,#0x4
+   \   000612   E9           MOV     A,R1
+   \   000613   A4           MUL     AB
+   \   000614   2C           ADD     A,R4
+   \   000615   F9           MOV     R1,A
+   \   000616   7414         MOV     A,#0x14
+   \   000618   12....       LCALL   ?XSTACK_DISP0_8
+   \   00061B   E582         MOV     A,DPL
+   \   00061D   28           ADD     A,R0
+   \   00061E   F582         MOV     DPL,A
+   \   000620   E583         MOV     A,DPH
+   \   000622   39           ADDC    A,R1
+   \   000623   F583         MOV     DPH,A
+   \   000625   78..         MOV     R0,#?V0 + 12
+   \   000627   12....       LCALL   ?L_MOV_X
+   \   00062A   78..         MOV     R0,#?V0 + 8
+   \   00062C   79..         MOV     R1,#?V0 + 12
+   \   00062E   12....       LCALL   ?FLT_ADD
+   \   000631   7404         MOV     A,#0x4
+   \   000633   12....       LCALL   ?XSTACK_DISP0_8
+   \   000636   78..         MOV     R0,#?V0 + 12
+   \   000638   12....       LCALL   ?L_MOV_X
+   \   00063B   78..         MOV     R0,#?V0 + 8
+   \   00063D   79..         MOV     R1,#?V0 + 12
+   \   00063F   12....       LCALL   ?FLT_LT
+   \   000642   506B         JNC     ??SampleApp_MinMax_localization_9
+    101                 {y_top=(AnchorY[i]+distance[i]);}
+   \   000644   EA           MOV     A,R2
+   \   000645   F8           MOV     R0,A
+   \   000646   EB           MOV     A,R3
+   \   000647   F9           MOV     R1,A
+   \   000648   E8           MOV     A,R0
+   \   000649   75F004       MOV     B,#0x4
+   \   00064C   A4           MUL     AB
+   \   00064D   C8           XCH     A,R0
+   \   00064E   ACF0         MOV     R4,B
+   \   000650   75F000       MOV     B,#0x0
+   \   000653   A4           MUL     AB
+   \   000654   2C           ADD     A,R4
+   \   000655   FC           MOV     R4,A
+   \   000656   75F004       MOV     B,#0x4
+   \   000659   E9           MOV     A,R1
+   \   00065A   A4           MUL     AB
+   \   00065B   2C           ADD     A,R4
+   \   00065C   F9           MOV     R1,A
+   \   00065D   744C         MOV     A,#0x4c
+   \   00065F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000662   E0           MOVX    A,@DPTR
+   \   000663   28           ADD     A,R0
+   \   000664   FC           MOV     R4,A
+   \   000665   A3           INC     DPTR
+   \   000666   E0           MOVX    A,@DPTR
+   \   000667   39           ADDC    A,R1
+   \   000668   8C82         MOV     DPL,R4
+   \   00066A   F583         MOV     DPH,A
+   \   00066C   78..         MOV     R0,#?V0 + 12
+   \   00066E   12....       LCALL   ?L_MOV_X
+   \   000671   EA           MOV     A,R2
+   \   000672   F8           MOV     R0,A
+   \   000673   EB           MOV     A,R3
+   \   000674   F9           MOV     R1,A
+   \   000675   E8           MOV     A,R0
+   \   000676   75F004       MOV     B,#0x4
+   \   000679   A4           MUL     AB
+   \   00067A   C8           XCH     A,R0
+   \   00067B   ACF0         MOV     R4,B
+   \   00067D   75F000       MOV     B,#0x0
+   \   000680   A4           MUL     AB
+   \   000681   2C           ADD     A,R4
+   \   000682   FC           MOV     R4,A
+   \   000683   75F004       MOV     B,#0x4
+   \   000686   E9           MOV     A,R1
+   \   000687   A4           MUL     AB
+   \   000688   2C           ADD     A,R4
+   \   000689   F9           MOV     R1,A
+   \   00068A   7414         MOV     A,#0x14
+   \   00068C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00068F   E582         MOV     A,DPL
+   \   000691   28           ADD     A,R0
+   \   000692   F582         MOV     DPL,A
+   \   000694   E583         MOV     A,DPH
+   \   000696   39           ADDC    A,R1
+   \   000697   F583         MOV     DPH,A
+   \   000699   78..         MOV     R0,#?V0 + 8
+   \   00069B   12....       LCALL   ?L_MOV_X
+   \   00069E   78..         MOV     R0,#?V0 + 12
+   \   0006A0   79..         MOV     R1,#?V0 + 8
+   \   0006A2   12....       LCALL   ?FLT_ADD
+   \   0006A5   7404         MOV     A,#0x4
+   \   0006A7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0006AA   78..         MOV     R0,#?V0 + 12
+   \   0006AC   12....       LCALL   ?L_MOV_TO_X
+    102              }
+   \                     ??SampleApp_MinMax_localization_9:
+   \   0006AF   EA           MOV     A,R2
+   \   0006B0   2401         ADD     A,#0x1
+   \   0006B2   FA           MOV     R2,A
+   \   0006B3   EB           MOV     A,R3
+   \   0006B4   3400         ADDC    A,#0x0
+   \   0006B6   FB           MOV     R3,A
+   \   0006B7   02....       LJMP    ??SampleApp_MinMax_localization_4 & 0xFFFF
+    103              *xposition=(x_left+x_right)/2;
+   \                     ??SampleApp_MinMax_localization_5:
+   \   0006BA   740C         MOV     A,#0xc
+   \   0006BC   12....       LCALL   ?XSTACK_DISP0_8
+   \   0006BF   78..         MOV     R0,#?V0 + 8
+   \   0006C1   12....       LCALL   ?L_MOV_X
+   \   0006C4   7408         MOV     A,#0x8
+   \   0006C6   12....       LCALL   ?XSTACK_DISP0_8
+   \   0006C9   78..         MOV     R0,#?V0 + 12
+   \   0006CB   12....       LCALL   ?L_MOV_X
+   \   0006CE   78..         MOV     R0,#?V0 + 8
+   \   0006D0   79..         MOV     R1,#?V0 + 12
+   \   0006D2   12....       LCALL   ?FLT_ADD
+   \   0006D5   90....       MOV     DPTR,#__Constant_40000000
+   \   0006D8   78..         MOV     R0,#?V0 + 12
+   \   0006DA   12....       LCALL   ?L_MOV_X
+   \   0006DD   78..         MOV     R0,#?V0 + 8
+   \   0006DF   79..         MOV     R1,#?V0 + 12
+   \   0006E1   12....       LCALL   ?FLT_DIV
+   \   0006E4   7412         MOV     A,#0x12
+   \   0006E6   12....       LCALL   ?XSTACK_DISP0_8
+   \   0006E9   E0           MOVX    A,@DPTR
+   \   0006EA   F8           MOV     R0,A
+   \   0006EB   A3           INC     DPTR
+   \   0006EC   E0           MOVX    A,@DPTR
+   \   0006ED   F583         MOV     DPH,A
+   \   0006EF   8882         MOV     DPL,R0
+   \   0006F1   78..         MOV     R0,#?V0 + 8
+   \   0006F3   12....       LCALL   ?L_MOV_TO_X
+    104              *yposition=(y_bottom+y_top)/2;
+   \   0006F6   85....       MOV     ?V0 + 8,?V0 + 4
+   \   0006F9   85....       MOV     ?V0 + 9,?V0 + 5
+   \   0006FC   85....       MOV     ?V0 + 10,?V0 + 6
+   \   0006FF   85....       MOV     ?V0 + 11,?V0 + 7
+   \   000702   7404         MOV     A,#0x4
+   \   000704   12....       LCALL   ?XSTACK_DISP0_8
+   \   000707   78..         MOV     R0,#?V0 + 12
+   \   000709   12....       LCALL   ?L_MOV_X
+   \   00070C   78..         MOV     R0,#?V0 + 8
+   \   00070E   79..         MOV     R1,#?V0 + 12
+   \   000710   12....       LCALL   ?FLT_ADD
+   \   000713   90....       MOV     DPTR,#__Constant_40000000
+   \   000716   78..         MOV     R0,#?V0 + 12
+   \   000718   12....       LCALL   ?L_MOV_X
+   \   00071B   78..         MOV     R0,#?V0 + 8
+   \   00071D   79..         MOV     R1,#?V0 + 12
+   \   00071F   12....       LCALL   ?FLT_DIV
+   \   000722   7410         MOV     A,#0x10
+   \   000724   12....       LCALL   ?XSTACK_DISP0_8
+   \   000727   E0           MOVX    A,@DPTR
+   \   000728   F8           MOV     R0,A
+   \   000729   A3           INC     DPTR
+   \   00072A   E0           MOVX    A,@DPTR
+   \   00072B   F583         MOV     DPH,A
+   \   00072D   8882         MOV     DPL,R0
+   \   00072F   78..         MOV     R0,#?V0 + 8
+   \   000731   12....       LCALL   ?L_MOV_TO_X
+    105              
+    106          }
+   \   000734   7428         MOV     A,#0x28
+   \   000736   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000739   7F10         MOV     R7,#0x10
+   \   00073B   02....       LJMP    ?BANKED_LEAVE_XDATA
+    107          
+    108          
+    109          /*********************************************************************
+    110           * @fn      SampleApp_WCL_localization
+    111           *
+    112           * @brief   calculate the position of a quadrotor
+    113           *
+    114           * @param   rssi_i readings from different anchors, the result will be stored in xposition and yposition
+    115           *
+    116           * @return  none
+    117           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    118          void SampleApp_WCL_localization(float* xposition, float* yposition, float nValue[4], float RssiValue[4],
+   \                     SampleApp_WCL_localization:
+    119                                             float AValue[4], float AnchorX[4], float AnchorY[4])
+    120          {
+   \   000000   74E8         MOV     A,#-0x18
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 24
+   \   000005                ; Auto size: 46
+   \   000005   74D2         MOV     A,#-0x2e
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   7408         MOV     A,#0x8
+   \   00000C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000F   EA           MOV     A,R2
+   \   000010   F0           MOVX    @DPTR,A
+   \   000011   A3           INC     DPTR
+   \   000012   EB           MOV     A,R3
+   \   000013   F0           MOVX    @DPTR,A
+   \   000014   7406         MOV     A,#0x6
+   \   000016   12....       LCALL   ?XSTACK_DISP0_8
+   \   000019   EC           MOV     A,R4
+   \   00001A   F0           MOVX    @DPTR,A
+   \   00001B   A3           INC     DPTR
+   \   00001C   ED           MOV     A,R5
+   \   00001D   F0           MOVX    @DPTR,A
+    121              //initial the parameter 
+    122              int g=4;   // const. parameter for WCL  2.78
+   \   00001E   7404         MOV     A,#0x4
+   \   000020   12....       LCALL   ?XSTACK_DISP0_8
+   \   000023   7404         MOV     A,#0x4
+   \   000025   F0           MOVX    @DPTR,A
+   \   000026   A3           INC     DPTR
+   \   000027   7400         MOV     A,#0x0
+   \   000029   F0           MOVX    @DPTR,A
+    123              float w[4]; //weight
+    124              float sumw=0.0f; // sum of weights
+   \   00002A   75..00       MOV     ?V0 + 0,#0x0
+   \   00002D   75..00       MOV     ?V0 + 1,#0x0
+   \   000030   75..00       MOV     ?V0 + 2,#0x0
+   \   000033   75..00       MOV     ?V0 + 3,#0x0
+    125              float naverage=0.0f;
+   \   000036   7C00         MOV     R4,#0x0
+   \   000038   7D00         MOV     R5,#0x0
+   \   00003A   7E00         MOV     R6,#0x0
+   \   00003C   7F00         MOV     R7,#0x0
+   \   00003E   85..82       MOV     DPL,?XSP + 0
+   \   000041   85..83       MOV     DPH,?XSP + 1
+   \   000044   EC           MOV     A,R4
+   \   000045   F0           MOVX    @DPTR,A
+   \   000046   A3           INC     DPTR
+   \   000047   ED           MOV     A,R5
+   \   000048   F0           MOVX    @DPTR,A
+   \   000049   A3           INC     DPTR
+   \   00004A   EE           MOV     A,R6
+   \   00004B   F0           MOVX    @DPTR,A
+   \   00004C   A3           INC     DPTR
+   \   00004D   EF           MOV     A,R7
+   \   00004E   F0           MOVX    @DPTR,A
+    126              float distance[4]={0.0f, 0.0f, 0.0f, 0.0f};
+   \   00004F   90....       MOV     DPTR,#`?<Constant {(0.0F), (0.0F), (0.0F), (0.0F)}>`
+   \   000052   C082         PUSH    DPL
+   \   000054   C083         PUSH    DPH
+   \   000056   741E         MOV     A,#0x1e
+   \   000058   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005B   AC82         MOV     R4,DPL
+   \   00005D   AD83         MOV     R5,DPH
+   \   00005F   D083         POP     DPH
+   \   000061   D082         POP     DPL
+   \   000063   7410         MOV     A,#0x10
+   \   000065   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    127              float rssigain=1.16f;
+   \   000068   7CE1         MOV     R4,#-0x1f
+   \   00006A   7D7A         MOV     R5,#0x7a
+   \   00006C   7E94         MOV     R6,#-0x6c
+   \   00006E   7F3F         MOV     R7,#0x3f
+   \   000070   740A         MOV     A,#0xa
+   \   000072   12....       LCALL   ?XSTACK_DISP0_8
+   \   000075   EC           MOV     A,R4
+   \   000076   F0           MOVX    @DPTR,A
+   \   000077   A3           INC     DPTR
+   \   000078   ED           MOV     A,R5
+   \   000079   F0           MOVX    @DPTR,A
+   \   00007A   A3           INC     DPTR
+   \   00007B   EE           MOV     A,R6
+   \   00007C   F0           MOVX    @DPTR,A
+   \   00007D   A3           INC     DPTR
+   \   00007E   EF           MOV     A,R7
+   \   00007F   F0           MOVX    @DPTR,A
+    128              
+    129                //average n from 4 nodes
+    130              for(int i=0;i<4;i++)
+   \   000080   7A00         MOV     R2,#0x0
+   \   000082   7B00         MOV     R3,#0x0
+   \                     ??SampleApp_WCL_localization_0:
+   \   000084   C3           CLR     C
+   \   000085   EA           MOV     A,R2
+   \   000086   9404         SUBB    A,#0x4
+   \   000088   EB           MOV     A,R3
+   \   000089   9400         SUBB    A,#0x0
+   \   00008B   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   00008D   65D0         XRL     A,PSW
+   \   00008F   33           RLC     A
+   \   000090   5054         JNC     ??SampleApp_WCL_localization_1
+    131              {
+    132                naverage+=nValue[i];
+   \   000092   85..82       MOV     DPL,?XSP + 0
+   \   000095   85..83       MOV     DPH,?XSP + 1
+   \   000098   78..         MOV     R0,#?V0 + 4
+   \   00009A   12....       LCALL   ?L_MOV_X
+   \   00009D   EA           MOV     A,R2
+   \   00009E   F8           MOV     R0,A
+   \   00009F   EB           MOV     A,R3
+   \   0000A0   F9           MOV     R1,A
+   \   0000A1   E8           MOV     A,R0
+   \   0000A2   75F004       MOV     B,#0x4
+   \   0000A5   A4           MUL     AB
+   \   0000A6   C8           XCH     A,R0
+   \   0000A7   ACF0         MOV     R4,B
+   \   0000A9   75F000       MOV     B,#0x0
+   \   0000AC   A4           MUL     AB
+   \   0000AD   2C           ADD     A,R4
+   \   0000AE   FC           MOV     R4,A
+   \   0000AF   75F004       MOV     B,#0x4
+   \   0000B2   E9           MOV     A,R1
+   \   0000B3   A4           MUL     AB
+   \   0000B4   2C           ADD     A,R4
+   \   0000B5   F9           MOV     R1,A
+   \   0000B6   7446         MOV     A,#0x46
+   \   0000B8   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000BB   E0           MOVX    A,@DPTR
+   \   0000BC   28           ADD     A,R0
+   \   0000BD   FC           MOV     R4,A
+   \   0000BE   A3           INC     DPTR
+   \   0000BF   E0           MOVX    A,@DPTR
+   \   0000C0   39           ADDC    A,R1
+   \   0000C1   8C82         MOV     DPL,R4
+   \   0000C3   F583         MOV     DPH,A
+   \   0000C5   78..         MOV     R0,#?V0 + 8
+   \   0000C7   12....       LCALL   ?L_MOV_X
+   \   0000CA   78..         MOV     R0,#?V0 + 4
+   \   0000CC   79..         MOV     R1,#?V0 + 8
+   \   0000CE   12....       LCALL   ?FLT_ADD
+   \   0000D1   85..82       MOV     DPL,?XSP + 0
+   \   0000D4   85..83       MOV     DPH,?XSP + 1
+   \   0000D7   78..         MOV     R0,#?V0 + 4
+   \   0000D9   12....       LCALL   ?L_MOV_TO_X
+    133              }
+   \   0000DC   EA           MOV     A,R2
+   \   0000DD   2401         ADD     A,#0x1
+   \   0000DF   FA           MOV     R2,A
+   \   0000E0   EB           MOV     A,R3
+   \   0000E1   3400         ADDC    A,#0x0
+   \   0000E3   FB           MOV     R3,A
+   \   0000E4   809E         SJMP    ??SampleApp_WCL_localization_0
+    134              
+    135            
+    136              naverage=naverage/4.0f;
+   \                     ??SampleApp_WCL_localization_1:
+   \   0000E6   85..82       MOV     DPL,?XSP + 0
+   \   0000E9   85..83       MOV     DPH,?XSP + 1
+   \   0000EC   78..         MOV     R0,#?V0 + 4
+   \   0000EE   12....       LCALL   ?L_MOV_X
+   \   0000F1   90....       MOV     DPTR,#__Constant_40800000
+   \   0000F4   78..         MOV     R0,#?V0 + 8
+   \   0000F6   12....       LCALL   ?L_MOV_X
+   \   0000F9   78..         MOV     R0,#?V0 + 4
+   \   0000FB   79..         MOV     R1,#?V0 + 8
+   \   0000FD   12....       LCALL   ?FLT_DIV
+   \   000100   85..82       MOV     DPL,?XSP + 0
+   \   000103   85..83       MOV     DPH,?XSP + 1
+   \   000106   78..         MOV     R0,#?V0 + 4
+   \   000108   12....       LCALL   ?L_MOV_TO_X
+    137              
+    138              //calculate the distances based on the calibrated parameter n and A
+    139              for (int i=0; i<4; i++)
+   \   00010B   7E00         MOV     R6,#0x0
+   \   00010D   7F00         MOV     R7,#0x0
+   \                     ??SampleApp_WCL_localization_2:
+   \   00010F   C3           CLR     C
+   \   000110   EE           MOV     A,R6
+   \   000111   9404         SUBB    A,#0x4
+   \   000113   EF           MOV     A,R7
+   \   000114   9400         SUBB    A,#0x0
+   \   000116   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000118   65D0         XRL     A,PSW
+   \   00011A   33           RLC     A
+   \   00011B   4003         JC      $+5
+   \   00011D   02....       LJMP    ??SampleApp_WCL_localization_3 & 0xFFFF
+    140              {
+    141                distance[i]=pow(10,((RssiValue[i]/rssigain-AValue[i])/(10*naverage)));
+   \   000120                ; Setup parameters for call to function pow
+   \   000120   EE           MOV     A,R6
+   \   000121   F8           MOV     R0,A
+   \   000122   EF           MOV     A,R7
+   \   000123   F9           MOV     R1,A
+   \   000124   E8           MOV     A,R0
+   \   000125   75F004       MOV     B,#0x4
+   \   000128   A4           MUL     AB
+   \   000129   C8           XCH     A,R0
+   \   00012A   AAF0         MOV     R2,B
+   \   00012C   75F000       MOV     B,#0x0
+   \   00012F   A4           MUL     AB
+   \   000130   2A           ADD     A,R2
+   \   000131   FA           MOV     R2,A
+   \   000132   75F004       MOV     B,#0x4
+   \   000135   E9           MOV     A,R1
+   \   000136   A4           MUL     AB
+   \   000137   2A           ADD     A,R2
+   \   000138   F9           MOV     R1,A
+   \   000139   7448         MOV     A,#0x48
+   \   00013B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00013E   E0           MOVX    A,@DPTR
+   \   00013F   28           ADD     A,R0
+   \   000140   FA           MOV     R2,A
+   \   000141   A3           INC     DPTR
+   \   000142   E0           MOVX    A,@DPTR
+   \   000143   39           ADDC    A,R1
+   \   000144   8A82         MOV     DPL,R2
+   \   000146   F583         MOV     DPH,A
+   \   000148   78..         MOV     R0,#?V0 + 4
+   \   00014A   12....       LCALL   ?L_MOV_X
+   \   00014D   740A         MOV     A,#0xa
+   \   00014F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000152   78..         MOV     R0,#?V0 + 8
+   \   000154   12....       LCALL   ?L_MOV_X
+   \   000157   78..         MOV     R0,#?V0 + 4
+   \   000159   79..         MOV     R1,#?V0 + 8
+   \   00015B   12....       LCALL   ?FLT_DIV
+   \   00015E   EE           MOV     A,R6
+   \   00015F   F8           MOV     R0,A
+   \   000160   EF           MOV     A,R7
+   \   000161   F9           MOV     R1,A
+   \   000162   E8           MOV     A,R0
+   \   000163   75F004       MOV     B,#0x4
+   \   000166   A4           MUL     AB
+   \   000167   C8           XCH     A,R0
+   \   000168   AAF0         MOV     R2,B
+   \   00016A   75F000       MOV     B,#0x0
+   \   00016D   A4           MUL     AB
+   \   00016E   2A           ADD     A,R2
+   \   00016F   FA           MOV     R2,A
+   \   000170   75F004       MOV     B,#0x4
+   \   000173   E9           MOV     A,R1
+   \   000174   A4           MUL     AB
+   \   000175   2A           ADD     A,R2
+   \   000176   F9           MOV     R1,A
+   \   000177   744A         MOV     A,#0x4a
+   \   000179   12....       LCALL   ?XSTACK_DISP0_8
+   \   00017C   E0           MOVX    A,@DPTR
+   \   00017D   28           ADD     A,R0
+   \   00017E   FA           MOV     R2,A
+   \   00017F   A3           INC     DPTR
+   \   000180   E0           MOVX    A,@DPTR
+   \   000181   39           ADDC    A,R1
+   \   000182   8A82         MOV     DPL,R2
+   \   000184   F583         MOV     DPH,A
+   \   000186   78..         MOV     R0,#?V0 + 8
+   \   000188   12....       LCALL   ?L_MOV_X
+   \   00018B   78..         MOV     R0,#?V0 + 4
+   \   00018D   79..         MOV     R1,#?V0 + 8
+   \   00018F   12....       LCALL   ?FLT_SUB
+   \   000192   85..82       MOV     DPL,?XSP + 0
+   \   000195   85..83       MOV     DPH,?XSP + 1
+   \   000198   78..         MOV     R0,#?V0 + 12
+   \   00019A   12....       LCALL   ?L_MOV_X
+   \   00019D   90....       MOV     DPTR,#__Constant_41200000
+   \   0001A0   78..         MOV     R0,#?V0 + 8
+   \   0001A2   12....       LCALL   ?L_MOV_X
+   \   0001A5   78..         MOV     R0,#?V0 + 12
+   \   0001A7   79..         MOV     R1,#?V0 + 8
+   \   0001A9   12....       LCALL   ?FLT_MUL
+   \   0001AC   78..         MOV     R0,#?V0 + 4
+   \   0001AE   79..         MOV     R1,#?V0 + 12
+   \   0001B0   12....       LCALL   ?FLT_DIV
+   \   0001B3   78..         MOV     R0,#?V0 + 4
+   \   0001B5   12....       LCALL   ?PUSH_XSTACK_I_FOUR
+   \   0001B8   90....       MOV     DPTR,#__Constant_41200000
+   \   0001BB   12....       LCALL   ?XLOAD_R2345
+   \   0001BE   12....       LCALL   ??pow?relay
+   \   0001C1   7404         MOV     A,#0x4
+   \   0001C3   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0001C6   EE           MOV     A,R6
+   \   0001C7   F8           MOV     R0,A
+   \   0001C8   EF           MOV     A,R7
+   \   0001C9   F9           MOV     R1,A
+   \   0001CA   E8           MOV     A,R0
+   \   0001CB   75F004       MOV     B,#0x4
+   \   0001CE   A4           MUL     AB
+   \   0001CF   C8           XCH     A,R0
+   \   0001D0   85F0..       MOV     ?V0 + 4,B
+   \   0001D3   75F000       MOV     B,#0x0
+   \   0001D6   A4           MUL     AB
+   \   0001D7   25..         ADD     A,?V0 + 4
+   \   0001D9   F5..         MOV     ?V0 + 4,A
+   \   0001DB   75F004       MOV     B,#0x4
+   \   0001DE   E9           MOV     A,R1
+   \   0001DF   A4           MUL     AB
+   \   0001E0   25..         ADD     A,?V0 + 4
+   \   0001E2   F9           MOV     R1,A
+   \   0001E3   741E         MOV     A,#0x1e
+   \   0001E5   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001E8   E582         MOV     A,DPL
+   \   0001EA   28           ADD     A,R0
+   \   0001EB   F582         MOV     DPL,A
+   \   0001ED   E583         MOV     A,DPH
+   \   0001EF   39           ADDC    A,R1
+   \   0001F0   F583         MOV     DPH,A
+   \   0001F2   12....       LCALL   ?XSTORE_R2345
+    142                w[i]=pow(distance[i],-g);
+   \   0001F5                ; Setup parameters for call to function pow
+   \   0001F5   7404         MOV     A,#0x4
+   \   0001F7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001FA   E0           MOVX    A,@DPTR
+   \   0001FB   F8           MOV     R0,A
+   \   0001FC   A3           INC     DPTR
+   \   0001FD   E0           MOVX    A,@DPTR
+   \   0001FE   F9           MOV     R1,A
+   \   0001FF   C3           CLR     C
+   \   000200   E4           CLR     A
+   \   000201   98           SUBB    A,R0
+   \   000202   F5..         MOV     ?V0 + 4,A
+   \   000204   E4           CLR     A
+   \   000205   99           SUBB    A,R1
+   \   000206   F5..         MOV     ?V0 + 5,A
+   \   000208   E5..         MOV     A,?V0 + 5
+   \   00020A   33           RLC     A
+   \   00020B   95E0         SUBB    A,0xE0 /* A   */
+   \   00020D   F5..         MOV     ?V0 + 6,A
+   \   00020F   F5..         MOV     ?V0 + 7,A
+   \   000211   78..         MOV     R0,#?V0 + 4
+   \   000213   12....       LCALL   ?L_TO_FLT
+   \   000216   78..         MOV     R0,#?V0 + 4
+   \   000218   12....       LCALL   ?PUSH_XSTACK_I_FOUR
+   \   00021B   EE           MOV     A,R6
+   \   00021C   F8           MOV     R0,A
+   \   00021D   EF           MOV     A,R7
+   \   00021E   F9           MOV     R1,A
+   \   00021F   E8           MOV     A,R0
+   \   000220   75F004       MOV     B,#0x4
+   \   000223   A4           MUL     AB
+   \   000224   C8           XCH     A,R0
+   \   000225   AAF0         MOV     R2,B
+   \   000227   75F000       MOV     B,#0x0
+   \   00022A   A4           MUL     AB
+   \   00022B   2A           ADD     A,R2
+   \   00022C   FA           MOV     R2,A
+   \   00022D   75F004       MOV     B,#0x4
+   \   000230   E9           MOV     A,R1
+   \   000231   A4           MUL     AB
+   \   000232   2A           ADD     A,R2
+   \   000233   F9           MOV     R1,A
+   \   000234   7422         MOV     A,#0x22
+   \   000236   12....       LCALL   ?XSTACK_DISP0_8
+   \   000239   E582         MOV     A,DPL
+   \   00023B   28           ADD     A,R0
+   \   00023C   F582         MOV     DPL,A
+   \   00023E   E583         MOV     A,DPH
+   \   000240   39           ADDC    A,R1
+   \   000241   F583         MOV     DPH,A
+   \   000243   12....       LCALL   ?XLOAD_R2345
+   \   000246   12....       LCALL   ??pow?relay
+   \   000249   7404         MOV     A,#0x4
+   \   00024B   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00024E   EE           MOV     A,R6
+   \   00024F   F8           MOV     R0,A
+   \   000250   EF           MOV     A,R7
+   \   000251   F9           MOV     R1,A
+   \   000252   E8           MOV     A,R0
+   \   000253   75F004       MOV     B,#0x4
+   \   000256   A4           MUL     AB
+   \   000257   C8           XCH     A,R0
+   \   000258   85F0..       MOV     ?V0 + 4,B
+   \   00025B   75F000       MOV     B,#0x0
+   \   00025E   A4           MUL     AB
+   \   00025F   25..         ADD     A,?V0 + 4
+   \   000261   F5..         MOV     ?V0 + 4,A
+   \   000263   75F004       MOV     B,#0x4
+   \   000266   E9           MOV     A,R1
+   \   000267   A4           MUL     AB
+   \   000268   25..         ADD     A,?V0 + 4
+   \   00026A   F9           MOV     R1,A
+   \   00026B   740E         MOV     A,#0xe
+   \   00026D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000270   E582         MOV     A,DPL
+   \   000272   28           ADD     A,R0
+   \   000273   F582         MOV     DPL,A
+   \   000275   E583         MOV     A,DPH
+   \   000277   39           ADDC    A,R1
+   \   000278   F583         MOV     DPH,A
+   \   00027A   12....       LCALL   ?XSTORE_R2345
+    143                sumw+=w[i];
+   \   00027D   EE           MOV     A,R6
+   \   00027E   F8           MOV     R0,A
+   \   00027F   EF           MOV     A,R7
+   \   000280   F9           MOV     R1,A
+   \   000281   E8           MOV     A,R0
+   \   000282   75F004       MOV     B,#0x4
+   \   000285   A4           MUL     AB
+   \   000286   C8           XCH     A,R0
+   \   000287   AAF0         MOV     R2,B
+   \   000289   75F000       MOV     B,#0x0
+   \   00028C   A4           MUL     AB
+   \   00028D   2A           ADD     A,R2
+   \   00028E   FA           MOV     R2,A
+   \   00028F   75F004       MOV     B,#0x4
+   \   000292   E9           MOV     A,R1
+   \   000293   A4           MUL     AB
+   \   000294   2A           ADD     A,R2
+   \   000295   F9           MOV     R1,A
+   \   000296   740E         MOV     A,#0xe
+   \   000298   12....       LCALL   ?XSTACK_DISP0_8
+   \   00029B   E582         MOV     A,DPL
+   \   00029D   28           ADD     A,R0
+   \   00029E   F582         MOV     DPL,A
+   \   0002A0   E583         MOV     A,DPH
+   \   0002A2   39           ADDC    A,R1
+   \   0002A3   F583         MOV     DPH,A
+   \   0002A5   78..         MOV     R0,#?V0 + 4
+   \   0002A7   12....       LCALL   ?L_MOV_X
+   \   0002AA   78..         MOV     R0,#?V0 + 0
+   \   0002AC   79..         MOV     R1,#?V0 + 4
+   \   0002AE   12....       LCALL   ?FLT_ADD
+    144              }
+   \   0002B1   EE           MOV     A,R6
+   \   0002B2   2401         ADD     A,#0x1
+   \   0002B4   FE           MOV     R6,A
+   \   0002B5   EF           MOV     A,R7
+   \   0002B6   3400         ADDC    A,#0x0
+   \   0002B8   FF           MOV     R7,A
+   \   0002B9   02....       LJMP    ??SampleApp_WCL_localization_2 & 0xFFFF
+    145          
+    146              
+    147               
+    148              *xposition=AnchorX[0]*w[0]/sumw+AnchorX[1]*w[1]/sumw+AnchorX[2]*w[2]/sumw+AnchorX[3]*w[3]/sumw;
+   \                     ??SampleApp_WCL_localization_3:
+   \   0002BC   744C         MOV     A,#0x4c
+   \   0002BE   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002C1   E0           MOVX    A,@DPTR
+   \   0002C2   F8           MOV     R0,A
+   \   0002C3   A3           INC     DPTR
+   \   0002C4   E0           MOVX    A,@DPTR
+   \   0002C5   F583         MOV     DPH,A
+   \   0002C7   8882         MOV     DPL,R0
+   \   0002C9   78..         MOV     R0,#?V0 + 4
+   \   0002CB   12....       LCALL   ?L_MOV_X
+   \   0002CE   740E         MOV     A,#0xe
+   \   0002D0   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002D3   78..         MOV     R0,#?V0 + 8
+   \   0002D5   12....       LCALL   ?L_MOV_X
+   \   0002D8   78..         MOV     R0,#?V0 + 4
+   \   0002DA   79..         MOV     R1,#?V0 + 8
+   \   0002DC   12....       LCALL   ?FLT_MUL
+   \   0002DF   78..         MOV     R0,#?V0 + 4
+   \   0002E1   79..         MOV     R1,#?V0 + 0
+   \   0002E3   12....       LCALL   ?FLT_DIV
+   \   0002E6   744C         MOV     A,#0x4c
+   \   0002E8   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002EB   E0           MOVX    A,@DPTR
+   \   0002EC   F8           MOV     R0,A
+   \   0002ED   A3           INC     DPTR
+   \   0002EE   E0           MOVX    A,@DPTR
+   \   0002EF   F583         MOV     DPH,A
+   \   0002F1   8882         MOV     DPL,R0
+   \   0002F3   A3           INC     DPTR
+   \   0002F4   A3           INC     DPTR
+   \   0002F5   A3           INC     DPTR
+   \   0002F6   A3           INC     DPTR
+   \   0002F7   78..         MOV     R0,#?V0 + 8
+   \   0002F9   12....       LCALL   ?L_MOV_X
+   \   0002FC   7412         MOV     A,#0x12
+   \   0002FE   12....       LCALL   ?XSTACK_DISP0_8
+   \   000301   78..         MOV     R0,#?V0 + 12
+   \   000303   12....       LCALL   ?L_MOV_X
+   \   000306   78..         MOV     R0,#?V0 + 8
+   \   000308   79..         MOV     R1,#?V0 + 12
+   \   00030A   12....       LCALL   ?FLT_MUL
+   \   00030D   78..         MOV     R0,#?V0 + 8
+   \   00030F   79..         MOV     R1,#?V0 + 0
+   \   000311   12....       LCALL   ?FLT_DIV
+   \   000314   78..         MOV     R0,#?V0 + 4
+   \   000316   79..         MOV     R1,#?V0 + 8
+   \   000318   12....       LCALL   ?FLT_ADD
+   \   00031B   744C         MOV     A,#0x4c
+   \   00031D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000320   E0           MOVX    A,@DPTR
+   \   000321   F8           MOV     R0,A
+   \   000322   A3           INC     DPTR
+   \   000323   E0           MOVX    A,@DPTR
+   \   000324   C8           XCH     A,R0
+   \   000325   2408         ADD     A,#0x8
+   \   000327   F582         MOV     DPL,A
+   \   000329   E8           MOV     A,R0
+   \   00032A   3400         ADDC    A,#0x0
+   \   00032C   F583         MOV     DPH,A
+   \   00032E   78..         MOV     R0,#?V0 + 8
+   \   000330   12....       LCALL   ?L_MOV_X
+   \   000333   7416         MOV     A,#0x16
+   \   000335   12....       LCALL   ?XSTACK_DISP0_8
+   \   000338   78..         MOV     R0,#?V0 + 12
+   \   00033A   12....       LCALL   ?L_MOV_X
+   \   00033D   78..         MOV     R0,#?V0 + 8
+   \   00033F   79..         MOV     R1,#?V0 + 12
+   \   000341   12....       LCALL   ?FLT_MUL
+   \   000344   78..         MOV     R0,#?V0 + 8
+   \   000346   79..         MOV     R1,#?V0 + 0
+   \   000348   12....       LCALL   ?FLT_DIV
+   \   00034B   78..         MOV     R0,#?V0 + 4
+   \   00034D   79..         MOV     R1,#?V0 + 8
+   \   00034F   12....       LCALL   ?FLT_ADD
+   \   000352   744C         MOV     A,#0x4c
+   \   000354   12....       LCALL   ?XSTACK_DISP0_8
+   \   000357   E0           MOVX    A,@DPTR
+   \   000358   F8           MOV     R0,A
+   \   000359   A3           INC     DPTR
+   \   00035A   E0           MOVX    A,@DPTR
+   \   00035B   C8           XCH     A,R0
+   \   00035C   240C         ADD     A,#0xc
+   \   00035E   F582         MOV     DPL,A
+   \   000360   E8           MOV     A,R0
+   \   000361   3400         ADDC    A,#0x0
+   \   000363   F583         MOV     DPH,A
+   \   000365   78..         MOV     R0,#?V0 + 8
+   \   000367   12....       LCALL   ?L_MOV_X
+   \   00036A   741A         MOV     A,#0x1a
+   \   00036C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00036F   78..         MOV     R0,#?V0 + 12
+   \   000371   12....       LCALL   ?L_MOV_X
+   \   000374   78..         MOV     R0,#?V0 + 8
+   \   000376   79..         MOV     R1,#?V0 + 12
+   \   000378   12....       LCALL   ?FLT_MUL
+   \   00037B   78..         MOV     R0,#?V0 + 8
+   \   00037D   79..         MOV     R1,#?V0 + 0
+   \   00037F   12....       LCALL   ?FLT_DIV
+   \   000382   78..         MOV     R0,#?V0 + 4
+   \   000384   79..         MOV     R1,#?V0 + 8
+   \   000386   12....       LCALL   ?FLT_ADD
+   \   000389   7408         MOV     A,#0x8
+   \   00038B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00038E   E0           MOVX    A,@DPTR
+   \   00038F   F8           MOV     R0,A
+   \   000390   A3           INC     DPTR
+   \   000391   E0           MOVX    A,@DPTR
+   \   000392   F583         MOV     DPH,A
+   \   000394   8882         MOV     DPL,R0
+   \   000396   78..         MOV     R0,#?V0 + 4
+   \   000398   12....       LCALL   ?L_MOV_TO_X
+    149              *yposition=AnchorY[0]*w[0]/sumw+AnchorY[1]*w[1]/sumw+AnchorY[2]*w[2]/sumw+AnchorY[3]*w[3]/sumw;
+   \   00039B   744E         MOV     A,#0x4e
+   \   00039D   12....       LCALL   ?XSTACK_DISP0_8
+   \   0003A0   E0           MOVX    A,@DPTR
+   \   0003A1   F8           MOV     R0,A
+   \   0003A2   A3           INC     DPTR
+   \   0003A3   E0           MOVX    A,@DPTR
+   \   0003A4   F583         MOV     DPH,A
+   \   0003A6   8882         MOV     DPL,R0
+   \   0003A8   78..         MOV     R0,#?V0 + 4
+   \   0003AA   12....       LCALL   ?L_MOV_X
+   \   0003AD   740E         MOV     A,#0xe
+   \   0003AF   12....       LCALL   ?XSTACK_DISP0_8
+   \   0003B2   78..         MOV     R0,#?V0 + 8
+   \   0003B4   12....       LCALL   ?L_MOV_X
+   \   0003B7   78..         MOV     R0,#?V0 + 4
+   \   0003B9   79..         MOV     R1,#?V0 + 8
+   \   0003BB   12....       LCALL   ?FLT_MUL
+   \   0003BE   78..         MOV     R0,#?V0 + 4
+   \   0003C0   79..         MOV     R1,#?V0 + 0
+   \   0003C2   12....       LCALL   ?FLT_DIV
+   \   0003C5   744E         MOV     A,#0x4e
+   \   0003C7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0003CA   E0           MOVX    A,@DPTR
+   \   0003CB   F8           MOV     R0,A
+   \   0003CC   A3           INC     DPTR
+   \   0003CD   E0           MOVX    A,@DPTR
+   \   0003CE   F583         MOV     DPH,A
+   \   0003D0   8882         MOV     DPL,R0
+   \   0003D2   A3           INC     DPTR
+   \   0003D3   A3           INC     DPTR
+   \   0003D4   A3           INC     DPTR
+   \   0003D5   A3           INC     DPTR
+   \   0003D6   78..         MOV     R0,#?V0 + 8
+   \   0003D8   12....       LCALL   ?L_MOV_X
+   \   0003DB   7412         MOV     A,#0x12
+   \   0003DD   12....       LCALL   ?XSTACK_DISP0_8
+   \   0003E0   78..         MOV     R0,#?V0 + 12
+   \   0003E2   12....       LCALL   ?L_MOV_X
+   \   0003E5   78..         MOV     R0,#?V0 + 8
+   \   0003E7   79..         MOV     R1,#?V0 + 12
+   \   0003E9   12....       LCALL   ?FLT_MUL
+   \   0003EC   78..         MOV     R0,#?V0 + 8
+   \   0003EE   79..         MOV     R1,#?V0 + 0
+   \   0003F0   12....       LCALL   ?FLT_DIV
+   \   0003F3   78..         MOV     R0,#?V0 + 4
+   \   0003F5   79..         MOV     R1,#?V0 + 8
+   \   0003F7   12....       LCALL   ?FLT_ADD
+   \   0003FA   744E         MOV     A,#0x4e
+   \   0003FC   12....       LCALL   ?XSTACK_DISP0_8
+   \   0003FF   E0           MOVX    A,@DPTR
+   \   000400   F8           MOV     R0,A
+   \   000401   A3           INC     DPTR
+   \   000402   E0           MOVX    A,@DPTR
+   \   000403   C8           XCH     A,R0
+   \   000404   2408         ADD     A,#0x8
+   \   000406   F582         MOV     DPL,A
+   \   000408   E8           MOV     A,R0
+   \   000409   3400         ADDC    A,#0x0
+   \   00040B   F583         MOV     DPH,A
+   \   00040D   78..         MOV     R0,#?V0 + 8
+   \   00040F   12....       LCALL   ?L_MOV_X
+   \   000412   7416         MOV     A,#0x16
+   \   000414   12....       LCALL   ?XSTACK_DISP0_8
+   \   000417   78..         MOV     R0,#?V0 + 12
+   \   000419   12....       LCALL   ?L_MOV_X
+   \   00041C   78..         MOV     R0,#?V0 + 8
+   \   00041E   79..         MOV     R1,#?V0 + 12
+   \   000420   12....       LCALL   ?FLT_MUL
+   \   000423   78..         MOV     R0,#?V0 + 8
+   \   000425   79..         MOV     R1,#?V0 + 0
+   \   000427   12....       LCALL   ?FLT_DIV
+   \   00042A   78..         MOV     R0,#?V0 + 4
+   \   00042C   79..         MOV     R1,#?V0 + 8
+   \   00042E   12....       LCALL   ?FLT_ADD
+   \   000431   744E         MOV     A,#0x4e
+   \   000433   12....       LCALL   ?XSTACK_DISP0_8
+   \   000436   E0           MOVX    A,@DPTR
+   \   000437   F8           MOV     R0,A
+   \   000438   A3           INC     DPTR
+   \   000439   E0           MOVX    A,@DPTR
+   \   00043A   C8           XCH     A,R0
+   \   00043B   240C         ADD     A,#0xc
+   \   00043D   F582         MOV     DPL,A
+   \   00043F   E8           MOV     A,R0
+   \   000440   3400         ADDC    A,#0x0
+   \   000442   F583         MOV     DPH,A
+   \   000444   78..         MOV     R0,#?V0 + 8
+   \   000446   12....       LCALL   ?L_MOV_X
+   \   000449   741A         MOV     A,#0x1a
+   \   00044B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00044E   78..         MOV     R0,#?V0 + 12
+   \   000450   12....       LCALL   ?L_MOV_X
+   \   000453   78..         MOV     R0,#?V0 + 8
+   \   000455   79..         MOV     R1,#?V0 + 12
+   \   000457   12....       LCALL   ?FLT_MUL
+   \   00045A   78..         MOV     R0,#?V0 + 8
+   \   00045C   79..         MOV     R1,#?V0 + 0
+   \   00045E   12....       LCALL   ?FLT_DIV
+   \   000461   78..         MOV     R0,#?V0 + 4
+   \   000463   79..         MOV     R1,#?V0 + 8
+   \   000465   12....       LCALL   ?FLT_ADD
+   \   000468   7406         MOV     A,#0x6
+   \   00046A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00046D   E0           MOVX    A,@DPTR
+   \   00046E   F8           MOV     R0,A
+   \   00046F   A3           INC     DPTR
+   \   000470   E0           MOVX    A,@DPTR
+   \   000471   F583         MOV     DPH,A
+   \   000473   8882         MOV     DPL,R0
+   \   000475   78..         MOV     R0,#?V0 + 4
+   \   000477   12....       LCALL   ?L_MOV_TO_X
+    150              
+    151          }
+   \   00047A   742E         MOV     A,#0x2e
+   \   00047C   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00047F   7F10         MOV     R7,#0x10
+   \   000481   02....       LJMP    ?BANKED_LEAVE_XDATA
+    152          
+    153          /*********************************************************************
+    154           * @fn      moving_average
+    155           *
+    156           * @brief   filter for moving average
+    157           *
+    158           * @param   
+    159           *
+    160           * @return  none
+    161           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    162          void moving_average(int8 in, int8 moavarray[], int length, int fil_cnt[2], float *out)
+   \                     moving_average:
+    163          {
+   \   000000   74EC         MOV     A,#-0x14
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 20
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007   8A..         MOV     ?V0 + 10,R2
+   \   000009   8B..         MOV     ?V0 + 11,R3
+   \   00000B   7414         MOV     A,#0x14
+   \   00000D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000010   E0           MOVX    A,@DPTR
+   \   000011   FA           MOV     R2,A
+   \   000012   A3           INC     DPTR
+   \   000013   E0           MOVX    A,@DPTR
+   \   000014   FB           MOV     R3,A
+   \   000015   7416         MOV     A,#0x16
+   \   000017   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001A   E0           MOVX    A,@DPTR
+   \   00001B   F5..         MOV     ?V0 + 8,A
+   \   00001D   A3           INC     DPTR
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   F5..         MOV     ?V0 + 9,A
+    164            if(++fil_cnt[0]>length)
+   \   000021   8A82         MOV     DPL,R2
+   \   000023   8B83         MOV     DPH,R3
+   \   000025   E0           MOVX    A,@DPTR
+   \   000026   2401         ADD     A,#0x1
+   \   000028   F8           MOV     R0,A
+   \   000029   A3           INC     DPTR
+   \   00002A   E0           MOVX    A,@DPTR
+   \   00002B   3400         ADDC    A,#0x0
+   \   00002D   F9           MOV     R1,A
+   \   00002E   8A82         MOV     DPL,R2
+   \   000030   8B83         MOV     DPH,R3
+   \   000032   E8           MOV     A,R0
+   \   000033   F0           MOVX    @DPTR,A
+   \   000034   A3           INC     DPTR
+   \   000035   E9           MOV     A,R1
+   \   000036   F0           MOVX    @DPTR,A
+   \   000037   C3           CLR     C
+   \   000038   EC           MOV     A,R4
+   \   000039   98           SUBB    A,R0
+   \   00003A   ED           MOV     A,R5
+   \   00003B   99           SUBB    A,R1
+   \   00003C   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   00003E   65D0         XRL     A,PSW
+   \   000040   33           RLC     A
+   \   000041   501A         JNC     ??moving_average_0
+    165            {
+    166              fil_cnt[0]=0;
+   \   000043   8A82         MOV     DPL,R2
+   \   000045   8B83         MOV     DPH,R3
+   \   000047   7400         MOV     A,#0x0
+   \   000049   F0           MOVX    @DPTR,A
+   \   00004A   A3           INC     DPTR
+   \   00004B   7400         MOV     A,#0x0
+   \   00004D   F0           MOVX    @DPTR,A
+    167              fil_cnt[1]=1;
+   \   00004E   8A82         MOV     DPL,R2
+   \   000050   8B83         MOV     DPH,R3
+   \   000052   A3           INC     DPTR
+   \   000053   A3           INC     DPTR
+   \   000054   7401         MOV     A,#0x1
+   \   000056   F0           MOVX    @DPTR,A
+   \   000057   A3           INC     DPTR
+   \   000058   7400         MOV     A,#0x0
+   \   00005A   F0           MOVX    @DPTR,A
+   \   00005B   802B         SJMP    ??moving_average_1
+    168            }
+    169            else  
+    170            {
+    171              fil_cnt[1]=(fil_cnt[0]==length)?0:(fil_cnt[0]+1);
+   \                     ??moving_average_0:
+   \   00005D   8A82         MOV     DPL,R2
+   \   00005F   8B83         MOV     DPH,R3
+   \   000061   E0           MOVX    A,@DPTR
+   \   000062   6C           XRL     A,R4
+   \   000063   7003         JNZ     ??moving_average_2
+   \   000065   A3           INC     DPTR
+   \   000066   E0           MOVX    A,@DPTR
+   \   000067   6D           XRL     A,R5
+   \                     ??moving_average_2:
+   \   000068   7006         JNZ     ??moving_average_3
+   \   00006A   7800         MOV     R0,#0x0
+   \   00006C   7900         MOV     R1,#0x0
+   \   00006E   800D         SJMP    ??moving_average_4
+   \                     ??moving_average_3:
+   \   000070   8A82         MOV     DPL,R2
+   \   000072   8B83         MOV     DPH,R3
+   \   000074   E0           MOVX    A,@DPTR
+   \   000075   2401         ADD     A,#0x1
+   \   000077   F8           MOV     R0,A
+   \   000078   A3           INC     DPTR
+   \   000079   E0           MOVX    A,@DPTR
+   \   00007A   3400         ADDC    A,#0x0
+   \   00007C   F9           MOV     R1,A
+   \                     ??moving_average_4:
+   \   00007D   8A82         MOV     DPL,R2
+   \   00007F   8B83         MOV     DPH,R3
+   \   000081   A3           INC     DPTR
+   \   000082   A3           INC     DPTR
+   \   000083   E8           MOV     A,R0
+   \   000084   F0           MOVX    @DPTR,A
+   \   000085   A3           INC     DPTR
+   \   000086   E9           MOV     A,R1
+   \   000087   F0           MOVX    @DPTR,A
+    172            }
+    173            moavarray[fil_cnt[0]]=in;
+   \                     ??moving_average_1:
+   \   000088   EE           MOV     A,R6
+   \   000089   C0E0         PUSH    A
+   \   00008B   8A82         MOV     DPL,R2
+   \   00008D   8B83         MOV     DPH,R3
+   \   00008F   E0           MOVX    A,@DPTR
+   \   000090   F8           MOV     R0,A
+   \   000091   A3           INC     DPTR
+   \   000092   E0           MOVX    A,@DPTR
+   \   000093   F9           MOV     R1,A
+   \   000094   E5..         MOV     A,?V0 + 10
+   \   000096   28           ADD     A,R0
+   \   000097   F582         MOV     DPL,A
+   \   000099   E5..         MOV     A,?V0 + 11
+   \   00009B   39           ADDC    A,R1
+   \   00009C   F583         MOV     DPH,A
+   \   00009E   D0E0         POP     A
+   \   0000A0   F0           MOVX    @DPTR,A
+    174            *out+=(in-(moavarray[fil_cnt[1]]))/(float)(length);
+   \   0000A1   EE           MOV     A,R6
+   \   0000A2   F5..         MOV     ?V0 + 0,A
+   \   0000A4   33           RLC     A
+   \   0000A5   95E0         SUBB    A,0xE0 /* A   */
+   \   0000A7   F5..         MOV     ?V0 + 1,A
+   \   0000A9   8A82         MOV     DPL,R2
+   \   0000AB   8B83         MOV     DPH,R3
+   \   0000AD   A3           INC     DPTR
+   \   0000AE   A3           INC     DPTR
+   \   0000AF   E0           MOVX    A,@DPTR
+   \   0000B0   F8           MOV     R0,A
+   \   0000B1   A3           INC     DPTR
+   \   0000B2   E0           MOVX    A,@DPTR
+   \   0000B3   F9           MOV     R1,A
+   \   0000B4   E5..         MOV     A,?V0 + 10
+   \   0000B6   28           ADD     A,R0
+   \   0000B7   F582         MOV     DPL,A
+   \   0000B9   E5..         MOV     A,?V0 + 11
+   \   0000BB   39           ADDC    A,R1
+   \   0000BC   F583         MOV     DPH,A
+   \   0000BE   E0           MOVX    A,@DPTR
+   \   0000BF   F8           MOV     R0,A
+   \   0000C0   33           RLC     A
+   \   0000C1   95E0         SUBB    A,0xE0 /* A   */
+   \   0000C3   F9           MOV     R1,A
+   \   0000C4   E5..         MOV     A,?V0 + 0
+   \   0000C6   C3           CLR     C
+   \   0000C7   98           SUBB    A,R0
+   \   0000C8   F5..         MOV     ?V0 + 0,A
+   \   0000CA   E5..         MOV     A,?V0 + 1
+   \   0000CC   99           SUBB    A,R1
+   \   0000CD   F5..         MOV     ?V0 + 1,A
+   \   0000CF   E5..         MOV     A,?V0 + 1
+   \   0000D1   33           RLC     A
+   \   0000D2   95E0         SUBB    A,0xE0 /* A   */
+   \   0000D4   F5..         MOV     ?V0 + 2,A
+   \   0000D6   F5..         MOV     ?V0 + 3,A
+   \   0000D8   78..         MOV     R0,#?V0 + 0
+   \   0000DA   12....       LCALL   ?L_TO_FLT
+   \   0000DD   8C..         MOV     ?V0 + 4,R4
+   \   0000DF   ED           MOV     A,R5
+   \   0000E0   F5..         MOV     ?V0 + 5,A
+   \   0000E2   33           RLC     A
+   \   0000E3   95E0         SUBB    A,0xE0 /* A   */
+   \   0000E5   F5..         MOV     ?V0 + 6,A
+   \   0000E7   F5..         MOV     ?V0 + 7,A
+   \   0000E9   78..         MOV     R0,#?V0 + 4
+   \   0000EB   12....       LCALL   ?L_TO_FLT
+   \   0000EE   78..         MOV     R0,#?V0 + 0
+   \   0000F0   79..         MOV     R1,#?V0 + 4
+   \   0000F2   12....       LCALL   ?FLT_DIV
+   \   0000F5   85..82       MOV     DPL,?V0 + 8
+   \   0000F8   85..83       MOV     DPH,?V0 + 9
+   \   0000FB   78..         MOV     R0,#?V0 + 4
+   \   0000FD   12....       LCALL   ?L_MOV_X
+   \   000100   78..         MOV     R0,#?V0 + 0
+   \   000102   79..         MOV     R1,#?V0 + 4
+   \   000104   12....       LCALL   ?FLT_ADD
+   \   000107   85..82       MOV     DPL,?V0 + 8
+   \   00010A   85..83       MOV     DPH,?V0 + 9
+   \   00010D   78..         MOV     R0,#?V0 + 0
+   \   00010F   12....       LCALL   ?L_MOV_TO_X
+    175            
+    176            
+    177          }
+   \   000112   7F0C         MOV     R7,#0xc
+   \   000114   02....       LJMP    ?BANKED_LEAVE_XDATA
+    178          
+    179          
+    180          /*********************************************************************
+    181           * @fn      moving_average
+    182           *
+    183           * @brief   filter for moving average
+    184           *
+    185           * @param   
+    186           *
+    187           * @return  none
+    188           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    189          void moving_average_f(float in, float moavarray[], int length, int fil_cnt[2], float *out)
+   \                     moving_average_f:
+    190          {
+   \   000000   74EA         MOV     A,#-0x16
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 22
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 4,R2
+   \   000007   8B..         MOV     ?V0 + 5,R3
+   \   000009   8C..         MOV     ?V0 + 6,R4
+   \   00000B   8D..         MOV     ?V0 + 7,R5
+   \   00000D   7416         MOV     A,#0x16
+   \   00000F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000012   E0           MOVX    A,@DPTR
+   \   000013   F5..         MOV     ?V0 + 12,A
+   \   000015   A3           INC     DPTR
+   \   000016   E0           MOVX    A,@DPTR
+   \   000017   F5..         MOV     ?V0 + 13,A
+   \   000019   7418         MOV     A,#0x18
+   \   00001B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   FA           MOV     R2,A
+   \   000020   A3           INC     DPTR
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   FB           MOV     R3,A
+   \   000023   741A         MOV     A,#0x1a
+   \   000025   12....       LCALL   ?XSTACK_DISP0_8
+   \   000028   E0           MOVX    A,@DPTR
+   \   000029   FC           MOV     R4,A
+   \   00002A   A3           INC     DPTR
+   \   00002B   E0           MOVX    A,@DPTR
+   \   00002C   FD           MOV     R5,A
+   \   00002D   741C         MOV     A,#0x1c
+   \   00002F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000032   E0           MOVX    A,@DPTR
+   \   000033   FE           MOV     R6,A
+   \   000034   A3           INC     DPTR
+   \   000035   E0           MOVX    A,@DPTR
+   \   000036   FF           MOV     R7,A
+    191            if(++fil_cnt[0]>length)
+   \   000037   8C82         MOV     DPL,R4
+   \   000039   8D83         MOV     DPH,R5
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   2401         ADD     A,#0x1
+   \   00003E   F8           MOV     R0,A
+   \   00003F   A3           INC     DPTR
+   \   000040   E0           MOVX    A,@DPTR
+   \   000041   3400         ADDC    A,#0x0
+   \   000043   F9           MOV     R1,A
+   \   000044   8C82         MOV     DPL,R4
+   \   000046   8D83         MOV     DPH,R5
+   \   000048   E8           MOV     A,R0
+   \   000049   F0           MOVX    @DPTR,A
+   \   00004A   A3           INC     DPTR
+   \   00004B   E9           MOV     A,R1
+   \   00004C   F0           MOVX    @DPTR,A
+   \   00004D   C3           CLR     C
+   \   00004E   EA           MOV     A,R2
+   \   00004F   98           SUBB    A,R0
+   \   000050   EB           MOV     A,R3
+   \   000051   99           SUBB    A,R1
+   \   000052   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000054   65D0         XRL     A,PSW
+   \   000056   33           RLC     A
+   \   000057   501A         JNC     ??moving_average_f_0
+    192            {
+    193              fil_cnt[0]=0;
+   \   000059   8C82         MOV     DPL,R4
+   \   00005B   8D83         MOV     DPH,R5
+   \   00005D   7400         MOV     A,#0x0
+   \   00005F   F0           MOVX    @DPTR,A
+   \   000060   A3           INC     DPTR
+   \   000061   7400         MOV     A,#0x0
+   \   000063   F0           MOVX    @DPTR,A
+    194              fil_cnt[1]=1;
+   \   000064   8C82         MOV     DPL,R4
+   \   000066   8D83         MOV     DPH,R5
+   \   000068   A3           INC     DPTR
+   \   000069   A3           INC     DPTR
+   \   00006A   7401         MOV     A,#0x1
+   \   00006C   F0           MOVX    @DPTR,A
+   \   00006D   A3           INC     DPTR
+   \   00006E   7400         MOV     A,#0x0
+   \   000070   F0           MOVX    @DPTR,A
+   \   000071   802B         SJMP    ??moving_average_f_1
+    195            }
+    196            else  
+    197            {
+    198              fil_cnt[1]=(fil_cnt[0]==length)?0:(fil_cnt[0]+1);
+   \                     ??moving_average_f_0:
+   \   000073   8C82         MOV     DPL,R4
+   \   000075   8D83         MOV     DPH,R5
+   \   000077   E0           MOVX    A,@DPTR
+   \   000078   6A           XRL     A,R2
+   \   000079   7003         JNZ     ??moving_average_f_2
+   \   00007B   A3           INC     DPTR
+   \   00007C   E0           MOVX    A,@DPTR
+   \   00007D   6B           XRL     A,R3
+   \                     ??moving_average_f_2:
+   \   00007E   7006         JNZ     ??moving_average_f_3
+   \   000080   7800         MOV     R0,#0x0
+   \   000082   7900         MOV     R1,#0x0
+   \   000084   800D         SJMP    ??moving_average_f_4
+   \                     ??moving_average_f_3:
+   \   000086   8C82         MOV     DPL,R4
+   \   000088   8D83         MOV     DPH,R5
+   \   00008A   E0           MOVX    A,@DPTR
+   \   00008B   2401         ADD     A,#0x1
+   \   00008D   F8           MOV     R0,A
+   \   00008E   A3           INC     DPTR
+   \   00008F   E0           MOVX    A,@DPTR
+   \   000090   3400         ADDC    A,#0x0
+   \   000092   F9           MOV     R1,A
+   \                     ??moving_average_f_4:
+   \   000093   8C82         MOV     DPL,R4
+   \   000095   8D83         MOV     DPH,R5
+   \   000097   A3           INC     DPTR
+   \   000098   A3           INC     DPTR
+   \   000099   E8           MOV     A,R0
+   \   00009A   F0           MOVX    @DPTR,A
+   \   00009B   A3           INC     DPTR
+   \   00009C   E9           MOV     A,R1
+   \   00009D   F0           MOVX    @DPTR,A
+    199            }
+    200            moavarray[fil_cnt[0]]=in;
+   \                     ??moving_average_f_1:
+   \   00009E   8C82         MOV     DPL,R4
+   \   0000A0   8D83         MOV     DPH,R5
+   \   0000A2   E0           MOVX    A,@DPTR
+   \   0000A3   F8           MOV     R0,A
+   \   0000A4   A3           INC     DPTR
+   \   0000A5   E0           MOVX    A,@DPTR
+   \   0000A6   F9           MOV     R1,A
+   \   0000A7   E8           MOV     A,R0
+   \   0000A8   75F004       MOV     B,#0x4
+   \   0000AB   A4           MUL     AB
+   \   0000AC   C8           XCH     A,R0
+   \   0000AD   85F0..       MOV     ?V0 + 0,B
+   \   0000B0   75F000       MOV     B,#0x0
+   \   0000B3   A4           MUL     AB
+   \   0000B4   25..         ADD     A,?V0 + 0
+   \   0000B6   F5..         MOV     ?V0 + 0,A
+   \   0000B8   75F004       MOV     B,#0x4
+   \   0000BB   E9           MOV     A,R1
+   \   0000BC   A4           MUL     AB
+   \   0000BD   25..         ADD     A,?V0 + 0
+   \   0000BF   F9           MOV     R1,A
+   \   0000C0   E5..         MOV     A,?V0 + 12
+   \   0000C2   28           ADD     A,R0
+   \   0000C3   F582         MOV     DPL,A
+   \   0000C5   E5..         MOV     A,?V0 + 13
+   \   0000C7   39           ADDC    A,R1
+   \   0000C8   F583         MOV     DPH,A
+   \   0000CA   78..         MOV     R0,#?V0 + 4
+   \   0000CC   12....       LCALL   ?L_MOV_TO_X
+    201            *out+=(in-(moavarray[fil_cnt[1]]))/(float)(length);
+   \   0000CF   85....       MOV     ?V0 + 0,?V0 + 4
+   \   0000D2   85....       MOV     ?V0 + 1,?V0 + 5
+   \   0000D5   85....       MOV     ?V0 + 2,?V0 + 6
+   \   0000D8   85....       MOV     ?V0 + 3,?V0 + 7
+   \   0000DB   8C82         MOV     DPL,R4
+   \   0000DD   8D83         MOV     DPH,R5
+   \   0000DF   A3           INC     DPTR
+   \   0000E0   A3           INC     DPTR
+   \   0000E1   E0           MOVX    A,@DPTR
+   \   0000E2   F8           MOV     R0,A
+   \   0000E3   A3           INC     DPTR
+   \   0000E4   E0           MOVX    A,@DPTR
+   \   0000E5   F9           MOV     R1,A
+   \   0000E6   E8           MOV     A,R0
+   \   0000E7   75F004       MOV     B,#0x4
+   \   0000EA   A4           MUL     AB
+   \   0000EB   C8           XCH     A,R0
+   \   0000EC   85F0..       MOV     ?V0 + 8,B
+   \   0000EF   75F000       MOV     B,#0x0
+   \   0000F2   A4           MUL     AB
+   \   0000F3   25..         ADD     A,?V0 + 8
+   \   0000F5   F5..         MOV     ?V0 + 8,A
+   \   0000F7   75F004       MOV     B,#0x4
+   \   0000FA   E9           MOV     A,R1
+   \   0000FB   A4           MUL     AB
+   \   0000FC   25..         ADD     A,?V0 + 8
+   \   0000FE   F9           MOV     R1,A
+   \   0000FF   E5..         MOV     A,?V0 + 12
+   \   000101   28           ADD     A,R0
+   \   000102   F582         MOV     DPL,A
+   \   000104   E5..         MOV     A,?V0 + 13
+   \   000106   39           ADDC    A,R1
+   \   000107   F583         MOV     DPH,A
+   \   000109   78..         MOV     R0,#?V0 + 8
+   \   00010B   12....       LCALL   ?L_MOV_X
+   \   00010E   78..         MOV     R0,#?V0 + 0
+   \   000110   79..         MOV     R1,#?V0 + 8
+   \   000112   12....       LCALL   ?FLT_SUB
+   \   000115   8A..         MOV     ?V0 + 8,R2
+   \   000117   EB           MOV     A,R3
+   \   000118   F5..         MOV     ?V0 + 9,A
+   \   00011A   33           RLC     A
+   \   00011B   95E0         SUBB    A,0xE0 /* A   */
+   \   00011D   F5..         MOV     ?V0 + 10,A
+   \   00011F   F5..         MOV     ?V0 + 11,A
+   \   000121   78..         MOV     R0,#?V0 + 8
+   \   000123   12....       LCALL   ?L_TO_FLT
+   \   000126   78..         MOV     R0,#?V0 + 0
+   \   000128   79..         MOV     R1,#?V0 + 8
+   \   00012A   12....       LCALL   ?FLT_DIV
+   \   00012D   8E82         MOV     DPL,R6
+   \   00012F   8F83         MOV     DPH,R7
+   \   000131   78..         MOV     R0,#?V0 + 8
+   \   000133   12....       LCALL   ?L_MOV_X
+   \   000136   78..         MOV     R0,#?V0 + 0
+   \   000138   79..         MOV     R1,#?V0 + 8
+   \   00013A   12....       LCALL   ?FLT_ADD
+   \   00013D   8E82         MOV     DPL,R6
+   \   00013F   8F83         MOV     DPH,R7
+   \   000141   78..         MOV     R0,#?V0 + 0
+   \   000143   12....       LCALL   ?L_MOV_TO_X
+    202            
+    203            
+    204          }
+   \   000146   7F0E         MOV     R7,#0xe
+   \   000148   02....       LJMP    ?BANKED_LEAVE_XDATA
+    205          
+    206          
+    207          
+    208          /*********************************************************************
+    209           * @fn      gaussianfilter
+    210           *
+    211           * @brief   filter for received rssi data
+    212           *
+    213           * @param   rssi rssi array, the result will be stored in xposition and yposition
+    214           *
+    215           * @return  none
+    216           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    217          float gaussianfilter(int8* rssi, int length)
+   \                     gaussianfilter:
+    218          {
+   \   000000   74E8         MOV     A,#-0x18
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 24
+   \   000005                ; Auto size: 18
+   \   000005   74EE         MOV     A,#-0x12
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   7404         MOV     A,#0x4
+   \   00000C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000F   EA           MOV     A,R2
+   \   000010   F0           MOVX    @DPTR,A
+   \   000011   A3           INC     DPTR
+   \   000012   EB           MOV     A,R3
+   \   000013   F0           MOVX    @DPTR,A
+   \   000014   85..82       MOV     DPL,?XSP + 0
+   \   000017   85..83       MOV     DPH,?XSP + 1
+   \   00001A   EC           MOV     A,R4
+   \   00001B   F0           MOVX    @DPTR,A
+   \   00001C   A3           INC     DPTR
+   \   00001D   ED           MOV     A,R5
+   \   00001E   F0           MOVX    @DPTR,A
+    219            float mu=0.0;
+   \   00001F   75..00       MOV     ?V0 + 0,#0x0
+   \   000022   75..00       MOV     ?V0 + 1,#0x0
+   \   000025   75..00       MOV     ?V0 + 2,#0x0
+   \   000028   75..00       MOV     ?V0 + 3,#0x0
+    220            float variance=0.0;
+   \   00002B   75..00       MOV     ?V0 + 4,#0x0
+   \   00002E   75..00       MOV     ?V0 + 5,#0x0
+   \   000031   75..00       MOV     ?V0 + 6,#0x0
+   \   000034   75..00       MOV     ?V0 + 7,#0x0
+    221            float newmean=0.0;
+   \   000037   7C00         MOV     R4,#0x0
+   \   000039   7D00         MOV     R5,#0x0
+   \   00003B   7E00         MOV     R6,#0x0
+   \   00003D   7F00         MOV     R7,#0x0
+   \   00003F   7406         MOV     A,#0x6
+   \   000041   12....       LCALL   ?XSTACK_DISP0_8
+   \   000044   EC           MOV     A,R4
+   \   000045   F0           MOVX    @DPTR,A
+   \   000046   A3           INC     DPTR
+   \   000047   ED           MOV     A,R5
+   \   000048   F0           MOVX    @DPTR,A
+   \   000049   A3           INC     DPTR
+   \   00004A   EE           MOV     A,R6
+   \   00004B   F0           MOVX    @DPTR,A
+   \   00004C   A3           INC     DPTR
+   \   00004D   EF           MOV     A,R7
+   \   00004E   F0           MOVX    @DPTR,A
+    222            
+    223            for (int i=0; i<length; i++)
+   \   00004F   7A00         MOV     R2,#0x0
+   \   000051   7B00         MOV     R3,#0x0
+   \                     ??gaussianfilter_0:
+   \   000053   85..82       MOV     DPL,?XSP + 0
+   \   000056   85..83       MOV     DPH,?XSP + 1
+   \   000059   E0           MOVX    A,@DPTR
+   \   00005A   F8           MOV     R0,A
+   \   00005B   A3           INC     DPTR
+   \   00005C   E0           MOVX    A,@DPTR
+   \   00005D   F9           MOV     R1,A
+   \   00005E   C3           CLR     C
+   \   00005F   EA           MOV     A,R2
+   \   000060   98           SUBB    A,R0
+   \   000061   EB           MOV     A,R3
+   \   000062   99           SUBB    A,R1
+   \   000063   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000065   65D0         XRL     A,PSW
+   \   000067   33           RLC     A
+   \   000068   503D         JNC     ??gaussianfilter_1
+    224            {
+    225              mu+=*(rssi+i);
+   \   00006A   7404         MOV     A,#0x4
+   \   00006C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00006F   E0           MOVX    A,@DPTR
+   \   000070   2A           ADD     A,R2
+   \   000071   F8           MOV     R0,A
+   \   000072   A3           INC     DPTR
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   3B           ADDC    A,R3
+   \   000075   8882         MOV     DPL,R0
+   \   000077   F583         MOV     DPH,A
+   \   000079   E0           MOVX    A,@DPTR
+   \   00007A   F5..         MOV     ?V0 + 8,A
+   \   00007C   33           RLC     A
+   \   00007D   95E0         SUBB    A,0xE0 /* A   */
+   \   00007F   F5..         MOV     ?V0 + 9,A
+   \   000081   F5..         MOV     ?V0 + 10,A
+   \   000083   F5..         MOV     ?V0 + 11,A
+   \   000085   78..         MOV     R0,#?V0 + 8
+   \   000087   12....       LCALL   ?L_TO_FLT
+   \   00008A   78..         MOV     R0,#?V0 + 8
+   \   00008C   79..         MOV     R1,#?V0 + 0
+   \   00008E   12....       LCALL   ?FLT_ADD
+   \   000091   85....       MOV     ?V0 + 0,?V0 + 8
+   \   000094   85....       MOV     ?V0 + 1,?V0 + 9
+   \   000097   85....       MOV     ?V0 + 2,?V0 + 10
+   \   00009A   85....       MOV     ?V0 + 3,?V0 + 11
+    226            }
+   \   00009D   EA           MOV     A,R2
+   \   00009E   2401         ADD     A,#0x1
+   \   0000A0   FA           MOV     R2,A
+   \   0000A1   EB           MOV     A,R3
+   \   0000A2   3400         ADDC    A,#0x0
+   \   0000A4   FB           MOV     R3,A
+   \   0000A5   80AC         SJMP    ??gaussianfilter_0
+    227            mu=mu/length;
+   \                     ??gaussianfilter_1:
+   \   0000A7   85..82       MOV     DPL,?XSP + 0
+   \   0000AA   85..83       MOV     DPH,?XSP + 1
+   \   0000AD   E0           MOVX    A,@DPTR
+   \   0000AE   F5..         MOV     ?V0 + 8,A
+   \   0000B0   A3           INC     DPTR
+   \   0000B1   E0           MOVX    A,@DPTR
+   \   0000B2   F5..         MOV     ?V0 + 9,A
+   \   0000B4   E5..         MOV     A,?V0 + 9
+   \   0000B6   33           RLC     A
+   \   0000B7   95E0         SUBB    A,0xE0 /* A   */
+   \   0000B9   F5..         MOV     ?V0 + 10,A
+   \   0000BB   F5..         MOV     ?V0 + 11,A
+   \   0000BD   78..         MOV     R0,#?V0 + 8
+   \   0000BF   12....       LCALL   ?L_TO_FLT
+   \   0000C2   78..         MOV     R0,#?V0 + 0
+   \   0000C4   79..         MOV     R1,#?V0 + 8
+   \   0000C6   12....       LCALL   ?FLT_DIV
+    228            
+    229            for (int i=0; i<length; i++)
+   \   0000C9   7A00         MOV     R2,#0x0
+   \   0000CB   7B00         MOV     R3,#0x0
+   \                     ??gaussianfilter_2:
+   \   0000CD   85..82       MOV     DPL,?XSP + 0
+   \   0000D0   85..83       MOV     DPH,?XSP + 1
+   \   0000D3   E0           MOVX    A,@DPTR
+   \   0000D4   F8           MOV     R0,A
+   \   0000D5   A3           INC     DPTR
+   \   0000D6   E0           MOVX    A,@DPTR
+   \   0000D7   F9           MOV     R1,A
+   \   0000D8   C3           CLR     C
+   \   0000D9   EA           MOV     A,R2
+   \   0000DA   98           SUBB    A,R0
+   \   0000DB   EB           MOV     A,R3
+   \   0000DC   99           SUBB    A,R1
+   \   0000DD   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   0000DF   65D0         XRL     A,PSW
+   \   0000E1   33           RLC     A
+   \   0000E2   506C         JNC     ??gaussianfilter_3
+    230            {
+    231              float temp=*(rssi+i);
+   \   0000E4   7404         MOV     A,#0x4
+   \   0000E6   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000E9   E0           MOVX    A,@DPTR
+   \   0000EA   2A           ADD     A,R2
+   \   0000EB   F8           MOV     R0,A
+   \   0000EC   A3           INC     DPTR
+   \   0000ED   E0           MOVX    A,@DPTR
+   \   0000EE   3B           ADDC    A,R3
+   \   0000EF   8882         MOV     DPL,R0
+   \   0000F1   F583         MOV     DPH,A
+   \   0000F3   E0           MOVX    A,@DPTR
+   \   0000F4   F5..         MOV     ?V0 + 8,A
+   \   0000F6   33           RLC     A
+   \   0000F7   95E0         SUBB    A,0xE0 /* A   */
+   \   0000F9   F5..         MOV     ?V0 + 9,A
+   \   0000FB   F5..         MOV     ?V0 + 10,A
+   \   0000FD   F5..         MOV     ?V0 + 11,A
+   \   0000FF   78..         MOV     R0,#?V0 + 8
+   \   000101   12....       LCALL   ?L_TO_FLT
+   \   000104   740A         MOV     A,#0xa
+   \   000106   12....       LCALL   ?XSTACK_DISP0_8
+   \   000109   78..         MOV     R0,#?V0 + 8
+   \   00010B   12....       LCALL   ?L_MOV_TO_X
+    232              variance+=(float)pow((mu-temp),2);
+   \   00010E   85....       MOV     ?V0 + 8,?V0 + 0
+   \   000111   85....       MOV     ?V0 + 9,?V0 + 1
+   \   000114   85....       MOV     ?V0 + 10,?V0 + 2
+   \   000117   85....       MOV     ?V0 + 11,?V0 + 3
+   \   00011A   740A         MOV     A,#0xa
+   \   00011C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00011F   78..         MOV     R0,#?V0 + 12
+   \   000121   12....       LCALL   ?L_MOV_X
+   \   000124   78..         MOV     R0,#?V0 + 8
+   \   000126   79..         MOV     R1,#?V0 + 12
+   \   000128   12....       LCALL   ?FLT_SUB
+   \   00012B   85....       MOV     ?V0 + 12,?V0 + 8
+   \   00012E   85....       MOV     ?V0 + 13,?V0 + 9
+   \   000131   85....       MOV     ?V0 + 14,?V0 + 10
+   \   000134   85....       MOV     ?V0 + 15,?V0 + 11
+   \   000137   78..         MOV     R0,#?V0 + 12
+   \   000139   79..         MOV     R1,#?V0 + 8
+   \   00013B   12....       LCALL   ?FLT_MUL
+   \   00013E   78..         MOV     R0,#?V0 + 4
+   \   000140   79..         MOV     R1,#?V0 + 12
+   \   000142   12....       LCALL   ?FLT_ADD
+    233            }
+   \   000145   EA           MOV     A,R2
+   \   000146   2401         ADD     A,#0x1
+   \   000148   FA           MOV     R2,A
+   \   000149   EB           MOV     A,R3
+   \   00014A   3400         ADDC    A,#0x0
+   \   00014C   FB           MOV     R3,A
+   \   00014D   02....       LJMP    ??gaussianfilter_2 & 0xFFFF
+    234            variance=(float)(variance/length);
+   \                     ??gaussianfilter_3:
+   \   000150   85..82       MOV     DPL,?XSP + 0
+   \   000153   85..83       MOV     DPH,?XSP + 1
+   \   000156   E0           MOVX    A,@DPTR
+   \   000157   F5..         MOV     ?V0 + 8,A
+   \   000159   A3           INC     DPTR
+   \   00015A   E0           MOVX    A,@DPTR
+   \   00015B   F5..         MOV     ?V0 + 9,A
+   \   00015D   E5..         MOV     A,?V0 + 9
+   \   00015F   33           RLC     A
+   \   000160   95E0         SUBB    A,0xE0 /* A   */
+   \   000162   F5..         MOV     ?V0 + 10,A
+   \   000164   F5..         MOV     ?V0 + 11,A
+   \   000166   78..         MOV     R0,#?V0 + 8
+   \   000168   12....       LCALL   ?L_TO_FLT
+   \   00016B   78..         MOV     R0,#?V0 + 4
+   \   00016D   79..         MOV     R1,#?V0 + 8
+   \   00016F   12....       LCALL   ?FLT_DIV
+    235            
+    236            float intervalmin=mu-variance;
+   \   000172   85....       MOV     ?V0 + 8,?V0 + 0
+   \   000175   85....       MOV     ?V0 + 9,?V0 + 1
+   \   000178   85....       MOV     ?V0 + 10,?V0 + 2
+   \   00017B   85....       MOV     ?V0 + 11,?V0 + 3
+   \   00017E   78..         MOV     R0,#?V0 + 8
+   \   000180   79..         MOV     R1,#?V0 + 4
+   \   000182   12....       LCALL   ?FLT_SUB
+   \   000185   740A         MOV     A,#0xa
+   \   000187   12....       LCALL   ?XSTACK_DISP0_8
+   \   00018A   78..         MOV     R0,#?V0 + 8
+   \   00018C   12....       LCALL   ?L_MOV_TO_X
+    237            float intervalmax=mu+variance;
+   \   00018F   85....       MOV     ?V0 + 8,?V0 + 0
+   \   000192   85....       MOV     ?V0 + 9,?V0 + 1
+   \   000195   85....       MOV     ?V0 + 10,?V0 + 2
+   \   000198   85....       MOV     ?V0 + 11,?V0 + 3
+   \   00019B   78..         MOV     R0,#?V0 + 8
+   \   00019D   79..         MOV     R1,#?V0 + 4
+   \   00019F   12....       LCALL   ?FLT_ADD
+   \   0001A2   740E         MOV     A,#0xe
+   \   0001A4   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001A7   78..         MOV     R0,#?V0 + 8
+   \   0001A9   12....       LCALL   ?L_MOV_TO_X
+    238            
+    239            int index=0;
+   \   0001AC   7E00         MOV     R6,#0x0
+   \   0001AE   7F00         MOV     R7,#0x0
+    240            for (int i=0; i<length; i++)
+   \   0001B0   7402         MOV     A,#0x2
+   \   0001B2   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001B5   7400         MOV     A,#0x0
+   \   0001B7   F0           MOVX    @DPTR,A
+   \   0001B8   A3           INC     DPTR
+   \   0001B9   7400         MOV     A,#0x0
+   \   0001BB   F0           MOVX    @DPTR,A
+   \                     ??gaussianfilter_4:
+   \   0001BC   7402         MOV     A,#0x2
+   \   0001BE   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001C1   C082         PUSH    DPL
+   \   0001C3   C083         PUSH    DPH
+   \   0001C5   85..82       MOV     DPL,?XSP + 0
+   \   0001C8   85..83       MOV     DPH,?XSP + 1
+   \   0001CB   E0           MOVX    A,@DPTR
+   \   0001CC   F8           MOV     R0,A
+   \   0001CD   A3           INC     DPTR
+   \   0001CE   E0           MOVX    A,@DPTR
+   \   0001CF   F9           MOV     R1,A
+   \   0001D0   D083         POP     DPH
+   \   0001D2   D082         POP     DPL
+   \   0001D4   C3           CLR     C
+   \   0001D5   E0           MOVX    A,@DPTR
+   \   0001D6   98           SUBB    A,R0
+   \   0001D7   A3           INC     DPTR
+   \   0001D8   E0           MOVX    A,@DPTR
+   \   0001D9   99           SUBB    A,R1
+   \   0001DA   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   0001DC   65D0         XRL     A,PSW
+   \   0001DE   33           RLC     A
+   \   0001DF   4003         JC      $+5
+   \   0001E1   02....       LJMP    ??gaussianfilter_5 & 0xFFFF
+    241            {
+    242              float temp=*(rssi+i);
+   \   0001E4   7402         MOV     A,#0x2
+   \   0001E6   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001E9   E0           MOVX    A,@DPTR
+   \   0001EA   F8           MOV     R0,A
+   \   0001EB   A3           INC     DPTR
+   \   0001EC   E0           MOVX    A,@DPTR
+   \   0001ED   F9           MOV     R1,A
+   \   0001EE   7404         MOV     A,#0x4
+   \   0001F0   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001F3   E0           MOVX    A,@DPTR
+   \   0001F4   28           ADD     A,R0
+   \   0001F5   FA           MOV     R2,A
+   \   0001F6   A3           INC     DPTR
+   \   0001F7   E0           MOVX    A,@DPTR
+   \   0001F8   39           ADDC    A,R1
+   \   0001F9   8A82         MOV     DPL,R2
+   \   0001FB   F583         MOV     DPH,A
+   \   0001FD   E0           MOVX    A,@DPTR
+   \   0001FE   F5..         MOV     ?V0 + 8,A
+   \   000200   33           RLC     A
+   \   000201   95E0         SUBB    A,0xE0 /* A   */
+   \   000203   F5..         MOV     ?V0 + 9,A
+   \   000205   F5..         MOV     ?V0 + 10,A
+   \   000207   F5..         MOV     ?V0 + 11,A
+   \   000209   78..         MOV     R0,#?V0 + 8
+   \   00020B   12....       LCALL   ?L_TO_FLT
+    243              if(temp<=intervalmax&&temp>=intervalmin)
+   \   00020E   740E         MOV     A,#0xe
+   \   000210   12....       LCALL   ?XSTACK_DISP0_8
+   \   000213   78..         MOV     R0,#?V0 + 12
+   \   000215   12....       LCALL   ?L_MOV_X
+   \   000218   78..         MOV     R0,#?V0 + 12
+   \   00021A   79..         MOV     R1,#?V0 + 8
+   \   00021C   12....       LCALL   ?FLT_GE
+   \   00021F   5036         JNC     ??gaussianfilter_6
+   \   000221   740A         MOV     A,#0xa
+   \   000223   12....       LCALL   ?XSTACK_DISP0_8
+   \   000226   78..         MOV     R0,#?V0 + 12
+   \   000228   12....       LCALL   ?L_MOV_X
+   \   00022B   78..         MOV     R0,#?V0 + 8
+   \   00022D   79..         MOV     R1,#?V0 + 12
+   \   00022F   12....       LCALL   ?FLT_GE
+   \   000232   5023         JNC     ??gaussianfilter_6
+    244                 {
+    245                   index++;
+   \   000234   EE           MOV     A,R6
+   \   000235   2401         ADD     A,#0x1
+   \   000237   FE           MOV     R6,A
+   \   000238   EF           MOV     A,R7
+   \   000239   3400         ADDC    A,#0x0
+   \   00023B   FF           MOV     R7,A
+    246                   newmean+=temp;
+   \   00023C   7406         MOV     A,#0x6
+   \   00023E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000241   78..         MOV     R0,#?V0 + 12
+   \   000243   12....       LCALL   ?L_MOV_X
+   \   000246   78..         MOV     R0,#?V0 + 12
+   \   000248   79..         MOV     R1,#?V0 + 8
+   \   00024A   12....       LCALL   ?FLT_ADD
+   \   00024D   7406         MOV     A,#0x6
+   \   00024F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000252   78..         MOV     R0,#?V0 + 12
+   \   000254   12....       LCALL   ?L_MOV_TO_X
+    247                 }
+    248            }
+   \                     ??gaussianfilter_6:
+   \   000257   7402         MOV     A,#0x2
+   \   000259   12....       LCALL   ?XSTACK_DISP0_8
+   \   00025C   E0           MOVX    A,@DPTR
+   \   00025D   2401         ADD     A,#0x1
+   \   00025F   F0           MOVX    @DPTR,A
+   \   000260   A3           INC     DPTR
+   \   000261   E0           MOVX    A,@DPTR
+   \   000262   3400         ADDC    A,#0x0
+   \   000264   F0           MOVX    @DPTR,A
+   \   000265   02....       LJMP    ??gaussianfilter_4 & 0xFFFF
+    249            
+    250                 if(index!=0)
+   \                     ??gaussianfilter_5:
+   \   000268   EE           MOV     A,R6
+   \   000269   4F           ORL     A,R7
+   \   00026A   602C         JZ      ??gaussianfilter_7
+    251                 {
+    252                   newmean=newmean/index;
+   \   00026C   7406         MOV     A,#0x6
+   \   00026E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000271   78..         MOV     R0,#?V0 + 12
+   \   000273   12....       LCALL   ?L_MOV_X
+   \   000276   8E..         MOV     ?V0 + 8,R6
+   \   000278   EF           MOV     A,R7
+   \   000279   F5..         MOV     ?V0 + 9,A
+   \   00027B   33           RLC     A
+   \   00027C   95E0         SUBB    A,0xE0 /* A   */
+   \   00027E   F5..         MOV     ?V0 + 10,A
+   \   000280   F5..         MOV     ?V0 + 11,A
+   \   000282   78..         MOV     R0,#?V0 + 8
+   \   000284   12....       LCALL   ?L_TO_FLT
+   \   000287   78..         MOV     R0,#?V0 + 12
+   \   000289   79..         MOV     R1,#?V0 + 8
+   \   00028B   12....       LCALL   ?FLT_DIV
+   \   00028E   7406         MOV     A,#0x6
+   \   000290   12....       LCALL   ?XSTACK_DISP0_8
+   \   000293   78..         MOV     R0,#?V0 + 12
+   \   000295   12....       LCALL   ?L_MOV_TO_X
+    253                 }
+    254                 
+    255            return newmean;
+   \                     ??gaussianfilter_7:
+   \   000298   7406         MOV     A,#0x6
+   \   00029A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00029D   12....       LCALL   ?XLOAD_R2345
+   \   0002A0   7412         MOV     A,#0x12
+   \   0002A2   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0002A5   7F10         MOV     R7,#0x10
+   \   0002A7   02....       LJMP    ?BANKED_LEAVE_XDATA
+    256          }
+    257          
+    258          /*********************************************************************
+    259           * @fn      averagefilter
+    260           *
+    261           * @brief   filter for received rssi data
+    262           *
+    263           * @param   rssi rssi array
+    264           *
+    265           * @return  none
+    266           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    267          float averagefilter(int8* rssi, int length)
+   \                     averagefilter:
+    268          {
+   \   000000   74E8         MOV     A,#-0x18
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 24
+   \   000005                ; Auto size: 2
+   \   000005   74FE         MOV     A,#-0x2
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   EA           MOV     A,R2
+   \   000011   F0           MOVX    @DPTR,A
+   \   000012   A3           INC     DPTR
+   \   000013   EB           MOV     A,R3
+   \   000014   F0           MOVX    @DPTR,A
+   \   000015   EC           MOV     A,R4
+   \   000016   FE           MOV     R6,A
+   \   000017   ED           MOV     A,R5
+   \   000018   FF           MOV     R7,A
+    269            int32 mu=0;
+   \   000019   75..00       MOV     ?V0 + 0,#0x0
+   \   00001C   75..00       MOV     ?V0 + 1,#0x0
+   \   00001F   75..00       MOV     ?V0 + 2,#0x0
+   \   000022   75..00       MOV     ?V0 + 3,#0x0
+    270           
+    271            float newmean=0.0;
+   \   000025   75..00       MOV     ?V0 + 4,#0x0
+   \   000028   75..00       MOV     ?V0 + 5,#0x0
+   \   00002B   75..00       MOV     ?V0 + 6,#0x0
+   \   00002E   75..00       MOV     ?V0 + 7,#0x0
+    272            
+    273            for(int i=0; i<length; i++)
+   \   000031   7A00         MOV     R2,#0x0
+   \   000033   7B00         MOV     R3,#0x0
+   \                     ??averagefilter_0:
+   \   000035   C3           CLR     C
+   \   000036   EA           MOV     A,R2
+   \   000037   9E           SUBB    A,R6
+   \   000038   EB           MOV     A,R3
+   \   000039   9F           SUBB    A,R7
+   \   00003A   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   00003C   65D0         XRL     A,PSW
+   \   00003E   33           RLC     A
+   \   00003F   502D         JNC     ??averagefilter_1
+    274             {
+    275                            mu+=(int32)*(rssi+i);
+   \   000041   85..82       MOV     DPL,?XSP + 0
+   \   000044   85..83       MOV     DPH,?XSP + 1
+   \   000047   E0           MOVX    A,@DPTR
+   \   000048   2A           ADD     A,R2
+   \   000049   F8           MOV     R0,A
+   \   00004A   A3           INC     DPTR
+   \   00004B   E0           MOVX    A,@DPTR
+   \   00004C   3B           ADDC    A,R3
+   \   00004D   8882         MOV     DPL,R0
+   \   00004F   F583         MOV     DPH,A
+   \   000051   E0           MOVX    A,@DPTR
+   \   000052   F5..         MOV     ?V0 + 8,A
+   \   000054   33           RLC     A
+   \   000055   95E0         SUBB    A,0xE0 /* A   */
+   \   000057   F5..         MOV     ?V0 + 9,A
+   \   000059   F5..         MOV     ?V0 + 10,A
+   \   00005B   F5..         MOV     ?V0 + 11,A
+   \   00005D   78..         MOV     R0,#?V0 + 0
+   \   00005F   79..         MOV     R1,#?V0 + 8
+   \   000061   12....       LCALL   ?L_ADD
+    276             }
+   \   000064   EA           MOV     A,R2
+   \   000065   2401         ADD     A,#0x1
+   \   000067   FA           MOV     R2,A
+   \   000068   EB           MOV     A,R3
+   \   000069   3400         ADDC    A,#0x0
+   \   00006B   FB           MOV     R3,A
+   \   00006C   80C7         SJMP    ??averagefilter_0
+    277                           newmean=((float)mu)/((float)length);
+   \                     ??averagefilter_1:
+   \   00006E   85....       MOV     ?V0 + 12,?V0 + 0
+   \   000071   85....       MOV     ?V0 + 13,?V0 + 1
+   \   000074   85....       MOV     ?V0 + 14,?V0 + 2
+   \   000077   85....       MOV     ?V0 + 15,?V0 + 3
+   \   00007A   78..         MOV     R0,#?V0 + 12
+   \   00007C   12....       LCALL   ?L_TO_FLT
+   \   00007F   8E..         MOV     ?V0 + 8,R6
+   \   000081   EF           MOV     A,R7
+   \   000082   F5..         MOV     ?V0 + 9,A
+   \   000084   33           RLC     A
+   \   000085   95E0         SUBB    A,0xE0 /* A   */
+   \   000087   F5..         MOV     ?V0 + 10,A
+   \   000089   F5..         MOV     ?V0 + 11,A
+   \   00008B   78..         MOV     R0,#?V0 + 8
+   \   00008D   12....       LCALL   ?L_TO_FLT
+   \   000090   78..         MOV     R0,#?V0 + 12
+   \   000092   79..         MOV     R1,#?V0 + 8
+   \   000094   12....       LCALL   ?FLT_DIV
+   \   000097   85....       MOV     ?V0 + 4,?V0 + 12
+   \   00009A   85....       MOV     ?V0 + 5,?V0 + 13
+   \   00009D   85....       MOV     ?V0 + 6,?V0 + 14
+   \   0000A0   85....       MOV     ?V0 + 7,?V0 + 15
+    278                       
+    279                 
+    280            return newmean;
+   \   0000A3   AA..         MOV     R2,?V0 + 4
+   \   0000A5   AB..         MOV     R3,?V0 + 5
+   \   0000A7   AC..         MOV     R4,?V0 + 6
+   \   0000A9   AD..         MOV     R5,?V0 + 7
+   \   0000AB   7402         MOV     A,#0x2
+   \   0000AD   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000B0   7F10         MOV     R7,#0x10
+   \   0000B2   02....       LJMP    ?BANKED_LEAVE_XDATA
+    281          }
+    282          
+    283          /*********************************************************************
+    284           * @fn      calibrationN
+    285           *
+    286           * @brief   calibration of n
+    287           *
+    288           * @param   rssi rssi array
+    289           *
+    290           * @return  none
+    291           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    292          float calibrationN(int localID, int index, float rssivalue_f[4], float nValue[4], float AnchorX[4], float AnchorY[4], float AnchorZ[4], float A[4])
+   \                     calibrationN:
+    293          {
+   \   000000   74E8         MOV     A,#-0x18
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 24
+   \   000005                ; Auto size: 6
+   \   000005   74FA         MOV     A,#-0x6
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   EA           MOV     A,R2
+   \   000011   F0           MOVX    @DPTR,A
+   \   000012   A3           INC     DPTR
+   \   000013   EB           MOV     A,R3
+   \   000014   F0           MOVX    @DPTR,A
+   \   000015   EC           MOV     A,R4
+   \   000016   FE           MOV     R6,A
+   \   000017   ED           MOV     A,R5
+   \   000018   FF           MOV     R7,A
+    294            float n;
+    295            if(localID!=index)
+   \   000019   85..82       MOV     DPL,?XSP + 0
+   \   00001C   85..83       MOV     DPH,?XSP + 1
+   \   00001F   E0           MOVX    A,@DPTR
+   \   000020   6E           XRL     A,R6
+   \   000021   7003         JNZ     ??calibrationN_0
+   \   000023   A3           INC     DPTR
+   \   000024   E0           MOVX    A,@DPTR
+   \   000025   6F           XRL     A,R7
+   \                     ??calibrationN_0:
+   \   000026   7003         JNZ     $+5
+   \   000028   02....       LJMP    ??calibrationN_1 & 0xFFFF
+    296            {
+    297                
+    298                float d=0.0;
+   \   00002B   75..00       MOV     ?V0 + 0,#0x0
+   \   00002E   75..00       MOV     ?V0 + 1,#0x0
+   \   000031   75..00       MOV     ?V0 + 2,#0x0
+   \   000034   75..00       MOV     ?V0 + 3,#0x0
+    299                d=(AnchorX[localID-1]-AnchorX[index-1])*(AnchorX[localID-1]-AnchorX[index-1])+
+    300                  (AnchorY[localID-1]-AnchorY[index-1])*(AnchorY[localID-1]-AnchorY[index-1])+
+    301                    (AnchorZ[localID-1]-AnchorZ[index-1])*(AnchorZ[localID-1]-AnchorZ[index-1]);
+   \   000037   85..82       MOV     DPL,?XSP + 0
+   \   00003A   85..83       MOV     DPH,?XSP + 1
+   \   00003D   E0           MOVX    A,@DPTR
+   \   00003E   F8           MOV     R0,A
+   \   00003F   A3           INC     DPTR
+   \   000040   E0           MOVX    A,@DPTR
+   \   000041   F9           MOV     R1,A
+   \   000042   E8           MOV     A,R0
+   \   000043   75F004       MOV     B,#0x4
+   \   000046   A4           MUL     AB
+   \   000047   C8           XCH     A,R0
+   \   000048   AAF0         MOV     R2,B
+   \   00004A   75F000       MOV     B,#0x0
+   \   00004D   A4           MUL     AB
+   \   00004E   2A           ADD     A,R2
+   \   00004F   FA           MOV     R2,A
+   \   000050   75F004       MOV     B,#0x4
+   \   000053   E9           MOV     A,R1
+   \   000054   A4           MUL     AB
+   \   000055   2A           ADD     A,R2
+   \   000056   F9           MOV     R1,A
+   \   000057   7422         MOV     A,#0x22
+   \   000059   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005C   E0           MOVX    A,@DPTR
+   \   00005D   28           ADD     A,R0
+   \   00005E   F8           MOV     R0,A
+   \   00005F   A3           INC     DPTR
+   \   000060   E0           MOVX    A,@DPTR
+   \   000061   39           ADDC    A,R1
+   \   000062   F9           MOV     R1,A
+   \   000063   E8           MOV     A,R0
+   \   000064   24FC         ADD     A,#-0x4
+   \   000066   F582         MOV     DPL,A
+   \   000068   E9           MOV     A,R1
+   \   000069   34FF         ADDC    A,#-0x1
+   \   00006B   F583         MOV     DPH,A
+   \   00006D   78..         MOV     R0,#?V0 + 4
+   \   00006F   12....       LCALL   ?L_MOV_X
+   \   000072   EE           MOV     A,R6
+   \   000073   F8           MOV     R0,A
+   \   000074   EF           MOV     A,R7
+   \   000075   F9           MOV     R1,A
+   \   000076   E8           MOV     A,R0
+   \   000077   75F004       MOV     B,#0x4
+   \   00007A   A4           MUL     AB
+   \   00007B   C8           XCH     A,R0
+   \   00007C   AAF0         MOV     R2,B
+   \   00007E   75F000       MOV     B,#0x0
+   \   000081   A4           MUL     AB
+   \   000082   2A           ADD     A,R2
+   \   000083   FA           MOV     R2,A
+   \   000084   75F004       MOV     B,#0x4
+   \   000087   E9           MOV     A,R1
+   \   000088   A4           MUL     AB
+   \   000089   2A           ADD     A,R2
+   \   00008A   F9           MOV     R1,A
+   \   00008B   7422         MOV     A,#0x22
+   \   00008D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000090   E0           MOVX    A,@DPTR
+   \   000091   28           ADD     A,R0
+   \   000092   F8           MOV     R0,A
+   \   000093   A3           INC     DPTR
+   \   000094   E0           MOVX    A,@DPTR
+   \   000095   39           ADDC    A,R1
+   \   000096   F9           MOV     R1,A
+   \   000097   E8           MOV     A,R0
+   \   000098   24FC         ADD     A,#-0x4
+   \   00009A   F582         MOV     DPL,A
+   \   00009C   E9           MOV     A,R1
+   \   00009D   34FF         ADDC    A,#-0x1
+   \   00009F   F583         MOV     DPH,A
+   \   0000A1   78..         MOV     R0,#?V0 + 8
+   \   0000A3   12....       LCALL   ?L_MOV_X
+   \   0000A6   78..         MOV     R0,#?V0 + 4
+   \   0000A8   79..         MOV     R1,#?V0 + 8
+   \   0000AA   12....       LCALL   ?FLT_SUB
+   \   0000AD   85..82       MOV     DPL,?XSP + 0
+   \   0000B0   85..83       MOV     DPH,?XSP + 1
+   \   0000B3   E0           MOVX    A,@DPTR
+   \   0000B4   F8           MOV     R0,A
+   \   0000B5   A3           INC     DPTR
+   \   0000B6   E0           MOVX    A,@DPTR
+   \   0000B7   F9           MOV     R1,A
+   \   0000B8   E8           MOV     A,R0
+   \   0000B9   75F004       MOV     B,#0x4
+   \   0000BC   A4           MUL     AB
+   \   0000BD   C8           XCH     A,R0
+   \   0000BE   AAF0         MOV     R2,B
+   \   0000C0   75F000       MOV     B,#0x0
+   \   0000C3   A4           MUL     AB
+   \   0000C4   2A           ADD     A,R2
+   \   0000C5   FA           MOV     R2,A
+   \   0000C6   75F004       MOV     B,#0x4
+   \   0000C9   E9           MOV     A,R1
+   \   0000CA   A4           MUL     AB
+   \   0000CB   2A           ADD     A,R2
+   \   0000CC   F9           MOV     R1,A
+   \   0000CD   7422         MOV     A,#0x22
+   \   0000CF   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000D2   E0           MOVX    A,@DPTR
+   \   0000D3   28           ADD     A,R0
+   \   0000D4   F8           MOV     R0,A
+   \   0000D5   A3           INC     DPTR
+   \   0000D6   E0           MOVX    A,@DPTR
+   \   0000D7   39           ADDC    A,R1
+   \   0000D8   F9           MOV     R1,A
+   \   0000D9   E8           MOV     A,R0
+   \   0000DA   24FC         ADD     A,#-0x4
+   \   0000DC   F582         MOV     DPL,A
+   \   0000DE   E9           MOV     A,R1
+   \   0000DF   34FF         ADDC    A,#-0x1
+   \   0000E1   F583         MOV     DPH,A
+   \   0000E3   78..         MOV     R0,#?V0 + 12
+   \   0000E5   12....       LCALL   ?L_MOV_X
+   \   0000E8   EE           MOV     A,R6
+   \   0000E9   F8           MOV     R0,A
+   \   0000EA   EF           MOV     A,R7
+   \   0000EB   F9           MOV     R1,A
+   \   0000EC   E8           MOV     A,R0
+   \   0000ED   75F004       MOV     B,#0x4
+   \   0000F0   A4           MUL     AB
+   \   0000F1   C8           XCH     A,R0
+   \   0000F2   AAF0         MOV     R2,B
+   \   0000F4   75F000       MOV     B,#0x0
+   \   0000F7   A4           MUL     AB
+   \   0000F8   2A           ADD     A,R2
+   \   0000F9   FA           MOV     R2,A
+   \   0000FA   75F004       MOV     B,#0x4
+   \   0000FD   E9           MOV     A,R1
+   \   0000FE   A4           MUL     AB
+   \   0000FF   2A           ADD     A,R2
+   \   000100   F9           MOV     R1,A
+   \   000101   7422         MOV     A,#0x22
+   \   000103   12....       LCALL   ?XSTACK_DISP0_8
+   \   000106   E0           MOVX    A,@DPTR
+   \   000107   28           ADD     A,R0
+   \   000108   F8           MOV     R0,A
+   \   000109   A3           INC     DPTR
+   \   00010A   E0           MOVX    A,@DPTR
+   \   00010B   39           ADDC    A,R1
+   \   00010C   F9           MOV     R1,A
+   \   00010D   E8           MOV     A,R0
+   \   00010E   24FC         ADD     A,#-0x4
+   \   000110   F582         MOV     DPL,A
+   \   000112   E9           MOV     A,R1
+   \   000113   34FF         ADDC    A,#-0x1
+   \   000115   F583         MOV     DPH,A
+   \   000117   78..         MOV     R0,#?V0 + 8
+   \   000119   12....       LCALL   ?L_MOV_X
+   \   00011C   78..         MOV     R0,#?V0 + 12
+   \   00011E   79..         MOV     R1,#?V0 + 8
+   \   000120   12....       LCALL   ?FLT_SUB
+   \   000123   78..         MOV     R0,#?V0 + 4
+   \   000125   79..         MOV     R1,#?V0 + 12
+   \   000127   12....       LCALL   ?FLT_MUL
+   \   00012A   C0..         PUSH    ?V0 + 4
+   \   00012C   C0..         PUSH    ?V0 + 5
+   \   00012E   C0..         PUSH    ?V0 + 6
+   \   000130   C0..         PUSH    ?V0 + 7
+   \   000132   85..82       MOV     DPL,?XSP + 0
+   \   000135   85..83       MOV     DPH,?XSP + 1
+   \   000138   E0           MOVX    A,@DPTR
+   \   000139   F8           MOV     R0,A
+   \   00013A   A3           INC     DPTR
+   \   00013B   E0           MOVX    A,@DPTR
+   \   00013C   F9           MOV     R1,A
+   \   00013D   E8           MOV     A,R0
+   \   00013E   75F004       MOV     B,#0x4
+   \   000141   A4           MUL     AB
+   \   000142   C8           XCH     A,R0
+   \   000143   AAF0         MOV     R2,B
+   \   000145   75F000       MOV     B,#0x0
+   \   000148   A4           MUL     AB
+   \   000149   2A           ADD     A,R2
+   \   00014A   FA           MOV     R2,A
+   \   00014B   75F004       MOV     B,#0x4
+   \   00014E   E9           MOV     A,R1
+   \   00014F   A4           MUL     AB
+   \   000150   2A           ADD     A,R2
+   \   000151   F9           MOV     R1,A
+   \   000152   7424         MOV     A,#0x24
+   \   000154   12....       LCALL   ?XSTACK_DISP0_8
+   \   000157   E0           MOVX    A,@DPTR
+   \   000158   28           ADD     A,R0
+   \   000159   F8           MOV     R0,A
+   \   00015A   A3           INC     DPTR
+   \   00015B   E0           MOVX    A,@DPTR
+   \   00015C   39           ADDC    A,R1
+   \   00015D   F9           MOV     R1,A
+   \   00015E   E8           MOV     A,R0
+   \   00015F   24FC         ADD     A,#-0x4
+   \   000161   F582         MOV     DPL,A
+   \   000163   E9           MOV     A,R1
+   \   000164   34FF         ADDC    A,#-0x1
+   \   000166   F583         MOV     DPH,A
+   \   000168   78..         MOV     R0,#?V0 + 4
+   \   00016A   12....       LCALL   ?L_MOV_X
+   \   00016D   EE           MOV     A,R6
+   \   00016E   F8           MOV     R0,A
+   \   00016F   EF           MOV     A,R7
+   \   000170   F9           MOV     R1,A
+   \   000171   E8           MOV     A,R0
+   \   000172   75F004       MOV     B,#0x4
+   \   000175   A4           MUL     AB
+   \   000176   C8           XCH     A,R0
+   \   000177   AAF0         MOV     R2,B
+   \   000179   75F000       MOV     B,#0x0
+   \   00017C   A4           MUL     AB
+   \   00017D   2A           ADD     A,R2
+   \   00017E   FA           MOV     R2,A
+   \   00017F   75F004       MOV     B,#0x4
+   \   000182   E9           MOV     A,R1
+   \   000183   A4           MUL     AB
+   \   000184   2A           ADD     A,R2
+   \   000185   F9           MOV     R1,A
+   \   000186   7424         MOV     A,#0x24
+   \   000188   12....       LCALL   ?XSTACK_DISP0_8
+   \   00018B   E0           MOVX    A,@DPTR
+   \   00018C   28           ADD     A,R0
+   \   00018D   F8           MOV     R0,A
+   \   00018E   A3           INC     DPTR
+   \   00018F   E0           MOVX    A,@DPTR
+   \   000190   39           ADDC    A,R1
+   \   000191   F9           MOV     R1,A
+   \   000192   E8           MOV     A,R0
+   \   000193   24FC         ADD     A,#-0x4
+   \   000195   F582         MOV     DPL,A
+   \   000197   E9           MOV     A,R1
+   \   000198   34FF         ADDC    A,#-0x1
+   \   00019A   F583         MOV     DPH,A
+   \   00019C   78..         MOV     R0,#?V0 + 8
+   \   00019E   12....       LCALL   ?L_MOV_X
+   \   0001A1   78..         MOV     R0,#?V0 + 4
+   \   0001A3   79..         MOV     R1,#?V0 + 8
+   \   0001A5   12....       LCALL   ?FLT_SUB
+   \   0001A8   85..82       MOV     DPL,?XSP + 0
+   \   0001AB   85..83       MOV     DPH,?XSP + 1
+   \   0001AE   E0           MOVX    A,@DPTR
+   \   0001AF   F8           MOV     R0,A
+   \   0001B0   A3           INC     DPTR
+   \   0001B1   E0           MOVX    A,@DPTR
+   \   0001B2   F9           MOV     R1,A
+   \   0001B3   E8           MOV     A,R0
+   \   0001B4   75F004       MOV     B,#0x4
+   \   0001B7   A4           MUL     AB
+   \   0001B8   C8           XCH     A,R0
+   \   0001B9   AAF0         MOV     R2,B
+   \   0001BB   75F000       MOV     B,#0x0
+   \   0001BE   A4           MUL     AB
+   \   0001BF   2A           ADD     A,R2
+   \   0001C0   FA           MOV     R2,A
+   \   0001C1   75F004       MOV     B,#0x4
+   \   0001C4   E9           MOV     A,R1
+   \   0001C5   A4           MUL     AB
+   \   0001C6   2A           ADD     A,R2
+   \   0001C7   F9           MOV     R1,A
+   \   0001C8   7424         MOV     A,#0x24
+   \   0001CA   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001CD   E0           MOVX    A,@DPTR
+   \   0001CE   28           ADD     A,R0
+   \   0001CF   F8           MOV     R0,A
+   \   0001D0   A3           INC     DPTR
+   \   0001D1   E0           MOVX    A,@DPTR
+   \   0001D2   39           ADDC    A,R1
+   \   0001D3   F9           MOV     R1,A
+   \   0001D4   E8           MOV     A,R0
+   \   0001D5   24FC         ADD     A,#-0x4
+   \   0001D7   F582         MOV     DPL,A
+   \   0001D9   E9           MOV     A,R1
+   \   0001DA   34FF         ADDC    A,#-0x1
+   \   0001DC   F583         MOV     DPH,A
+   \   0001DE   78..         MOV     R0,#?V0 + 12
+   \   0001E0   12....       LCALL   ?L_MOV_X
+   \   0001E3   EE           MOV     A,R6
+   \   0001E4   F8           MOV     R0,A
+   \   0001E5   EF           MOV     A,R7
+   \   0001E6   F9           MOV     R1,A
+   \   0001E7   E8           MOV     A,R0
+   \   0001E8   75F004       MOV     B,#0x4
+   \   0001EB   A4           MUL     AB
+   \   0001EC   C8           XCH     A,R0
+   \   0001ED   AAF0         MOV     R2,B
+   \   0001EF   75F000       MOV     B,#0x0
+   \   0001F2   A4           MUL     AB
+   \   0001F3   2A           ADD     A,R2
+   \   0001F4   FA           MOV     R2,A
+   \   0001F5   75F004       MOV     B,#0x4
+   \   0001F8   E9           MOV     A,R1
+   \   0001F9   A4           MUL     AB
+   \   0001FA   2A           ADD     A,R2
+   \   0001FB   F9           MOV     R1,A
+   \   0001FC   7424         MOV     A,#0x24
+   \   0001FE   12....       LCALL   ?XSTACK_DISP0_8
+   \   000201   E0           MOVX    A,@DPTR
+   \   000202   28           ADD     A,R0
+   \   000203   F8           MOV     R0,A
+   \   000204   A3           INC     DPTR
+   \   000205   E0           MOVX    A,@DPTR
+   \   000206   39           ADDC    A,R1
+   \   000207   F9           MOV     R1,A
+   \   000208   E8           MOV     A,R0
+   \   000209   24FC         ADD     A,#-0x4
+   \   00020B   F582         MOV     DPL,A
+   \   00020D   E9           MOV     A,R1
+   \   00020E   34FF         ADDC    A,#-0x1
+   \   000210   F583         MOV     DPH,A
+   \   000212   78..         MOV     R0,#?V0 + 8
+   \   000214   12....       LCALL   ?L_MOV_X
+   \   000217   78..         MOV     R0,#?V0 + 12
+   \   000219   79..         MOV     R1,#?V0 + 8
+   \   00021B   12....       LCALL   ?FLT_SUB
+   \   00021E   78..         MOV     R0,#?V0 + 4
+   \   000220   79..         MOV     R1,#?V0 + 12
+   \   000222   12....       LCALL   ?FLT_MUL
+   \   000225   D0..         POP     ?V0 + 11
+   \   000227   D0..         POP     ?V0 + 10
+   \   000229   D0..         POP     ?V0 + 9
+   \   00022B   D0..         POP     ?V0 + 8
+   \   00022D   78..         MOV     R0,#?V0 + 8
+   \   00022F   79..         MOV     R1,#?V0 + 4
+   \   000231   12....       LCALL   ?FLT_ADD
+   \   000234   C0..         PUSH    ?V0 + 8
+   \   000236   C0..         PUSH    ?V0 + 9
+   \   000238   C0..         PUSH    ?V0 + 10
+   \   00023A   C0..         PUSH    ?V0 + 11
+   \   00023C   85..82       MOV     DPL,?XSP + 0
+   \   00023F   85..83       MOV     DPH,?XSP + 1
+   \   000242   E0           MOVX    A,@DPTR
+   \   000243   F8           MOV     R0,A
+   \   000244   A3           INC     DPTR
+   \   000245   E0           MOVX    A,@DPTR
+   \   000246   F9           MOV     R1,A
+   \   000247   E8           MOV     A,R0
+   \   000248   75F004       MOV     B,#0x4
+   \   00024B   A4           MUL     AB
+   \   00024C   C8           XCH     A,R0
+   \   00024D   AAF0         MOV     R2,B
+   \   00024F   75F000       MOV     B,#0x0
+   \   000252   A4           MUL     AB
+   \   000253   2A           ADD     A,R2
+   \   000254   FA           MOV     R2,A
+   \   000255   75F004       MOV     B,#0x4
+   \   000258   E9           MOV     A,R1
+   \   000259   A4           MUL     AB
+   \   00025A   2A           ADD     A,R2
+   \   00025B   F9           MOV     R1,A
+   \   00025C   7426         MOV     A,#0x26
+   \   00025E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000261   E0           MOVX    A,@DPTR
+   \   000262   28           ADD     A,R0
+   \   000263   F8           MOV     R0,A
+   \   000264   A3           INC     DPTR
+   \   000265   E0           MOVX    A,@DPTR
+   \   000266   39           ADDC    A,R1
+   \   000267   F9           MOV     R1,A
+   \   000268   E8           MOV     A,R0
+   \   000269   24FC         ADD     A,#-0x4
+   \   00026B   F582         MOV     DPL,A
+   \   00026D   E9           MOV     A,R1
+   \   00026E   34FF         ADDC    A,#-0x1
+   \   000270   F583         MOV     DPH,A
+   \   000272   78..         MOV     R0,#?V0 + 4
+   \   000274   12....       LCALL   ?L_MOV_X
+   \   000277   EE           MOV     A,R6
+   \   000278   F8           MOV     R0,A
+   \   000279   EF           MOV     A,R7
+   \   00027A   F9           MOV     R1,A
+   \   00027B   E8           MOV     A,R0
+   \   00027C   75F004       MOV     B,#0x4
+   \   00027F   A4           MUL     AB
+   \   000280   C8           XCH     A,R0
+   \   000281   AAF0         MOV     R2,B
+   \   000283   75F000       MOV     B,#0x0
+   \   000286   A4           MUL     AB
+   \   000287   2A           ADD     A,R2
+   \   000288   FA           MOV     R2,A
+   \   000289   75F004       MOV     B,#0x4
+   \   00028C   E9           MOV     A,R1
+   \   00028D   A4           MUL     AB
+   \   00028E   2A           ADD     A,R2
+   \   00028F   F9           MOV     R1,A
+   \   000290   7426         MOV     A,#0x26
+   \   000292   12....       LCALL   ?XSTACK_DISP0_8
+   \   000295   E0           MOVX    A,@DPTR
+   \   000296   28           ADD     A,R0
+   \   000297   F8           MOV     R0,A
+   \   000298   A3           INC     DPTR
+   \   000299   E0           MOVX    A,@DPTR
+   \   00029A   39           ADDC    A,R1
+   \   00029B   F9           MOV     R1,A
+   \   00029C   E8           MOV     A,R0
+   \   00029D   24FC         ADD     A,#-0x4
+   \   00029F   F582         MOV     DPL,A
+   \   0002A1   E9           MOV     A,R1
+   \   0002A2   34FF         ADDC    A,#-0x1
+   \   0002A4   F583         MOV     DPH,A
+   \   0002A6   78..         MOV     R0,#?V0 + 8
+   \   0002A8   12....       LCALL   ?L_MOV_X
+   \   0002AB   78..         MOV     R0,#?V0 + 4
+   \   0002AD   79..         MOV     R1,#?V0 + 8
+   \   0002AF   12....       LCALL   ?FLT_SUB
+   \   0002B2   85..82       MOV     DPL,?XSP + 0
+   \   0002B5   85..83       MOV     DPH,?XSP + 1
+   \   0002B8   E0           MOVX    A,@DPTR
+   \   0002B9   F8           MOV     R0,A
+   \   0002BA   A3           INC     DPTR
+   \   0002BB   E0           MOVX    A,@DPTR
+   \   0002BC   F9           MOV     R1,A
+   \   0002BD   E8           MOV     A,R0
+   \   0002BE   75F004       MOV     B,#0x4
+   \   0002C1   A4           MUL     AB
+   \   0002C2   C8           XCH     A,R0
+   \   0002C3   AAF0         MOV     R2,B
+   \   0002C5   75F000       MOV     B,#0x0
+   \   0002C8   A4           MUL     AB
+   \   0002C9   2A           ADD     A,R2
+   \   0002CA   FA           MOV     R2,A
+   \   0002CB   75F004       MOV     B,#0x4
+   \   0002CE   E9           MOV     A,R1
+   \   0002CF   A4           MUL     AB
+   \   0002D0   2A           ADD     A,R2
+   \   0002D1   F9           MOV     R1,A
+   \   0002D2   7426         MOV     A,#0x26
+   \   0002D4   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002D7   E0           MOVX    A,@DPTR
+   \   0002D8   28           ADD     A,R0
+   \   0002D9   F8           MOV     R0,A
+   \   0002DA   A3           INC     DPTR
+   \   0002DB   E0           MOVX    A,@DPTR
+   \   0002DC   39           ADDC    A,R1
+   \   0002DD   F9           MOV     R1,A
+   \   0002DE   E8           MOV     A,R0
+   \   0002DF   24FC         ADD     A,#-0x4
+   \   0002E1   F582         MOV     DPL,A
+   \   0002E3   E9           MOV     A,R1
+   \   0002E4   34FF         ADDC    A,#-0x1
+   \   0002E6   F583         MOV     DPH,A
+   \   0002E8   78..         MOV     R0,#?V0 + 12
+   \   0002EA   12....       LCALL   ?L_MOV_X
+   \   0002ED   EE           MOV     A,R6
+   \   0002EE   F8           MOV     R0,A
+   \   0002EF   EF           MOV     A,R7
+   \   0002F0   F9           MOV     R1,A
+   \   0002F1   E8           MOV     A,R0
+   \   0002F2   75F004       MOV     B,#0x4
+   \   0002F5   A4           MUL     AB
+   \   0002F6   C8           XCH     A,R0
+   \   0002F7   AAF0         MOV     R2,B
+   \   0002F9   75F000       MOV     B,#0x0
+   \   0002FC   A4           MUL     AB
+   \   0002FD   2A           ADD     A,R2
+   \   0002FE   FA           MOV     R2,A
+   \   0002FF   75F004       MOV     B,#0x4
+   \   000302   E9           MOV     A,R1
+   \   000303   A4           MUL     AB
+   \   000304   2A           ADD     A,R2
+   \   000305   F9           MOV     R1,A
+   \   000306   7426         MOV     A,#0x26
+   \   000308   12....       LCALL   ?XSTACK_DISP0_8
+   \   00030B   E0           MOVX    A,@DPTR
+   \   00030C   28           ADD     A,R0
+   \   00030D   F8           MOV     R0,A
+   \   00030E   A3           INC     DPTR
+   \   00030F   E0           MOVX    A,@DPTR
+   \   000310   39           ADDC    A,R1
+   \   000311   F9           MOV     R1,A
+   \   000312   E8           MOV     A,R0
+   \   000313   24FC         ADD     A,#-0x4
+   \   000315   F582         MOV     DPL,A
+   \   000317   E9           MOV     A,R1
+   \   000318   34FF         ADDC    A,#-0x1
+   \   00031A   F583         MOV     DPH,A
+   \   00031C   78..         MOV     R0,#?V0 + 8
+   \   00031E   12....       LCALL   ?L_MOV_X
+   \   000321   78..         MOV     R0,#?V0 + 12
+   \   000323   79..         MOV     R1,#?V0 + 8
+   \   000325   12....       LCALL   ?FLT_SUB
+   \   000328   78..         MOV     R0,#?V0 + 4
+   \   00032A   79..         MOV     R1,#?V0 + 12
+   \   00032C   12....       LCALL   ?FLT_MUL
+   \   00032F   D0..         POP     ?V0 + 11
+   \   000331   D0..         POP     ?V0 + 10
+   \   000333   D0..         POP     ?V0 + 9
+   \   000335   D0..         POP     ?V0 + 8
+   \   000337   78..         MOV     R0,#?V0 + 8
+   \   000339   79..         MOV     R1,#?V0 + 4
+   \   00033B   12....       LCALL   ?FLT_ADD
+   \   00033E   85....       MOV     ?V0 + 0,?V0 + 8
+   \   000341   85....       MOV     ?V0 + 1,?V0 + 9
+   \   000344   85....       MOV     ?V0 + 2,?V0 + 10
+   \   000347   85....       MOV     ?V0 + 3,?V0 + 11
+    302               // d+=pow((AnchorY[localID-1]-AnchorY[index-1]),2);
+    303               // d+=pow((AnchorZ[localID-1]-AnchorZ[index-1]),2);
+    304                d=pow(d,0.5);
+   \   00034A                ; Setup parameters for call to function pow
+   \   00034A   90....       MOV     DPTR,#__Constant_3f000000
+   \   00034D   12....       LCALL   ?PUSH_XSTACK8_X_FOUR
+   \   000350   AA..         MOV     R2,?V0 + 0
+   \   000352   AB..         MOV     R3,?V0 + 1
+   \   000354   AC..         MOV     R4,?V0 + 2
+   \   000356   AD..         MOV     R5,?V0 + 3
+   \   000358   12....       LCALL   ??pow?relay
+   \   00035B   7404         MOV     A,#0x4
+   \   00035D   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000360   8A..         MOV     ?V0 + 4,R2
+   \   000362   8B..         MOV     ?V0 + 5,R3
+   \   000364   8C..         MOV     ?V0 + 6,R4
+   \   000366   8D..         MOV     ?V0 + 7,R5
+   \   000368   85....       MOV     ?V0 + 0,?V0 + 4
+   \   00036B   85....       MOV     ?V0 + 1,?V0 + 5
+   \   00036E   85....       MOV     ?V0 + 2,?V0 + 6
+   \   000371   85....       MOV     ?V0 + 3,?V0 + 7
+    305                if(d!=1)
+   \   000374   90....       MOV     DPTR,#__Constant_3f800000
+   \   000377   78..         MOV     R0,#?V0 + 4
+   \   000379   12....       LCALL   ?L_MOV_X
+   \   00037C   78..         MOV     R0,#?V0 + 0
+   \   00037E   79..         MOV     R1,#?V0 + 4
+   \   000380   12....       LCALL   ?FLT_EQ
+   \   000383   7003         JNZ     $+5
+   \   000385   02....       LJMP    ??calibrationN_2 & 0xFFFF
+    306                  n=(rssivalue_f[index-1]-A[index-1])/10/(log10(d));
+   \   000388   EE           MOV     A,R6
+   \   000389   F8           MOV     R0,A
+   \   00038A   EF           MOV     A,R7
+   \   00038B   F9           MOV     R1,A
+   \   00038C   E8           MOV     A,R0
+   \   00038D   75F004       MOV     B,#0x4
+   \   000390   A4           MUL     AB
+   \   000391   C8           XCH     A,R0
+   \   000392   AAF0         MOV     R2,B
+   \   000394   75F000       MOV     B,#0x0
+   \   000397   A4           MUL     AB
+   \   000398   2A           ADD     A,R2
+   \   000399   FA           MOV     R2,A
+   \   00039A   75F004       MOV     B,#0x4
+   \   00039D   E9           MOV     A,R1
+   \   00039E   A4           MUL     AB
+   \   00039F   2A           ADD     A,R2
+   \   0003A0   F9           MOV     R1,A
+   \   0003A1   741E         MOV     A,#0x1e
+   \   0003A3   12....       LCALL   ?XSTACK_DISP0_8
+   \   0003A6   E0           MOVX    A,@DPTR
+   \   0003A7   28           ADD     A,R0
+   \   0003A8   F8           MOV     R0,A
+   \   0003A9   A3           INC     DPTR
+   \   0003AA   E0           MOVX    A,@DPTR
+   \   0003AB   39           ADDC    A,R1
+   \   0003AC   F9           MOV     R1,A
+   \   0003AD   E8           MOV     A,R0
+   \   0003AE   24FC         ADD     A,#-0x4
+   \   0003B0   F582         MOV     DPL,A
+   \   0003B2   E9           MOV     A,R1
+   \   0003B3   34FF         ADDC    A,#-0x1
+   \   0003B5   F583         MOV     DPH,A
+   \   0003B7   78..         MOV     R0,#?V0 + 4
+   \   0003B9   12....       LCALL   ?L_MOV_X
+   \   0003BC   EE           MOV     A,R6
+   \   0003BD   F8           MOV     R0,A
+   \   0003BE   EF           MOV     A,R7
+   \   0003BF   F9           MOV     R1,A
+   \   0003C0   E8           MOV     A,R0
+   \   0003C1   75F004       MOV     B,#0x4
+   \   0003C4   A4           MUL     AB
+   \   0003C5   C8           XCH     A,R0
+   \   0003C6   AAF0         MOV     R2,B
+   \   0003C8   75F000       MOV     B,#0x0
+   \   0003CB   A4           MUL     AB
+   \   0003CC   2A           ADD     A,R2
+   \   0003CD   FA           MOV     R2,A
+   \   0003CE   75F004       MOV     B,#0x4
+   \   0003D1   E9           MOV     A,R1
+   \   0003D2   A4           MUL     AB
+   \   0003D3   2A           ADD     A,R2
+   \   0003D4   F9           MOV     R1,A
+   \   0003D5   7428         MOV     A,#0x28
+   \   0003D7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0003DA   E0           MOVX    A,@DPTR
+   \   0003DB   28           ADD     A,R0
+   \   0003DC   F8           MOV     R0,A
+   \   0003DD   A3           INC     DPTR
+   \   0003DE   E0           MOVX    A,@DPTR
+   \   0003DF   39           ADDC    A,R1
+   \   0003E0   F9           MOV     R1,A
+   \   0003E1   E8           MOV     A,R0
+   \   0003E2   24FC         ADD     A,#-0x4
+   \   0003E4   F582         MOV     DPL,A
+   \   0003E6   E9           MOV     A,R1
+   \   0003E7   34FF         ADDC    A,#-0x1
+   \   0003E9   F583         MOV     DPH,A
+   \   0003EB   78..         MOV     R0,#?V0 + 8
+   \   0003ED   12....       LCALL   ?L_MOV_X
+   \   0003F0   78..         MOV     R0,#?V0 + 4
+   \   0003F2   79..         MOV     R1,#?V0 + 8
+   \   0003F4   12....       LCALL   ?FLT_SUB
+   \   0003F7   90....       MOV     DPTR,#__Constant_41200000
+   \   0003FA   78..         MOV     R0,#?V0 + 8
+   \   0003FC   12....       LCALL   ?L_MOV_X
+   \   0003FF   78..         MOV     R0,#?V0 + 4
+   \   000401   79..         MOV     R1,#?V0 + 8
+   \   000403   12....       LCALL   ?FLT_DIV
+   \   000406                ; Setup parameters for call to function log10
+   \   000406   AA..         MOV     R2,?V0 + 0
+   \   000408   AB..         MOV     R3,?V0 + 1
+   \   00040A   AC..         MOV     R4,?V0 + 2
+   \   00040C   AD..         MOV     R5,?V0 + 3
+   \   00040E   12....       LCALL   ??log10?relay
+   \   000411   8A..         MOV     ?V0 + 8,R2
+   \   000413   8B..         MOV     ?V0 + 9,R3
+   \   000415   8C..         MOV     ?V0 + 10,R4
+   \   000417   8D..         MOV     ?V0 + 11,R5
+   \   000419   78..         MOV     R0,#?V0 + 4
+   \   00041B   79..         MOV     R1,#?V0 + 8
+   \   00041D   12....       LCALL   ?FLT_DIV
+   \   000420   7402         MOV     A,#0x2
+   \   000422   12....       LCALL   ?XSTACK_DISP0_8
+   \   000425   78..         MOV     R0,#?V0 + 4
+   \   000427   12....       LCALL   ?L_MOV_TO_X
+   \   00042A   02....       LJMP    ??calibrationN_3 & 0xFFFF
+    307                else
+    308                  n=nValue[localID-1];
+   \                     ??calibrationN_2:
+   \   00042D   85..82       MOV     DPL,?XSP + 0
+   \   000430   85..83       MOV     DPH,?XSP + 1
+   \   000433   E0           MOVX    A,@DPTR
+   \   000434   F8           MOV     R0,A
+   \   000435   A3           INC     DPTR
+   \   000436   E0           MOVX    A,@DPTR
+   \   000437   F9           MOV     R1,A
+   \   000438   E8           MOV     A,R0
+   \   000439   75F004       MOV     B,#0x4
+   \   00043C   A4           MUL     AB
+   \   00043D   C8           XCH     A,R0
+   \   00043E   AAF0         MOV     R2,B
+   \   000440   75F000       MOV     B,#0x0
+   \   000443   A4           MUL     AB
+   \   000444   2A           ADD     A,R2
+   \   000445   FA           MOV     R2,A
+   \   000446   75F004       MOV     B,#0x4
+   \   000449   E9           MOV     A,R1
+   \   00044A   A4           MUL     AB
+   \   00044B   2A           ADD     A,R2
+   \   00044C   F9           MOV     R1,A
+   \   00044D   7420         MOV     A,#0x20
+   \   00044F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000452   E0           MOVX    A,@DPTR
+   \   000453   28           ADD     A,R0
+   \   000454   F8           MOV     R0,A
+   \   000455   A3           INC     DPTR
+   \   000456   E0           MOVX    A,@DPTR
+   \   000457   39           ADDC    A,R1
+   \   000458   F9           MOV     R1,A
+   \   000459   E8           MOV     A,R0
+   \   00045A   24FC         ADD     A,#-0x4
+   \   00045C   F582         MOV     DPL,A
+   \   00045E   E9           MOV     A,R1
+   \   00045F   34FF         ADDC    A,#-0x1
+   \   000461   F583         MOV     DPH,A
+   \   000463   12....       LCALL   ?XLOAD_R2345
+   \   000466   7402         MOV     A,#0x2
+   \   000468   12....       LCALL   ?XSTACK_DISP0_8
+   \   00046B   12....       LCALL   ?XSTORE_R2345
+   \   00046E   8041         SJMP    ??calibrationN_3
+    309            }
+    310            else
+    311            {
+    312              n=nValue[localID-1];
+   \                     ??calibrationN_1:
+   \   000470   85..82       MOV     DPL,?XSP + 0
+   \   000473   85..83       MOV     DPH,?XSP + 1
+   \   000476   E0           MOVX    A,@DPTR
+   \   000477   F8           MOV     R0,A
+   \   000478   A3           INC     DPTR
+   \   000479   E0           MOVX    A,@DPTR
+   \   00047A   F9           MOV     R1,A
+   \   00047B   E8           MOV     A,R0
+   \   00047C   75F004       MOV     B,#0x4
+   \   00047F   A4           MUL     AB
+   \   000480   C8           XCH     A,R0
+   \   000481   AAF0         MOV     R2,B
+   \   000483   75F000       MOV     B,#0x0
+   \   000486   A4           MUL     AB
+   \   000487   2A           ADD     A,R2
+   \   000488   FA           MOV     R2,A
+   \   000489   75F004       MOV     B,#0x4
+   \   00048C   E9           MOV     A,R1
+   \   00048D   A4           MUL     AB
+   \   00048E   2A           ADD     A,R2
+   \   00048F   F9           MOV     R1,A
+   \   000490   7420         MOV     A,#0x20
+   \   000492   12....       LCALL   ?XSTACK_DISP0_8
+   \   000495   E0           MOVX    A,@DPTR
+   \   000496   28           ADD     A,R0
+   \   000497   F8           MOV     R0,A
+   \   000498   A3           INC     DPTR
+   \   000499   E0           MOVX    A,@DPTR
+   \   00049A   39           ADDC    A,R1
+   \   00049B   F9           MOV     R1,A
+   \   00049C   E8           MOV     A,R0
+   \   00049D   24FC         ADD     A,#-0x4
+   \   00049F   F582         MOV     DPL,A
+   \   0004A1   E9           MOV     A,R1
+   \   0004A2   34FF         ADDC    A,#-0x1
+   \   0004A4   F583         MOV     DPH,A
+   \   0004A6   12....       LCALL   ?XLOAD_R2345
+   \   0004A9   7402         MOV     A,#0x2
+   \   0004AB   12....       LCALL   ?XSTACK_DISP0_8
+   \   0004AE   12....       LCALL   ?XSTORE_R2345
+    313            }
+    314            return n;
+   \                     ??calibrationN_3:
+   \   0004B1   7402         MOV     A,#0x2
+   \   0004B3   12....       LCALL   ?XSTACK_DISP0_8
+   \   0004B6   12....       LCALL   ?XLOAD_R2345
+   \   0004B9   7406         MOV     A,#0x6
+   \   0004BB   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0004BE   7F10         MOV     R7,#0x10
+   \   0004C0   02....       LJMP    ?BANKED_LEAVE_XDATA
+    315          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??printRSSIandLQI?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    printRSSIandLQI
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SampleApp_MinMax_localization?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SampleApp_MinMax_localization
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SampleApp_WCL_localization?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SampleApp_WCL_localization
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??moving_average?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    moving_average
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??moving_average_f?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    moving_average_f
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??gaussianfilter?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    gaussianfilter
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??averagefilter?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    averagefilter
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??calibrationN?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    calibrationN
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "RSSI:">`:
+   \   000000   52535349     DB "RSSI:"
+   \            3A00    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {(0.0F)}>`:
+   \   000000   00000000     DD 0H
+   \   000004   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   00000C   00000000     DB 0, 0, 0, 0
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {(0.0F), (0.0F), (0.0F), (0.0F)}>`:
+   \   000000   00000000     DD 0H
+   \   000004   00000000     DD 0H
+   \   000008   00000000     DD 0H
+   \   00000C   00000000     DD 0H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_40800000:
+   \   000000   00008040     DD 40800000H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_41200000:
+   \   000000   00002041     DD 41200000H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3f000000:
+   \   000000   0000003F     DD 3F000000H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_40000000:
+   \   000000   00000040     DD 40000000H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3f800000:
+   \   000000   0000803F     DD 3F800000H
+    316          
+    317          
+    318          /*********************************************************************
+    319          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       4      0     82  SampleApp_MinMax_localization
+                          0 0 68 -> pow
+       2      0     84  SampleApp_WCL_localization
+                          0 0 74 -> pow
+       0      0     26  averagefilter
+       4      0     46  calibrationN
+                          0 0 30 -> log10
+                          0 0 34 -> pow
+       2      0     42  gaussianfilter
+       1      0     24  moving_average
+       0      0     30  moving_average_f
+       1      0     13  printRSSIandLQI
+                          0 0 13 -> HalUARTWrite
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ?<Constant "RSSI:">
+      16  ?<Constant {(0.0F), (0.0F), (0.0F), (0.0F)}>
+      16  ?<Constant {(0.0F)}>
+       6  ??SampleApp_MinMax_localization?relay
+       6  ??SampleApp_WCL_localization?relay
+       6  ??averagefilter?relay
+       6  ??calibrationN?relay
+       6  ??gaussianfilter?relay
+       6  ??moving_average?relay
+       6  ??moving_average_f?relay
+       6  ??printRSSIandLQI?relay
+    1854  SampleApp_MinMax_localization
+    1156  SampleApp_WCL_localization
+       4  __Constant_3f000000
+       4  __Constant_3f800000
+       4  __Constant_40000000
+       4  __Constant_40800000
+       4  __Constant_41200000
+     181  averagefilter
+    1219  calibrationN
+     682  gaussianfilter
+     279  moving_average
+     331  moving_average_f
+     163  printRSSIandLQI
+
+ 
+ 5 865 bytes in segment BANKED_CODE
+    48 bytes in segment BANK_RELAYS
+    58 bytes in segment XDATA_ROM_C
+ 
+ 5 913 bytes of CODE  memory
+    38 bytes of CONST memory (+ 20 bytes shared)
+
+Errors: none
+Warnings: none
