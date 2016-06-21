@@ -207,7 +207,7 @@ float locationZ[4]={0.0f, 0.0f, 0.0f, 0.0f};    // quadrotor position in z direc
 //LParameter tempParameter;                       // structure parameter, which is not in used
 
 // device id
-int DeviceID=2;                                 // device id to identify the device
+int DeviceID=1;                                 // device id to identify the device
                                                 // for coordinator meanless; for router is the anchor's id, except id 6,
                                                 // which is preparing for tester; for quadrotor, it is the id.
 /*********************************************************************

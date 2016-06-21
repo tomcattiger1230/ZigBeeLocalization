@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             18/Apr/2016  16:07:30 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             21/Jun/2016  17:02:22 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -10,15 +10,16 @@
 #    Constant location  =  data_rom                                           #
 #    Dptr setup         =  1,16                                               #
 #                                                                             #
-#    Source file        =  F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Samp #
-#                          leApp\Source\SampleApp.c                           #
-#    Command line       =  -f F:\myCloud\ZigbeeTest\Projects\zstack\Samples\S #
-#                          ampleApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev #
-#                          .cfg (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS)  #
-#                          -f F:\myCloud\ZigbeeTest\Projects\zstack\Samples\S #
-#                          ampleApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfi #
-#                          g.cfg (-DSECURE=0 -DZG_SECURE_DYNAMIC=0            #
-#                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800          #
+#    Source file        =  F:\myCloud\ZigBeeLocalization\Projects\zstack\Samp #
+#                          les\SampleApp\Source\SampleApp.c                   #
+#    Command line       =  -f F:\myCloud\ZigBeeLocalization\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\Tools\CC2530DB\ #
+#                          f8wEndev.cfg (-DCPU32MHZ -DROOT=__near_func        #
+#                          -DBLINK_LEDS) -f F:\myCloud\ZigBeeLocalization\Pro #
+#                          jects\zstack\Samples\SampleApp\CC2530DB\..\..\..\T #
+#                          ools\CC2530DB\f8wConfig.cfg (-DSECURE=0            #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
 #                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
 #                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
 #                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
@@ -37,80 +38,87 @@
 #                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=TRUE      #
 #                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
 #                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
-#                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Samp #
-#                          leApp\Source\SampleApp.c -D ZIGBEEPRO -D           #
+#                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Samp #
+#                          les\SampleApp\Source\SampleApp.c -D ZIGBEEPRO -D   #
 #                          NWK_AUTO_POLL -D ZTOOL_P1 -D xMT_TASK -D           #
 #                          xMT_SYS_FUNC -D xMT_ZDO_FUNC -D                    #
-#                          LCD_SUPPORTED=DEBUG -lC F:\myCloud\ZigbeeTest\Proj #
-#                          ects\zstack\Samples\SampleApp\CC2530DB\QuadRotorOn #
-#                          boardPro\List\ -lA F:\myCloud\ZigbeeTest\Projects\ #
-#                          zstack\Samples\SampleApp\CC2530DB\QuadRotorOnboard #
-#                          Pro\List\ --diag_suppress Pe001,Pa010 -o           #
-#                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Samp #
-#                          leApp\CC2530DB\QuadRotorOnboardPro\Obj\ -e         #
-#                          --debug --core=plain --dptr=16,1                   #
+#                          LCD_SUPPORTED=DEBUG -lC F:\myCloud\ZigBeeLocalizat #
+#                          ion\Projects\zstack\Samples\SampleApp\CC2530DB\Qua #
+#                          dRotorOnboardPro\List\ -lA                         #
+#                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Samp #
+#                          les\SampleApp\CC2530DB\QuadRotorOnboardPro\List\   #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Samp #
+#                          les\SampleApp\CC2530DB\QuadRotorOnboardPro\Obj\    #
+#                          -e --debug --core=plain --dptr=16,1                #
 #                          --data_model=large --code_model=banked             #
 #                          --calling_convention=xdata_reentrant               #
 #                          --place_constants=data_rom --nr_virtual_regs 16    #
-#                          -I F:\myCloud\ZigbeeTest\Projects\zstack\Samples\S #
-#                          ampleApp\CC2530DB\ -I F:\myCloud\ZigbeeTest\Projec #
-#                          ts\zstack\Samples\SampleApp\CC2530DB\..\SOURCE\    #
-#                          -I F:\myCloud\ZigbeeTest\Projects\zstack\Samples\S #
-#                          ampleApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I      #
-#                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Samp #
-#                          leApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\ -I    #
-#                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Samp #
-#                          leApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLU #
-#                          DE\ -I F:\myCloud\ZigbeeTest\Projects\zstack\Sampl #
-#                          es\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\HA #
-#                          L\TARGET\CC2530EB\ -I F:\myCloud\ZigbeeTest\Projec #
-#                          ts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\. #
-#                          .\COMPONENTS\OSAL\MCU\CCSOC\ -I                    #
-#                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Samp #
-#                          leApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCL #
-#                          UDE\ -I F:\myCloud\ZigbeeTest\Projects\zstack\Samp #
+#                          -I F:\myCloud\ZigBeeLocalization\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\ -I                      #
+#                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Samp #
+#                          les\SampleApp\CC2530DB\..\SOURCE\ -I               #
+#                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Samp #
+#                          les\SampleApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\    #
+#                          -I F:\myCloud\ZigBeeLocalization\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENT #
+#                          S\MT\ -I F:\myCloud\ZigBeeLocalization\Projects\zs #
+#                          tack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COM #
+#                          PONENTS\HAL\INCLUDE\ -I F:\myCloud\ZigBeeLocalizat #
+#                          ion\Projects\zstack\Samples\SampleApp\CC2530DB\..\ #
+#                          ..\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\ -I     #
+#                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Samp #
+#                          les\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\O #
+#                          SAL\MCU\CCSOC\ -I F:\myCloud\ZigBeeLocalization\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\OSAL\INCLUDE\ -I                  #
+#                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Samp #
 #                          les\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\S #
-#                          TACK\AF\ -I F:\myCloud\ZigbeeTest\Projects\zstack\ #
-#                          Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPONEN #
-#                          TS\STACK\NWK\ -I F:\myCloud\ZigbeeTest\Projects\zs #
-#                          tack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COM #
-#                          PONENTS\STACK\SEC\ -I F:\myCloud\ZigbeeTest\Projec #
-#                          ts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\. #
-#                          .\COMPONENTS\STACK\SAPI\ -I                        #
-#                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Samp #
-#                          leApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SYS #
-#                          \ -I F:\myCloud\ZigbeeTest\Projects\zstack\Samples #
-#                          \SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\STAC #
-#                          K\ZDO\ -I F:\myCloud\ZigbeeTest\Projects\zstack\Sa #
-#                          mples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS #
-#                          \ZMAC\F8W\ -I F:\myCloud\ZigbeeTest\Projects\zstac #
-#                          k\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPON #
-#                          ENTS\ZMAC\ -I F:\myCloud\ZigbeeTest\Projects\zstac #
-#                          k\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPON #
-#                          ENTS\SERVICES\SADDR\ -I F:\myCloud\ZigbeeTest\Proj #
-#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
-#                          \..\COMPONENTS\SERVICES\SDATA\ -I                  #
-#                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Samp #
-#                          leApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLU #
-#                          DE\ -I F:\myCloud\ZigbeeTest\Projects\zstack\Sampl #
-#                          es\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\MA #
-#                          C\HIGH_LEVEL\ -I F:\myCloud\ZigbeeTest\Projects\zs #
-#                          tack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COM #
-#                          PONENTS\MAC\LOW_LEVEL\srf04\ -I                    #
-#                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Samp #
-#                          leApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_L #
-#                          EVEL\srf04\SINGLE_CHIP\ -Ohz --require_prototypes  #
-#    List file          =  F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Samp #
-#                          leApp\CC2530DB\QuadRotorOnboardPro\List\SampleApp. #
-#                          lst                                                #
-#    Object file        =  F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Samp #
-#                          leApp\CC2530DB\QuadRotorOnboardPro\Obj\SampleApp.r #
-#                          51                                                 #
+#                          TACK\AF\ -I F:\myCloud\ZigBeeLocalization\Projects #
+#                          \zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\ #
+#                          COMPONENTS\STACK\NWK\ -I                           #
+#                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Samp #
+#                          les\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\S #
+#                          TACK\SEC\ -I F:\myCloud\ZigBeeLocalization\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \COMPONENTS\STACK\SAPI\ -I                         #
+#                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Samp #
+#                          les\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\S #
+#                          TACK\SYS\ -I F:\myCloud\ZigBeeLocalization\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \COMPONENTS\STACK\ZDO\ -I                          #
+#                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Samp #
+#                          les\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\Z #
+#                          MAC\F8W\ -I F:\myCloud\ZigBeeLocalization\Projects #
+#                          \zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\ #
+#                          COMPONENTS\ZMAC\ -I F:\myCloud\ZigBeeLocalization\ #
+#                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\. #
+#                          .\..\..\COMPONENTS\SERVICES\SADDR\ -I              #
+#                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Samp #
+#                          les\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\S #
+#                          ERVICES\SDATA\ -I F:\myCloud\ZigBeeLocalization\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\INCLUDE\ -I                   #
+#                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Samp #
+#                          les\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\M #
+#                          AC\HIGH_LEVEL\ -I F:\myCloud\ZigBeeLocalization\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I           #
+#                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Samp #
+#                          les\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\M #
+#                          AC\LOW_LEVEL\srf04\SINGLE_CHIP\ -Ohz               #
+#                          --require_prototypes                               #
+#    List file          =  F:\myCloud\ZigBeeLocalization\Projects\zstack\Samp #
+#                          les\SampleApp\CC2530DB\QuadRotorOnboardPro\List\Sa #
+#                          mpleApp.lst                                        #
+#    Object file        =  F:\myCloud\ZigBeeLocalization\Projects\zstack\Samp #
+#                          les\SampleApp\CC2530DB\QuadRotorOnboardPro\Obj\Sam #
+#                          pleApp.r51                                         #
 #                                                                             #
 #                                                                             #
 ###############################################################################
 
-F:\myCloud\ZigbeeTest\Projects\zstack\Samples\SampleApp\Source\SampleApp.c
+F:\myCloud\ZigBeeLocalization\Projects\zstack\Samples\SampleApp\Source\SampleApp.c
       1          /**************************************************************************************************
       2            Filename:       SampleApp.c
       3            Revised:        $Date: 2009-03-18 15:56:27 -0700 (Wed, 18 Mar 2009) $
@@ -637,7 +645,7 @@ F:\myCloud\ZigbeeTest\Projects\zstack\Samples\SampleApp\Source\SampleApp.c
     209          // device id
 
    \                                 In  segment XDATA_I, align 1, keep-with-next
-    210          int DeviceID=2;                                 // device id to identify the device
+    210          int DeviceID=1;                                 // device id to identify the device
    \                     DeviceID:
    \   000000                DS 2
    \   000002                REQUIRE `?<Initializer for DeviceID>`
@@ -5063,7 +5071,7 @@ F:\myCloud\ZigbeeTest\Projects\zstack\Samples\SampleApp\Source\SampleApp.c
 
    \                                 In  segment XDATA_ID, align 1, keep-with-next
    \                     `?<Initializer for DeviceID>`:
-   \   000000   0200         DW 2
+   \   000000   0100         DW 1
 
    \                                 In  segment BANK_RELAYS, align 1
    \                     ??SampleApp_Init?relay:

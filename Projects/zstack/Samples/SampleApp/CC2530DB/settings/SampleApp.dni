@@ -1,5 +1,5 @@
 [DebugChecksum]
-Checksum=-2065389502
+Checksum=757018189
 [DisAssemblyWindow]
 NumStates=_ 1
 State 1=_ 1
@@ -44,5 +44,7 @@ Count=0
 Stop timers on halt=0
 Leave target running=1
 [Aliases]
-Count=0
+A0=_ "C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Components\zmac\f8w\zmac.c" ""
+A1=_ "C:\Users\ArnoldWorkStation\Desktop\ZigbeeTest\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+Count=2
 SuppressDialog=0

@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                            /
-// IAR C/C++ Compiler V8.20.2.41139 for 8051            14/Apr/2016  15:07:22 /
+// IAR C/C++ Compiler V8.20.2.41139 for 8051            21/Jun/2016  17:00:55 /
 // Copyright 2004-2013 IAR Systems AB.                                        /
 //                                                                            /
 //    Core               =  plain                                             /
@@ -10,16 +10,16 @@
 //    Constant location  =  data_rom                                          /
 //    Dptr setup         =  1,16                                              /
 //                                                                            /
-//    Source file        =  F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Sam /
-//                          pleApp\Source\SampleApp.c                         /
-//    Command line       =  -f F:\myCloud\ZigbeeTest\Projects\zstack\Samples\ /
-//                          SampleApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoo /
-//                          rd.cfg (-DCPU32MHZ -DROOT=__near_func             /
+//    Source file        =  F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\Source\SampleApp.c                 /
+//    Command line       =  -f F:\myCloud\ZigBeeLocalization\Projects\zstack\ /
+//                          Samples\SampleApp\CC2530DB\..\..\..\Tools\CC2530D /
+//                          B\f8wCoord.cfg (-DCPU32MHZ -DROOT=__near_func     /
 //                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                  /
 //                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f      /
-//                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Sam /
-//                          pleApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig /
-//                          .cfg (-DSECURE=0 -DZG_SECURE_DYNAMIC=0            /
+//                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\..\..\..\Tools\CC2530DB\f /
+//                          8wConfig.cfg (-DSECURE=0 -DZG_SECURE_DYNAMIC=0    /
 //                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800         /
 //                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                      /
 //                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
@@ -39,77 +39,83 @@
 //                          "-DCONST=const __code" -DGENERIC=__generic        /
 //                          -DRFD_RCVC_ALWAYS_ON=TRUE -DPOLL_RATE=1000        /
 //                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
-//                          -DREJOIN_POLL_RATE=440 F:\myCloud\ZigbeeTest\Proj /
-//                          ects\zstack\Samples\SampleApp\Source\SampleApp.c  /
-//                          -D ZIGBEEPRO -D ZTOOL_P1 -D xMT_TASK -D           /
+//                          -DREJOIN_POLL_RATE=440 F:\myCloud\ZigBeeLocalizat /
+//                          ion\Projects\zstack\Samples\SampleApp\Source\Samp /
+//                          leApp.c -D ZIGBEEPRO -D ZTOOL_P1 -D xMT_TASK -D   /
 //                          xMT_SYS_FUNC -D xMT_ZDO_FUNC -D                   /
 //                          LCD_SUPPORTED=DEBUG -lC                           /
-//                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Sam /
-//                          pleApp\CC2530DB\PCCoordinatorEBPro\List\ -lA      /
-//                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Sam /
-//                          pleApp\CC2530DB\PCCoordinatorEBPro\List\          /
-//                          --diag_suppress Pe001,Pa010 -o                    /
-//                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Sam /
-//                          pleApp\CC2530DB\PCCoordinatorEBPro\Obj\ -e        /
-//                          --no_cse --no_unroll --no_inline                  /
+//                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\PCCoordinatorEBPro\List\  /
+//                          -lA F:\myCloud\ZigBeeLocalization\Projects\zstack /
+//                          \Samples\SampleApp\CC2530DB\PCCoordinatorEBPro\Li /
+//                          st\ --diag_suppress Pe001,Pa010 -o                /
+//                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\PCCoordinatorEBPro\Obj\   /
+//                          -e --no_cse --no_unroll --no_inline               /
 //                          --no_code_motion --no_tbaa --debug --core=plain   /
 //                          --dptr=16,1 --data_model=large                    /
 //                          --code_model=banked --calling_convention=xdata_re /
 //                          entrant --place_constants=data_rom                /
 //                          --nr_virtual_regs 16 -I                           /
-//                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Sam /
-//                          pleApp\CC2530DB\ -I F:\myCloud\ZigbeeTest\Project /
-//                          s\zstack\Samples\SampleApp\CC2530DB\..\SOURCE\    /
-//                          -I F:\myCloud\ZigbeeTest\Projects\zstack\Samples\ /
-//                          SampleApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I    /
-//                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Sam /
-//                          pleApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\ -I  /
-//                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Sam /
-//                          pleApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INC /
-//                          LUDE\ -I F:\myCloud\ZigbeeTest\Projects\zstack\Sa /
-//                          mples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENT /
-//                          S\HAL\TARGET\CC2530EB\ -I                         /
-//                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Sam /
-//                          pleApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MC /
-//                          U\CCSOC\ -I F:\myCloud\ZigbeeTest\Projects\zstack /
-//                          \Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPON /
-//                          ENTS\OSAL\INCLUDE\ -I F:\myCloud\ZigbeeTest\Proje /
+//                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\ -I                       /
+//                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\..\SOURCE\ -I             /
+//                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\  /
+//                          -I F:\myCloud\ZigBeeLocalization\Projects\zstack\ /
+//                          Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPONE /
+//                          NTS\MT\ -I F:\myCloud\ZigBeeLocalization\Projects /
+//                          \zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. /
+//                          \COMPONENTS\HAL\INCLUDE\ -I                       /
+//                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS /
+//                          \HAL\TARGET\CC2530EB\ -I                          /
+//                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS /
+//                          \OSAL\MCU\CCSOC\ -I F:\myCloud\ZigBeeLocalization /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS /
+//                          \STACK\AF\ -I F:\myCloud\ZigBeeLocalization\Proje /
 //                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. /
-//                          \..\COMPONENTS\STACK\AF\ -I                       /
-//                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Sam /
-//                          pleApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\N /
-//                          WK\ -I F:\myCloud\ZigbeeTest\Projects\zstack\Samp /
-//                          les\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\ /
-//                          STACK\SEC\ -I F:\myCloud\ZigbeeTest\Projects\zsta /
-//                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP /
-//                          ONENTS\STACK\SAPI\ -I F:\myCloud\ZigbeeTest\Proje /
+//                          \..\COMPONENTS\STACK\NWK\ -I                      /
+//                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS /
+//                          \STACK\SEC\ -I F:\myCloud\ZigBeeLocalization\Proj /
+//                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\. /
+//                          .\..\COMPONENTS\STACK\SAPI\ -I                    /
+//                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS /
+//                          \STACK\SYS\ -I F:\myCloud\ZigBeeLocalization\Proj /
+//                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\. /
+//                          .\..\COMPONENTS\STACK\ZDO\ -I                     /
+//                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS /
+//                          \ZMAC\F8W\ -I F:\myCloud\ZigBeeLocalization\Proje /
 //                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. /
-//                          \..\COMPONENTS\STACK\SYS\ -I                      /
-//                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Sam /
-//                          pleApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\Z /
-//                          DO\ -I F:\myCloud\ZigbeeTest\Projects\zstack\Samp /
-//                          les\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\ /
-//                          ZMAC\F8W\ -I F:\myCloud\ZigbeeTest\Projects\zstac /
-//                          k\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPO /
-//                          NENTS\ZMAC\ -I F:\myCloud\ZigbeeTest\Projects\zst /
-//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COM /
-//                          PONENTS\SERVICES\SADDR\ -I                        /
-//                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Sam /
-//                          pleApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICE /
-//                          S\SDATA\ -I F:\myCloud\ZigbeeTest\Projects\zstack /
-//                          \Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPON /
-//                          ENTS\MAC\INCLUDE\ -I F:\myCloud\ZigbeeTest\Projec /
-//                          ts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\ /
-//                          ..\COMPONENTS\MAC\HIGH_LEVEL\ -I                  /
-//                          F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Sam /
-//                          pleApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW /
-//                          _LEVEL\srf04\ -I F:\myCloud\ZigbeeTest\Projects\z /
-//                          stack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C /
-//                          OMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\ -On    /
+//                          \..\COMPONENTS\ZMAC\ -I                           /
+//                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS /
+//                          \SERVICES\SADDR\ -I F:\myCloud\ZigBeeLocalization /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\SERVICES\SDATA\ -I           /
+//                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS /
+//                          \MAC\INCLUDE\ -I F:\myCloud\ZigBeeLocalization\Pr /
+//                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\.. /
+//                          \..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I              /
+//                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS /
+//                          \MAC\LOW_LEVEL\srf04\ -I                          /
+//                          F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS /
+//                          \MAC\LOW_LEVEL\srf04\SINGLE_CHIP\ -On             /
 //                          --require_prototypes                              /
-//    List file          =  F:\myCloud\ZigbeeTest\Projects\zstack\Samples\Sam /
-//                          pleApp\CC2530DB\PCCoordinatorEBPro\List\SampleApp /
-//                          .s51                                              /
+//    List file          =  F:\myCloud\ZigBeeLocalization\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\PCCoordinatorEBPro\List\S /
+//                          ampleApp.s51                                      /
 //                                                                            /
 //                                                                            /
 ///////////////////////////////////////////////////////////////////////////////
@@ -655,11 +661,11 @@ SampleApp_Tester_calibration_differentAMessage SYMBOL "SampleApp_Tester_calibrat
         FUNCTION printRSSIandLQI,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME XSTACK, 14, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
 
-// F:\myCloud\ZigbeeTest\Projects\zstack\Samples\SampleApp\Source\SampleApp.c
+// F:\myCloud\ZigBeeLocalization\Projects\zstack\Samples\SampleApp\Source\SampleApp.c
 //    1 /**************************************************************************************************
 //    2   Filename:       SampleApp.c
 //    3   Revised:        $Date: 2009-03-18 15:56:27 -0700 (Wed, 18 Mar 2009) $
@@ -1175,7 +1181,7 @@ nValue:
         REQUIRE __INIT_XDATA_I
 
         RSEG XDATA_I:XDATA:NOROOT(0)
-//  194 float AValue[4]={48.28f,52.11f,53.83f,52.27f};     // initialized A parameter      ??47.52f,46.53,43.56,43.56
+//  194 float AValue[4]={51.34f,52.91f,50.28f,51.67f};     // initialized A parameter      ??47.52f,46.53,43.56,43.56  48.28f,52.11f,53.83f,52.27f
 AValue:
         DATA8
         DS 16
@@ -1250,7 +1256,7 @@ locationZ:
 //  209 // device id
 
         RSEG XDATA_I:XDATA:NOROOT(0)
-//  210 int DeviceID=6;                                 // device id to identify the device
+//  210 int DeviceID=2;                                 // device id to identify the device
 DeviceID:
         DATA16
         DS 2
@@ -3454,7 +3460,51 @@ SampleApp_QuadrotorMSGCB:
           CFI Function SampleApp_QuadrotorMSGCB
         CODE
 //  724 {
-        FUNCALL SampleApp_QuadrotorMSGCB, printRSSIandLQI
+        FUNCALL SampleApp_QuadrotorMSGCB, moving_average
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 34, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 34, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_QuadrotorMSGCB, moving_average
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 34, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 34, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_QuadrotorMSGCB, moving_average
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 34, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 34, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_QuadrotorMSGCB, moving_average
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 34, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 34, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SampleApp_QuadrotorMSGCB, HalUARTWrite
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 30, STACK
@@ -3463,50 +3513,6 @@ SampleApp_QuadrotorMSGCB:
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 30, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL SampleApp_QuadrotorMSGCB, moving_average
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 34, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 34, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL SampleApp_QuadrotorMSGCB, moving_average
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 34, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 34, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL SampleApp_QuadrotorMSGCB, moving_average
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 34, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 34, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL SampleApp_QuadrotorMSGCB, moving_average
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 34, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 34, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL SampleApp_QuadrotorMSGCB, moving_average_f
@@ -3670,19 +3676,21 @@ SampleApp_QuadrotorMSGCB:
         DATA8
         DATA
         DATA8
+        DB        0
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        6
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DATA
+        DATA8
         DB        1
-        DATA
-        DATA8
-        DATA
-        DATA8
-        DATA
-        DATA8
-        DB        2
-        DATA
-        DATA8
-        DATA
-        DATA8
-        DB        3
         DATA
         DATA16
         DATA
@@ -3696,14 +3704,7 @@ SampleApp_QuadrotorMSGCB:
         DATA8
         DATA
         DATA8
-        DB        4
-        DATA
-        DATA8
-        DATA
-        DATA8
-        DATA
-        DATA8
-        DB        1
+        DB        2
         DATA
         DATA16
         DATA
@@ -3711,6 +3712,20 @@ SampleApp_QuadrotorMSGCB:
         DATA
         DATA16
         DW        ??SampleApp_QuadrotorMSGCB_2
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        3
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??SampleApp_QuadrotorMSGCB_3
         DATA
         DATA8
         DATA
@@ -3738,7 +3753,7 @@ SampleApp_QuadrotorMSGCB:
         DATA16
         DATA
         DATA16
-        DW        ??SampleApp_QuadrotorMSGCB_3
+        DW        ??SampleApp_QuadrotorMSGCB_4
         DATA
         DATA8
         DATA
@@ -3752,7 +3767,7 @@ SampleApp_QuadrotorMSGCB:
         DATA16
         DATA
         DATA16
-        DW        ??SampleApp_QuadrotorMSGCB_4
+        DW        ??SampleApp_QuadrotorMSGCB_5
         DATA
         DATA16
         DATA
@@ -3766,7 +3781,7 @@ SampleApp_QuadrotorMSGCB:
 //  732         
 //  733         byte index;
 //  734         index=*(pkt->cmd.Data+1);
-??SampleApp_QuadrotorMSGCB_2:
+??SampleApp_QuadrotorMSGCB_1:
         MOV     A,R6
         ADD     A,#0x21
         MOV     DPL,A
@@ -3796,33 +3811,25 @@ SampleApp_QuadrotorMSGCB:
         SUBB    A,R0
         MOV     DPTR,#rssivalue
         MOVX    @DPTR,A
-//  736         printRSSIandLQI(pkt, 0);
-        ; Setup parameters for call to function printRSSIandLQI
-        MOV     R4,#0x0
-        MOV     R5,#0x0
-        MOV     A,R6
-        MOV     R2,A
-        MOV     A,R7
-        MOV     R3,A
-        LCALL   ??printRSSIandLQI?relay
+//  736        // printRSSIandLQI(pkt, 0);
 //  737         switch (index)
         MOV     A,?V0 + 4
         ADD     A,#-0x31
-        JZ      ??SampleApp_QuadrotorMSGCB_5
-        DEC     A
         JZ      ??SampleApp_QuadrotorMSGCB_6
         DEC     A
         JZ      ??SampleApp_QuadrotorMSGCB_7
         DEC     A
+        JZ      ??SampleApp_QuadrotorMSGCB_8
+        DEC     A
         JNZ     $+5
-        LJMP    ??SampleApp_QuadrotorMSGCB_8 & 0xFFFF
+        LJMP    ??SampleApp_QuadrotorMSGCB_9 & 0xFFFF
         LJMP    ??SampleApp_QuadrotorMSGCB_0 & 0xFFFF
 //  738         {
 //  739             case '1':
 //  740               { 
 //  741                 //moving average filter
 //  742                 moving_average(rssivalue, perRssiBuf1, RSSI_AVG_WINDOW_SIZE-1, imof1, &RssiValue[0]);
-??SampleApp_QuadrotorMSGCB_5:
+??SampleApp_QuadrotorMSGCB_6:
         ; Setup parameters for call to function moving_average
         MOV     ?V0 + 6,#RssiValue & 0xff
         MOV     ?V0 + 7,#(RssiValue >> 8) & 0xff
@@ -3853,7 +3860,7 @@ SampleApp_QuadrotorMSGCB:
 //  747               {
 //  748                 //moving average filter
 //  749                 moving_average(rssivalue, perRssiBuf2, RSSI_AVG_WINDOW_SIZE-1, imof2, &RssiValue[1]);
-??SampleApp_QuadrotorMSGCB_6:
+??SampleApp_QuadrotorMSGCB_7:
         ; Setup parameters for call to function moving_average
         MOV     ?V0 + 6,#(RssiValue + 4) & 0xff
         MOV     ?V0 + 7,#((RssiValue + 4) >> 8) & 0xff
@@ -3878,12 +3885,12 @@ SampleApp_QuadrotorMSGCB:
           CFI CFA_XSP16 add(XSP16, 30)
 //  750               }
 //  751                   break;
-        SJMP    ??SampleApp_QuadrotorMSGCB_9
+        SJMP    ??SampleApp_QuadrotorMSGCB_10
 //  752             case '3':
 //  753               {
 //  754                 //moving average filter
 //  755                 moving_average(rssivalue, perRssiBuf3, RSSI_AVG_WINDOW_SIZE-1, imof3, &RssiValue[2]);
-??SampleApp_QuadrotorMSGCB_7:
+??SampleApp_QuadrotorMSGCB_8:
         ; Setup parameters for call to function moving_average
         MOV     ?V0 + 6,#(RssiValue + 8) & 0xff
         MOV     ?V0 + 7,#((RssiValue + 8) >> 8) & 0xff
@@ -3908,12 +3915,12 @@ SampleApp_QuadrotorMSGCB:
           CFI CFA_XSP16 add(XSP16, 30)
 //  756               }
 //  757                   break;
-        SJMP    ??SampleApp_QuadrotorMSGCB_9
+        SJMP    ??SampleApp_QuadrotorMSGCB_10
 //  758             case '4':
 //  759               {
 //  760                 //moving average filter
 //  761                  moving_average(rssivalue, perRssiBuf4, RSSI_AVG_WINDOW_SIZE-1, imof4, &RssiValue[3]);
-??SampleApp_QuadrotorMSGCB_8:
+??SampleApp_QuadrotorMSGCB_9:
         ; Setup parameters for call to function moving_average
         MOV     ?V0 + 6,#(RssiValue + 12) & 0xff
         MOV     ?V0 + 7,#((RssiValue + 12) >> 8) & 0xff
@@ -3943,13 +3950,39 @@ SampleApp_QuadrotorMSGCB:
 //  766                    break;
 //  767          }
 //  768         break;
-??SampleApp_QuadrotorMSGCB_9:
+??SampleApp_QuadrotorMSGCB_10:
         LJMP    ??SampleApp_QuadrotorMSGCB_0 & 0xFFFF
 //  769       }
 //  770 
 //  771     case LZQR_GROUP_CLUSTERID: // position of other quadrotors
 //  772           {
-//  773             //HalUARTWrite(0, pkt->cmd.Data, pkt->cmd.DataLength); //输出接收到的数据
+//  773             HalUARTWrite(0, pkt->cmd.Data, pkt->cmd.DataLength); //输出接收到的数据
+??SampleApp_QuadrotorMSGCB_3:
+        ; Setup parameters for call to function HalUARTWrite
+        MOV     A,R6
+        ADD     A,#0x1f
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        ADD     A,#0x21
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     R1,#0x0
+        LCALL   ??HalUARTWrite?relay
 //  774            // break;
 //  775           }
 //  776     
@@ -3959,7 +3992,7 @@ SampleApp_QuadrotorMSGCB:
 //  780         
 //  781         byte alphaindex;
 //  782         alphaindex=*(pkt->cmd.Data);
-??SampleApp_QuadrotorMSGCB_1:
+??SampleApp_QuadrotorMSGCB_2:
         MOV     A,R6
         ADD     A,#0x21
         MOV     DPL,A
@@ -3986,7 +4019,7 @@ SampleApp_QuadrotorMSGCB:
         MOVX    A,@DPTR
         XRL     A,#0x41
         JZ      $+5
-        LJMP    ??SampleApp_QuadrotorMSGCB_10 & 0xFFFF
+        LJMP    ??SampleApp_QuadrotorMSGCB_11 & 0xFFFF
 //  784          {  
 //  785               byte index;
 //  786               index=*(pkt->cmd.Data+1);
@@ -4141,7 +4174,7 @@ SampleApp_QuadrotorMSGCB:
         MOV     DPH,?XSP + 1
         MOVX    A,@DPTR
         XRL     A,#0x31
-        JNZ     ??SampleApp_QuadrotorMSGCB_11
+        JNZ     ??SampleApp_QuadrotorMSGCB_12
 //  791                        case '1':
 //  792                           {
 //  793                                   moving_average_f(avalue, peraBuf1, 8-1, aindex1, &AValue[0]);
@@ -4180,13 +4213,13 @@ SampleApp_QuadrotorMSGCB:
 //  798                           {
 //  799                                   //AValue[1]=avalue;
 //  800                                   break;
-??SampleApp_QuadrotorMSGCB_11:
+??SampleApp_QuadrotorMSGCB_12:
         LJMP    ??SampleApp_QuadrotorMSGCB_0 & 0xFFFF
 //  801                            }
 //  802                        case '3':
 //  803                           {
 //  804                                   AValue[2]=avalue;
-??SampleApp_QuadrotorMSGCB_3:
+??SampleApp_QuadrotorMSGCB_4:
         MOV     A,#0x2
         LCALL   ?XSTACK_DISP0_8
         LCALL   ?XLOAD_R2345
@@ -4198,7 +4231,7 @@ SampleApp_QuadrotorMSGCB:
 //  807                        case '4':
 //  808                           {
 //  809                                   AValue[3]=avalue;
-??SampleApp_QuadrotorMSGCB_4:
+??SampleApp_QuadrotorMSGCB_5:
         MOV     A,#0x2
         LCALL   ?XSTACK_DISP0_8
         LCALL   ?XLOAD_R2345
@@ -4212,13 +4245,13 @@ SampleApp_QuadrotorMSGCB:
 //  814               }
 //  815          } 
 //  816         else if(alphaindex=='N')
-??SampleApp_QuadrotorMSGCB_10:
+??SampleApp_QuadrotorMSGCB_11:
         MOV     A,#0x1
         LCALL   ?XSTACK_DISP0_8
         MOVX    A,@DPTR
         XRL     A,#0x4e
         JZ      $+5
-        LJMP    ??SampleApp_QuadrotorMSGCB_12 & 0xFFFF
+        LJMP    ??SampleApp_QuadrotorMSGCB_13 & 0xFFFF
 //  817              {
 //  818                       HalUARTWrite(0, pkt->cmd.Data, pkt->cmd.DataLength); 
         ; Setup parameters for call to function HalUARTWrite
@@ -4490,21 +4523,21 @@ SampleApp_QuadrotorMSGCB:
         MOV     DPH,?XSP + 1
         MOVX    A,@DPTR
         ADD     A,#-0x31
-        JZ      ??SampleApp_QuadrotorMSGCB_13
-        DEC     A
         JZ      ??SampleApp_QuadrotorMSGCB_14
         DEC     A
-        JNZ     $+5
-        LJMP    ??SampleApp_QuadrotorMSGCB_15 & 0xFFFF
+        JZ      ??SampleApp_QuadrotorMSGCB_15
         DEC     A
         JNZ     $+5
         LJMP    ??SampleApp_QuadrotorMSGCB_16 & 0xFFFF
+        DEC     A
+        JNZ     $+5
+        LJMP    ??SampleApp_QuadrotorMSGCB_17 & 0xFFFF
         LJMP    ??SampleApp_QuadrotorMSGCB_0 & 0xFFFF
 //  829                            {  
 //  830                                 case '1':
 //  831                                  {
 //  832                                      moving_average_f(nvalue, pernBuf1, 7, nindex1, &nValue[0]);
-??SampleApp_QuadrotorMSGCB_13:
+??SampleApp_QuadrotorMSGCB_14:
         ; Setup parameters for call to function moving_average_f
         MOV     ?V0 + 8,#nValue & 0xff
         MOV     ?V0 + 9,#(nValue >> 8) & 0xff
@@ -4543,7 +4576,7 @@ SampleApp_QuadrotorMSGCB:
 //  838                                  {
 //  839 
 //  840                                       moving_average_f(nvalue, pernBuf2, 7, nindex2, &nValue[1]);
-??SampleApp_QuadrotorMSGCB_14:
+??SampleApp_QuadrotorMSGCB_15:
         ; Setup parameters for call to function moving_average_f
         MOV     ?V0 + 8,#(nValue + 4) & 0xff
         MOV     ?V0 + 9,#((nValue + 4) >> 8) & 0xff
@@ -4579,7 +4612,7 @@ SampleApp_QuadrotorMSGCB:
 //  843                                  case '3':
 //  844                                  {
 //  845                                    moving_average_f(nvalue, pernBuf3, 7, nindex3, &nValue[2]);
-??SampleApp_QuadrotorMSGCB_15:
+??SampleApp_QuadrotorMSGCB_16:
         ; Setup parameters for call to function moving_average_f
         MOV     ?V0 + 8,#(nValue + 8) & 0xff
         MOV     ?V0 + 9,#((nValue + 8) >> 8) & 0xff
@@ -4615,7 +4648,7 @@ SampleApp_QuadrotorMSGCB:
 //  848                                  case '4':
 //  849                                  {
 //  850                                     moving_average_f(nvalue, pernBuf4, 7, nindex4, &nValue[3]);
-??SampleApp_QuadrotorMSGCB_16:
+??SampleApp_QuadrotorMSGCB_17:
         ; Setup parameters for call to function moving_average_f
         MOV     ?V0 + 8,#(nValue + 12) & 0xff
         MOV     ?V0 + 9,#((nValue + 12) >> 8) & 0xff
@@ -4653,7 +4686,7 @@ SampleApp_QuadrotorMSGCB:
 //  855                           }
 //  856                      }
 //  857         else if (alphaindex=='O')
-??SampleApp_QuadrotorMSGCB_12:
+??SampleApp_QuadrotorMSGCB_13:
         MOV     A,#0x1
         LCALL   ?XSTACK_DISP0_8
         MOVX    A,@DPTR
@@ -4724,7 +4757,7 @@ SampleApp_QuadrotorMSGCB:
         INC     DPTR
         MOVX    A,@DPTR
         XRL     A,#0x2b
-        JNZ     ??SampleApp_QuadrotorMSGCB_17
+        JNZ     ??SampleApp_QuadrotorMSGCB_18
 //  864               {
 //  865                  plus=1;
         MOV     R0,#0x0
@@ -4735,12 +4768,12 @@ SampleApp_QuadrotorMSGCB:
         MOV     ?V0 + 5,R1
         MOV     ?V0 + 6,R2
         MOV     ?V0 + 7,R3
-        SJMP    ??SampleApp_QuadrotorMSGCB_18
+        SJMP    ??SampleApp_QuadrotorMSGCB_19
 //  866               }
 //  867               else
 //  868               {
 //  869                 plus=-1;
-??SampleApp_QuadrotorMSGCB_17:
+??SampleApp_QuadrotorMSGCB_18:
         MOV     R0,#0x0
         MOV     R1,#0x0
         MOV     R2,#-0x80
@@ -4751,7 +4784,7 @@ SampleApp_QuadrotorMSGCB:
         MOV     ?V0 + 7,R3
 //  870               }
 //  871               offseta=10.0f*(float)((int)(*(pkt->cmd.Data+3))-48)+(float)((int)(*(pkt->cmd.Data+4))-48)+0.1f*(float)((int)(*(pkt->cmd.Data+6))-48);
-??SampleApp_QuadrotorMSGCB_18:
+??SampleApp_QuadrotorMSGCB_19:
         MOV     A,R6
         ADD     A,#0x21
         MOV     DPL,A
@@ -4888,7 +4921,7 @@ SampleApp_QuadrotorMSGCB:
         MOV     DPH,?XSP + 1
         MOVX    A,@DPTR
         XRL     A,#0x31
-        JNZ     ??SampleApp_QuadrotorMSGCB_19
+        JNZ     ??SampleApp_QuadrotorMSGCB_20
 //  874                           {
 //  875                                   OffsetAValue[0]=plus*offseta;
         MOV     R0,#?V0 + 4
@@ -4901,12 +4934,12 @@ SampleApp_QuadrotorMSGCB:
 //  876                                  
 //  877                            }
 //  878                    else if (oindex=='2')
-??SampleApp_QuadrotorMSGCB_19:
+??SampleApp_QuadrotorMSGCB_20:
         MOV     DPL,?XSP + 0
         MOV     DPH,?XSP + 1
         MOVX    A,@DPTR
         XRL     A,#0x32
-        JNZ     ??SampleApp_QuadrotorMSGCB_20
+        JNZ     ??SampleApp_QuadrotorMSGCB_21
 //  879                           {
 //  880                                   OffsetAValue[1]=plus*offseta;
         MOV     R0,#?V0 + 4
@@ -4919,12 +4952,12 @@ SampleApp_QuadrotorMSGCB:
 //  881                                  
 //  882                            }
 //  883                    else  if (oindex=='3')
-??SampleApp_QuadrotorMSGCB_20:
+??SampleApp_QuadrotorMSGCB_21:
         MOV     DPL,?XSP + 0
         MOV     DPH,?XSP + 1
         MOVX    A,@DPTR
         XRL     A,#0x33
-        JNZ     ??SampleApp_QuadrotorMSGCB_21
+        JNZ     ??SampleApp_QuadrotorMSGCB_22
 //  884                           {
 //  885                                   OffsetAValue[2]=plus*offseta;
         MOV     R0,#?V0 + 4
@@ -4937,7 +4970,7 @@ SampleApp_QuadrotorMSGCB:
 //  886                                  
 //  887                            }
 //  888                     else if (oindex=='4')
-??SampleApp_QuadrotorMSGCB_21:
+??SampleApp_QuadrotorMSGCB_22:
         MOV     DPL,?XSP + 0
         MOV     DPH,?XSP + 1
         MOVX    A,@DPTR
@@ -7923,8 +7956,8 @@ SampleApp_Quadrotor_SendLocation:
         MOV     ?V0 + 6,?V0 + 2
         MOV     ?V0 + 7,?V0 + 3
 // 1520   // using min-max algorithm
-// 1521     SampleApp_MinMax_localization(&xposition, &yposition, zposition, nValue,
-// 1522                               RssiValue, AValue, AnchorX, AnchorY,OffsetAValue);
+// 1521   SampleApp_MinMax_localization(&xposition, &yposition, zposition, nValue,
+// 1522                             RssiValue, AValue, AnchorX, AnchorY,OffsetAValue);
         ; Setup parameters for call to function SampleApp_MinMax_localization
         MOV     ?V0 + 0,#OffsetAValue & 0xff
         MOV     ?V0 + 1,#(OffsetAValue >> 8) & 0xff
@@ -7971,10 +8004,11 @@ SampleApp_Quadrotor_SendLocation:
         MOV     A,#0x10
         LCALL   ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 48)
-// 1523   
-// 1524   // using weighted centroid localization algorithm
-// 1525   //SampleApp_WCL_localization(&xposition, &yposition, nValue,RssiValue,AValue,AnchorX,AnchorY,OffsetAValue);
-// 1526   locationX[index-1]=xposition;
+// 1523 //  locationX[index-1]=0.5f*xposition;
+// 1524 //  locationY[index-1]=0.5f*yposition;
+// 1525   // using weighted centroid localization algorithm
+// 1526   //SampleApp_WCL_localization(&xposition, &yposition, nValue,RssiValue,AValue,AnchorX,AnchorY,OffsetAValue);
+// 1527   locationX[index-1]=xposition;
         MOV     A,#0x4
         LCALL   ?XSTACK_DISP0_8
         LCALL   ?XLOAD_R2345
@@ -8001,7 +8035,7 @@ SampleApp_Quadrotor_SendLocation:
         ADDC    A,R1
         MOV     DPH,A
         LCALL   ?XSTORE_R2345
-// 1527   locationY[index-1]=yposition;
+// 1528   locationY[index-1]=yposition;
         MOV     DPL,?XSP + 0
         MOV     DPH,?XSP + 1
         LCALL   ?XLOAD_R2345
@@ -8028,10 +8062,10 @@ SampleApp_Quadrotor_SendLocation:
         ADDC    A,R1
         MOV     DPH,A
         LCALL   ?XSTORE_R2345
-// 1528   
 // 1529   
-// 1530 
-// 1531   uint8 data[18]="Q";
+// 1530   
+// 1531 
+// 1532   uint8 data[18]="Q";
         MOV     DPTR,#`?<Constant "Q">`
         PUSH    DPL
           CFI CFA_SP SP+-1
@@ -8047,7 +8081,7 @@ SampleApp_Quadrotor_SendLocation:
           CFI CFA_SP SP+0
         MOV     A,#0x12
         LCALL   ?MOVE_LONG8_XDATA_XDATA
-// 1532   data[1]=0x30+index;
+// 1533   data[1]=0x30+index;
         MOV     A,?V0 + 12
         ADD     A,#0x30
         PUSH    A
@@ -8057,18 +8091,18 @@ SampleApp_Quadrotor_SendLocation:
         POP     A
           CFI CFA_SP SP+0
         MOVX    @DPTR,A
-// 1533   data[2]='[';
+// 1534   data[2]='[';
         MOV     A,#0xa
         LCALL   ?XSTACK_DISP0_8
         MOV     A,#0x5b
         MOVX    @DPTR,A
-// 1534   data[17]=']';
+// 1535   data[17]=']';
         MOV     A,#0x19
         LCALL   ?XSTACK_DISP0_8
         MOV     A,#0x5d
         MOVX    @DPTR,A
-// 1535   uint8 number8;
-// 1536   number8=(uint8)xposition;
+// 1536   uint8 number8;
+// 1537   number8=(uint8)xposition;
         MOV     A,#0x4
         LCALL   ?XSTACK_DISP0_8
         MOV     R0,#?V0 + 0
@@ -8077,7 +8111,7 @@ SampleApp_Quadrotor_SendLocation:
         LCALL   ?FLT_TO_L
         MOV     A,?V0 + 0
         MOV     R6,?V0 + 0
-// 1537   data[3]=number8+'0';
+// 1538   data[3]=number8+'0';
         MOV     A,#0x30
         ADD     A,R6
         PUSH    A
@@ -8087,12 +8121,12 @@ SampleApp_Quadrotor_SendLocation:
         POP     A
           CFI CFA_SP SP+0
         MOVX    @DPTR,A
-// 1538   data[4]='.';
+// 1539   data[4]='.';
         MOV     A,#0xc
         LCALL   ?XSTACK_DISP0_8
         MOV     A,#0x2e
         MOVX    @DPTR,A
-// 1539   xposition=10*(xposition-(float)number8);
+// 1540   xposition=10*(xposition-(float)number8);
         MOV     A,#0x4
         LCALL   ?XSTACK_DISP0_8
         MOV     R0,#?V0 + 0
@@ -8117,7 +8151,7 @@ SampleApp_Quadrotor_SendLocation:
         LCALL   ?XSTACK_DISP0_8
         MOV     R0,#?V0 + 0
         LCALL   ?L_MOV_TO_X
-// 1540   number8=(uint8)xposition;
+// 1541   number8=(uint8)xposition;
         MOV     A,#0x4
         LCALL   ?XSTACK_DISP0_8
         MOV     R0,#?V0 + 0
@@ -8126,7 +8160,7 @@ SampleApp_Quadrotor_SendLocation:
         LCALL   ?FLT_TO_L
         MOV     A,?V0 + 0
         MOV     R6,?V0 + 0
-// 1541   data[5]=number8+'0';
+// 1542   data[5]=number8+'0';
         MOV     A,#0x30
         ADD     A,R6
         PUSH    A
@@ -8136,7 +8170,7 @@ SampleApp_Quadrotor_SendLocation:
         POP     A
           CFI CFA_SP SP+0
         MOVX    @DPTR,A
-// 1542   xposition=10*(xposition-(float)number8);
+// 1543   xposition=10*(xposition-(float)number8);
         MOV     A,#0x4
         LCALL   ?XSTACK_DISP0_8
         MOV     R0,#?V0 + 0
@@ -8161,7 +8195,7 @@ SampleApp_Quadrotor_SendLocation:
         LCALL   ?XSTACK_DISP0_8
         MOV     R0,#?V0 + 0
         LCALL   ?L_MOV_TO_X
-// 1543   number8=(uint8)xposition+'0';
+// 1544   number8=(uint8)xposition+'0';
         MOV     A,#0x4
         LCALL   ?XSTACK_DISP0_8
         MOV     R0,#?V0 + 0
@@ -8171,7 +8205,7 @@ SampleApp_Quadrotor_SendLocation:
         MOV     A,?V0 + 0
         ADD     A,#0x30
         MOV     R6,A
-// 1544   data[6]=number8;
+// 1545   data[6]=number8;
         PUSH    A
           CFI CFA_SP SP+-1
         MOV     A,#0xe
@@ -8179,12 +8213,12 @@ SampleApp_Quadrotor_SendLocation:
         POP     A
           CFI CFA_SP SP+0
         MOVX    @DPTR,A
-// 1545   data[7]=',';
+// 1546   data[7]=',';
         MOV     A,#0xf
         LCALL   ?XSTACK_DISP0_8
         MOV     A,#0x2c
         MOVX    @DPTR,A
-// 1546   number8=(uint8)yposition;
+// 1547   number8=(uint8)yposition;
         MOV     DPL,?XSP + 0
         MOV     DPH,?XSP + 1
         MOV     R0,#?V0 + 0
@@ -8193,7 +8227,7 @@ SampleApp_Quadrotor_SendLocation:
         LCALL   ?FLT_TO_L
         MOV     A,?V0 + 0
         MOV     R6,?V0 + 0
-// 1547   data[8]=number8+'0';
+// 1548   data[8]=number8+'0';
         MOV     A,#0x30
         ADD     A,R6
         PUSH    A
@@ -8203,12 +8237,12 @@ SampleApp_Quadrotor_SendLocation:
         POP     A
           CFI CFA_SP SP+0
         MOVX    @DPTR,A
-// 1548   data[9]='.';
+// 1549   data[9]='.';
         MOV     A,#0x11
         LCALL   ?XSTACK_DISP0_8
         MOV     A,#0x2e
         MOVX    @DPTR,A
-// 1549   yposition=10*(yposition-(float)number8);
+// 1550   yposition=10*(yposition-(float)number8);
         MOV     DPL,?XSP + 0
         MOV     DPH,?XSP + 1
         MOV     R0,#?V0 + 0
@@ -8233,7 +8267,7 @@ SampleApp_Quadrotor_SendLocation:
         MOV     DPH,?XSP + 1
         MOV     R0,#?V0 + 0
         LCALL   ?L_MOV_TO_X
-// 1550   number8=(uint8)yposition;
+// 1551   number8=(uint8)yposition;
         MOV     DPL,?XSP + 0
         MOV     DPH,?XSP + 1
         MOV     R0,#?V0 + 0
@@ -8242,7 +8276,7 @@ SampleApp_Quadrotor_SendLocation:
         LCALL   ?FLT_TO_L
         MOV     A,?V0 + 0
         MOV     R6,?V0 + 0
-// 1551   data[10]=number8+'0';
+// 1552   data[10]=number8+'0';
         MOV     A,#0x30
         ADD     A,R6
         PUSH    A
@@ -8252,7 +8286,7 @@ SampleApp_Quadrotor_SendLocation:
         POP     A
           CFI CFA_SP SP+0
         MOVX    @DPTR,A
-// 1552   yposition=10*(yposition-(float)number8);
+// 1553   yposition=10*(yposition-(float)number8);
         MOV     DPL,?XSP + 0
         MOV     DPH,?XSP + 1
         MOV     R0,#?V0 + 0
@@ -8277,7 +8311,7 @@ SampleApp_Quadrotor_SendLocation:
         MOV     DPH,?XSP + 1
         MOV     R0,#?V0 + 0
         LCALL   ?L_MOV_TO_X
-// 1553   number8=(uint8)yposition+'0';
+// 1554   number8=(uint8)yposition+'0';
         MOV     DPL,?XSP + 0
         MOV     DPH,?XSP + 1
         MOV     R0,#?V0 + 0
@@ -8287,7 +8321,7 @@ SampleApp_Quadrotor_SendLocation:
         MOV     A,?V0 + 0
         ADD     A,#0x30
         MOV     R6,A
-// 1554   data[11]=number8;
+// 1555   data[11]=number8;
         PUSH    A
           CFI CFA_SP SP+-1
         MOV     A,#0x13
@@ -8295,12 +8329,12 @@ SampleApp_Quadrotor_SendLocation:
         POP     A
           CFI CFA_SP SP+0
         MOVX    @DPTR,A
-// 1555   data[12]=',';
+// 1556   data[12]=',';
         MOV     A,#0x14
         LCALL   ?XSTACK_DISP0_8
         MOV     A,#0x2c
         MOVX    @DPTR,A
-// 1556   number8=(uint8)zposition;
+// 1557   number8=(uint8)zposition;
         MOV     ?V0 + 0,?V0 + 4
         MOV     ?V0 + 1,?V0 + 5
         MOV     ?V0 + 2,?V0 + 6
@@ -8309,7 +8343,7 @@ SampleApp_Quadrotor_SendLocation:
         LCALL   ?FLT_TO_L
         MOV     A,?V0 + 0
         MOV     R6,?V0 + 0
-// 1557   data[13]=number8+'0';
+// 1558   data[13]=number8+'0';
         MOV     A,#0x30
         ADD     A,R6
         PUSH    A
@@ -8319,12 +8353,12 @@ SampleApp_Quadrotor_SendLocation:
         POP     A
           CFI CFA_SP SP+0
         MOVX    @DPTR,A
-// 1558   data[14]='.';
+// 1559   data[14]='.';
         MOV     A,#0x16
         LCALL   ?XSTACK_DISP0_8
         MOV     A,#0x2e
         MOVX    @DPTR,A
-// 1559   zposition=10*(zposition-(float)number8);
+// 1560   zposition=10*(zposition-(float)number8);
         MOV     ?V0 + 0,R6
         CLR     A
         MOV     ?V0 + 1,A
@@ -8341,7 +8375,7 @@ SampleApp_Quadrotor_SendLocation:
         MOV     R0,#?V0 + 4
         MOV     R1,#?V0 + 0
         LCALL   ?FLT_MUL
-// 1560   number8=(uint8)zposition;
+// 1561   number8=(uint8)zposition;
         MOV     ?V0 + 0,?V0 + 4
         MOV     ?V0 + 1,?V0 + 5
         MOV     ?V0 + 2,?V0 + 6
@@ -8350,7 +8384,7 @@ SampleApp_Quadrotor_SendLocation:
         LCALL   ?FLT_TO_L
         MOV     A,?V0 + 0
         MOV     R6,?V0 + 0
-// 1561   data[15]=number8+'0';
+// 1562   data[15]=number8+'0';
         MOV     A,#0x30
         ADD     A,R6
         PUSH    A
@@ -8360,7 +8394,7 @@ SampleApp_Quadrotor_SendLocation:
         POP     A
           CFI CFA_SP SP+0
         MOVX    @DPTR,A
-// 1562   zposition=10*(zposition-(float)number8);
+// 1563   zposition=10*(zposition-(float)number8);
         MOV     ?V0 + 0,R6
         CLR     A
         MOV     ?V0 + 1,A
@@ -8377,7 +8411,7 @@ SampleApp_Quadrotor_SendLocation:
         MOV     R0,#?V0 + 4
         MOV     R1,#?V0 + 0
         LCALL   ?FLT_MUL
-// 1563   number8=(uint8)zposition+'0';
+// 1564   number8=(uint8)zposition+'0';
         MOV     ?V0 + 0,?V0 + 4
         MOV     ?V0 + 1,?V0 + 5
         MOV     ?V0 + 2,?V0 + 6
@@ -8387,7 +8421,7 @@ SampleApp_Quadrotor_SendLocation:
         MOV     A,?V0 + 0
         ADD     A,#0x30
         MOV     R6,A
-// 1564   data[16]=number8;
+// 1565   data[16]=number8;
         PUSH    A
           CFI CFA_SP SP+-1
         MOV     A,#0x18
@@ -8395,16 +8429,16 @@ SampleApp_Quadrotor_SendLocation:
         POP     A
           CFI CFA_SP SP+0
         MOVX    @DPTR,A
-// 1565   //data[18]='\0';
-// 1566  // HalUARTWrite(0, data, 18);
-// 1567   if ( AF_DataRequest( &SampleApp_Quadrotor_Location_DstAddr, &SampleApp_epDesc,
-// 1568                          LZQR_GROUP_CLUSTERID,
-// 1569                          18,//osal_strlen("Q1")+1,
-// 1570                          data,
-// 1571                          &SampleApp_TransID,
-// 1572                          AF_DISCV_ROUTE,//AF_SKIP_ROUTING,  
-// 1573                          AF_DEFAULT_RADIUS// 1
-// 1574                            ) == afStatus_SUCCESS )
+// 1566   //data[18]='\0';
+// 1567  // HalUARTWrite(0, data, 18);
+// 1568   if ( AF_DataRequest( &SampleApp_Quadrotor_Location_DstAddr, &SampleApp_epDesc,
+// 1569                          LZQR_GROUP_CLUSTERID,
+// 1570                          18,//osal_strlen("Q1")+1,
+// 1571                          data,
+// 1572                          &SampleApp_TransID,
+// 1573                          AF_DISCV_ROUTE,//AF_SKIP_ROUTING,  
+// 1574                          AF_DEFAULT_RADIUS// 1
+// 1575                            ) == afStatus_SUCCESS )
         ; Setup parameters for call to function AF_DataRequest
         MOV     ?V0 + 0,#0x1e
         MOV     R0,#?V0 + 0
@@ -8442,15 +8476,15 @@ SampleApp_Quadrotor_SendLocation:
         LCALL   ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 48)
         MOV     A,R1
-// 1575     {
-// 1576     }
-// 1577     else
-// 1578     {
-// 1579       // Error occurred in request to send.
-// 1580     }
-// 1581 
+// 1576     {
+// 1577     }
+// 1578     else
+// 1579     {
+// 1580       // Error occurred in request to send.
+// 1581     }
 // 1582 
-// 1583 }
+// 1583 
+// 1584 }
         MOV     A,#0x1a
         LCALL   ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 22)
@@ -8541,10 +8575,10 @@ SampleApp_Quadrotor_SendLocation:
         RSEG XDATA_ID:CODE:NOROOT(0)
 `?<Initializer for AValue>`:
         DATA32
-        DD 42411EB8H
-        DD 425070A4H
-        DD 425751ECH
-        DD 4251147BH
+        DD 424D5C29H
+        DD 4253A3D7H
+        DD 42491EB8H
+        DD 424EAE14H
 
         RSEG XDATA_ID:CODE:NOROOT(0)
 `?<Initializer for AnchorX>`:
@@ -8581,7 +8615,7 @@ SampleApp_Quadrotor_SendLocation:
         RSEG XDATA_ID:CODE:NOROOT(0)
 `?<Initializer for DeviceID>`:
         DATA16
-        DW 6
+        DW 2
 
         RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
 ??SampleApp_Init?relay:
@@ -8767,18 +8801,18 @@ __Constant_0:
         DD 0H
 
         END
-// 1584 
-// 1585 /*********************************************************************
-// 1586 *********************************************************************/
+// 1585 
+// 1586 /*********************************************************************
+// 1587 *********************************************************************/
 // 
-// 8 074 bytes in segment BANKED_CODE
+// 8 100 bytes in segment BANKED_CODE
 //    84 bytes in segment BANK_RELAYS
 //   146 bytes in segment XDATA_I
 //   146 bytes in segment XDATA_ID
 //    94 bytes in segment XDATA_ROM_C
 //   580 bytes in segment XDATA_Z
 // 
-// 8 304 bytes of CODE  memory
+// 8 330 bytes of CODE  memory
 //    74 bytes of CONST memory (+ 20 bytes shared)
 //   726 bytes of XDATA memory
 //
