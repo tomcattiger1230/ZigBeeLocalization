@@ -169,7 +169,7 @@ int imof2[2]={0,1};
 int imof3[2]={0,1};
 int imof4[2]={0,1};
 
-// index for moving filter of n value
+// index for moving filter of n value 
 int nindex1[2]={0,1};
 int nindex2[2]={0,1};
 int nindex3[2]={0,1};
@@ -192,9 +192,9 @@ float sumRssi4=0;
 float RssiValue[4]={0,0,0,0};                   // array for storing rssi values
 float nValue[4]={2.0f,2.0f,2.0f,2.0f};       // initialized n parameter   --3.59f,3.94f,2.63f,5.6f 
 float AValue[4]={51.34f,52.91f,50.28f,51.67f};     // initialized A parameter      ??47.52f,46.53,43.56,43.56  48.28f,52.11f,53.83f,52.27f
-float AnchorX[4]={4.0f, 0.0f, 0.0f, 4.0f};      // router position in x direction in m
-float AnchorY[4]={4.0f, 4.0f, 0.0f, 0.0f};      // router position in y direction in m
-float AnchorZ[4]={0.7f, 0.7f, 0.7f, 0.7f};      // router position in z direction in m
+float AnchorX[4]={0.0f, 4.2f, 4.2f, 0.0f};      // router position in x direction in m
+float AnchorY[4]={0.0f, 0.0f, 4.2f, 4.2f};      // router position in y direction in m
+float AnchorZ[4]={0.74f, 0.74f, 0.74f, 0.74f};      // reference nodes/routers position in z direction in m
 
 float RefAValue[4]={48.0f,54.0f,68.0f,48.6f};  // reference A values for self calibration
 float OffsetAValue[4]={0.0f, 0.0f, 0.0f, 0.0f};   // offset compared with reference A values
@@ -207,8 +207,8 @@ float locationZ[4]={0.0f, 0.0f, 0.0f, 0.0f};    // quadrotor position in z direc
 //LParameter tempParameter;                       // structure parameter, which is not in used
 
 // device id
-int DeviceID=1;                                 // device id to identify the device
-                                                // for coordinator meanless; for router is the anchor's id, except id 6,
+int DeviceID=4;                                 // device id to identify the device
+                                                // for coordinator meanless; for router is the anchor's id, except id 6 and 8,
                                                 // which is preparing for tester; for quadrotor, it is the id.
 /*********************************************************************
  * LOCAL FUNCTIONS

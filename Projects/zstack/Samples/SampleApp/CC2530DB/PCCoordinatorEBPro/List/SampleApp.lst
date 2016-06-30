@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             21/Jun/2016  17:00:55 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             30/Jun/2016  11:25:58 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -587,21 +587,21 @@ F:\myCloud\ZigBeeLocalization\Projects\zstack\Samples\SampleApp\Source\SampleApp
    \   000010                REQUIRE __INIT_XDATA_I
 
    \                                 In  segment XDATA_I, align 1, keep-with-next
-    195          float AnchorX[4]={4.0f, 0.0f, 0.0f, 4.0f};      // router position in x direction in m
+    195          float AnchorX[4]={0.0f, 4.2f, 4.2f, 0.0f};      // router position in x direction in m
    \                     AnchorX:
    \   000000                DS 16
    \   000010                REQUIRE `?<Initializer for AnchorX>`
    \   000010                REQUIRE __INIT_XDATA_I
 
    \                                 In  segment XDATA_I, align 1, keep-with-next
-    196          float AnchorY[4]={4.0f, 4.0f, 0.0f, 0.0f};      // router position in y direction in m
+    196          float AnchorY[4]={0.0f, 0.0f, 4.2f, 4.2f};      // router position in y direction in m
    \                     AnchorY:
    \   000000                DS 16
    \   000010                REQUIRE `?<Initializer for AnchorY>`
    \   000010                REQUIRE __INIT_XDATA_I
 
    \                                 In  segment XDATA_I, align 1, keep-with-next
-    197          float AnchorZ[4]={0.7f, 0.7f, 0.7f, 0.7f};      // router position in z direction in m
+    197          float AnchorZ[4]={0.74f, 0.74f, 0.74f, 0.74f};      // reference nodes/routers position in z direction in m
    \                     AnchorZ:
    \   000000                DS 16
    \   000010                REQUIRE `?<Initializer for AnchorZ>`
@@ -646,7 +646,7 @@ F:\myCloud\ZigBeeLocalization\Projects\zstack\Samples\SampleApp\Source\SampleApp
     209          // device id
 
    \                                 In  segment XDATA_I, align 1, keep-with-next
-    210          int DeviceID=2;                                 // device id to identify the device
+    210          int DeviceID=1;                                 // device id to identify the device
    \                     DeviceID:
    \   000000                DS 2
    \   000002                REQUIRE `?<Initializer for DeviceID>`
@@ -6380,24 +6380,24 @@ F:\myCloud\ZigBeeLocalization\Projects\zstack\Samples\SampleApp\Source\SampleApp
 
    \                                 In  segment XDATA_ID, align 1, keep-with-next
    \                     `?<Initializer for AnchorX>`:
-   \   000000   00008040     DD 40800000H
-   \   000004   00000000     DD 0H
-   \   000008   00000000     DD 0H
-   \   00000C   00008040     DD 40800000H
-
-   \                                 In  segment XDATA_ID, align 1, keep-with-next
-   \                     `?<Initializer for AnchorY>`:
-   \   000000   00008040     DD 40800000H
-   \   000004   00008040     DD 40800000H
-   \   000008   00000000     DD 0H
+   \   000000   00000000     DD 0H
+   \   000004   66668640     DD 40866666H
+   \   000008   66668640     DD 40866666H
    \   00000C   00000000     DD 0H
 
    \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for AnchorY>`:
+   \   000000   00000000     DD 0H
+   \   000004   00000000     DD 0H
+   \   000008   66668640     DD 40866666H
+   \   00000C   66668640     DD 40866666H
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
    \                     `?<Initializer for AnchorZ>`:
-   \   000000   3333333F     DD 3F333333H
-   \   000004   3333333F     DD 3F333333H
-   \   000008   3333333F     DD 3F333333H
-   \   00000C   3333333F     DD 3F333333H
+   \   000000   A4703D3F     DD 3F3D70A4H
+   \   000004   A4703D3F     DD 3F3D70A4H
+   \   000008   A4703D3F     DD 3F3D70A4H
+   \   00000C   A4703D3F     DD 3F3D70A4H
 
    \                                 In  segment XDATA_ID, align 1, keep-with-next
    \                     `?<Initializer for RefAValue>`:
@@ -6408,7 +6408,7 @@ F:\myCloud\ZigBeeLocalization\Projects\zstack\Samples\SampleApp\Source\SampleApp
 
    \                                 In  segment XDATA_ID, align 1, keep-with-next
    \                     `?<Initializer for DeviceID>`:
-   \   000000   0200         DW 2
+   \   000000   0100         DW 1
 
    \                                 In  segment BANK_RELAYS, align 1
    \                     ??SampleApp_Init?relay:

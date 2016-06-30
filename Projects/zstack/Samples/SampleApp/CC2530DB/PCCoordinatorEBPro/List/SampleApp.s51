@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                            /
-// IAR C/C++ Compiler V8.20.2.41139 for 8051            21/Jun/2016  17:00:55 /
+// IAR C/C++ Compiler V8.20.2.41139 for 8051            30/Jun/2016  11:25:58 /
 // Copyright 2004-2013 IAR Systems AB.                                        /
 //                                                                            /
 //    Core               =  plain                                             /
@@ -1189,7 +1189,7 @@ AValue:
         REQUIRE __INIT_XDATA_I
 
         RSEG XDATA_I:XDATA:NOROOT(0)
-//  195 float AnchorX[4]={4.0f, 0.0f, 0.0f, 4.0f};      // router position in x direction in m
+//  195 float AnchorX[4]={0.0f, 4.2f, 4.2f, 0.0f};      // router position in x direction in m
 AnchorX:
         DATA8
         DS 16
@@ -1197,7 +1197,7 @@ AnchorX:
         REQUIRE __INIT_XDATA_I
 
         RSEG XDATA_I:XDATA:NOROOT(0)
-//  196 float AnchorY[4]={4.0f, 4.0f, 0.0f, 0.0f};      // router position in y direction in m
+//  196 float AnchorY[4]={0.0f, 0.0f, 4.2f, 4.2f};      // router position in y direction in m
 AnchorY:
         DATA8
         DS 16
@@ -1205,7 +1205,7 @@ AnchorY:
         REQUIRE __INIT_XDATA_I
 
         RSEG XDATA_I:XDATA:NOROOT(0)
-//  197 float AnchorZ[4]={0.7f, 0.7f, 0.7f, 0.7f};      // router position in z direction in m
+//  197 float AnchorZ[4]={0.74f, 0.74f, 0.74f, 0.74f};      // reference nodes/routers position in z direction in m
 AnchorZ:
         DATA8
         DS 16
@@ -1256,7 +1256,7 @@ locationZ:
 //  209 // device id
 
         RSEG XDATA_I:XDATA:NOROOT(0)
-//  210 int DeviceID=2;                                 // device id to identify the device
+//  210 int DeviceID=1;                                 // device id to identify the device
 DeviceID:
         DATA16
         DS 2
@@ -8583,26 +8583,26 @@ SampleApp_Quadrotor_SendLocation:
         RSEG XDATA_ID:CODE:NOROOT(0)
 `?<Initializer for AnchorX>`:
         DATA32
-        DD 40800000H
         DD 0H
+        DD 40866666H
+        DD 40866666H
         DD 0H
-        DD 40800000H
 
         RSEG XDATA_ID:CODE:NOROOT(0)
 `?<Initializer for AnchorY>`:
         DATA32
-        DD 40800000H
-        DD 40800000H
         DD 0H
         DD 0H
+        DD 40866666H
+        DD 40866666H
 
         RSEG XDATA_ID:CODE:NOROOT(0)
 `?<Initializer for AnchorZ>`:
         DATA32
-        DD 3F333333H
-        DD 3F333333H
-        DD 3F333333H
-        DD 3F333333H
+        DD 3F3D70A4H
+        DD 3F3D70A4H
+        DD 3F3D70A4H
+        DD 3F3D70A4H
 
         RSEG XDATA_ID:CODE:NOROOT(0)
 `?<Initializer for RefAValue>`:
@@ -8615,7 +8615,7 @@ SampleApp_Quadrotor_SendLocation:
         RSEG XDATA_ID:CODE:NOROOT(0)
 `?<Initializer for DeviceID>`:
         DATA16
-        DW 2
+        DW 1
 
         RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
 ??SampleApp_Init?relay:

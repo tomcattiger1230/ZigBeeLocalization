@@ -20,19 +20,12 @@ sfr = "P1",	"SFR",	0x90,	1,	base=16,	modified
 sfr = "P2",	"SFR",	0xa0,	1,	base=16,	modified
 sfr = "P3",	"SFR",	0xb0,	1,	base=16,	modified
 sfr = "SCON",	"SFR",	0x98,	1,	base=16,	modified
+sfr = "SBUF",	"SFR",	0x99,	1,	base=16,	modified
 sfr = "PCON",	"SFR",	0x87,	1,	base=16,	modified
-sfr = "T2CON.EXF2",	"SFR",	0xc8,	1,	base=16,	modified
-sfr = "SCON.SM0",	"SFR",	0x98,	1,	base=16,	modified
-sfr = "SBUF",	"SFR",	0x99,	1,	base=16,	modified
-sfr = "PCON.IDL",	"SFR",	0x87,	1,	base=16,	modified
-sfr = "PCON.PD",	"SFR",	0x87,	1,	base=16,	modified
-sfr = "PCON.GF1",	"SFR",	0x87,	1,	base=16,	modified
-sfr = "PCON.SMOD1",	"SFR",	0x87,	1,	base=16,	modified
-sfr = "SBUF",	"SFR",	0x99,	1,	base=16,	modified
 
 
 [SfrGroupInfo]
 group = "Custom", "DPL", "DPH", "IE", "IP", "TCON", "TMOD"
 group = "Custom", "TL0", "TL1", "TH0", "TH1", "T2CON", "T2MOD"
 group = "Custom", "RCAP2L", "RCAP2H", "TL2", "TH2", "P0", "P1"
-group = "Custom", "P2", "P3", "SCON", "PCON"
+group = "Custom", "P2", "P3", "SCON", "SBUF", "PCON"
